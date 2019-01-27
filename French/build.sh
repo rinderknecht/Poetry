@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -x
+#set -x
 
 src="les_vers_blancs \
      dualite \
