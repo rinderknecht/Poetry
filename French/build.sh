@@ -11,8 +11,7 @@ src="les_vers_blancs \
      perigee_de_Mercure \
      pierrot \
      un_feu_nouveau \
-     zebre \
-     tsuyu_fr"
+     zebre"
 
 for TEX in $src; do
   make pdf TEX=$TEX
