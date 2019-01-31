@@ -27,4 +27,6 @@
        ad_libitum.pdf \
        les_bocaux.pdf \
        la_fontaine.pdf \
-       chevelure.pdf
+       chevelure.pdf \
+       singing_in_the_rain.pdf \
+       tsuyu_no_inochi.pdf
