@@ -19,4 +19,12 @@
        un_feu_nouveau.pdf \
        journal.pdf \
        nudite.pdf \
-       zebre.pdf
+       zebre.pdf \
+       neuvieme.pdf \
+       reflets.pdf \
+       les_regrets.pdf \
+       mauvais_temps.pdf \
+       ad_libitum.pdf \
+       les_bocaux.pdf \
+       la_fontaine.pdf \
+       chevelure.pdf
