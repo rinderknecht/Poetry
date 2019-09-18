@@ -1,6 +1,7 @@
 # Poetry
 Poetry in French and Spanish
 
+    $ cd French
     $ setup.sh
-    $ make pdf TEX=foo
+    $ ./build.sh
     $ ./clean.sh
