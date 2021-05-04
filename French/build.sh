@@ -21,7 +21,8 @@ src="les_vers_blancs \
      la_fontaine \
      chevelure \
      singing_in_the_rain \
-     tsuyu_no_inochi"
+     tsuyu_no_inochi \
+     un_deux"
 
 for TEX in $src; do
   make pdf TEX=$TEX
