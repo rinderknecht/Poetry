@@ -4,8 +4,10 @@
 
 src="comet \
      cup_of_tea \
-     tenth \
-     one_two"
+     jars \
+     one_two \
+     regrets \
+     tenth"
 
 for TEX in $src; do
   make pdf TEX=$TEX
