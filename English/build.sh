@@ -3,7 +3,7 @@
 #set -x
 
 src="comet \
-     cup_of_tea \
+     cup \
      jars \
      one_two \
      regrets \
