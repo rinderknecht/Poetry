@@ -13,7 +13,8 @@ for poem in $(ls *.tex); do pdflatex $poem; done
                              fountain.pdf \
                              hair.pdf \
                              blue.pdf \
-                             ermine.pdf
+                             ermine.pdf \
+                             book.pdf
 #                             meltwater.pdf \
 #                             white.pdf \
 #                             perigee.pdf \

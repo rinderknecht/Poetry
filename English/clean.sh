@@ -19,4 +19,5 @@ rm -f cup.pdf \
    white.pdf \
    perigee.pdf \
    comet.pdf \
-   duality.pdf
+   duality.pdf \
+   book.pdf
