@@ -20,4 +20,5 @@ rm -f cup.pdf \
    perigee.pdf \
    comet.pdf \
    duality.pdf \
-   book.pdf
+   book.pdf \
+   alchemy.pdf
