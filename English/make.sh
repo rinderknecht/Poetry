@@ -14,7 +14,8 @@ for poem in $(ls *.tex); do pdflatex $poem; done
                              hair.pdf \
                              blue.pdf \
                              ermine.pdf \
-                             book.pdf
+                             book.pdf \
+                             alchemy.pdf
 #                             meltwater.pdf \
 #                             white.pdf \
 #                             perigee.pdf \
