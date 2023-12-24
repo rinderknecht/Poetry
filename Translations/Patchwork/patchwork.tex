@@ -1,0 +1,52 @@
+%-*-latex-*-
+
+\documentclass[11pt,a4paper]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,french]{babel}
+\usepackage[charter]{mathdesign}
+\usepackage{verse}
+\usepackage{url}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\vspace*{70mm}
+
+\begin{center}
+{\Huge\textbf{Poèmes hispaniques divers}} \\
+\bigskip
+Traduits en vers rimés \\
+\medskip
+\textbf{Christian Rinderknecht}\\
+\url{rinderknecht@free.fr}
+\end{center}
+
+\selectlanguage{spanish}
+
+\part{Rubén Darío}
+
+\include{cancion_de_carnaval}
+\include{mia}
+\include{dice_mia}
+%\include{sonatina}
+\include{syrinx}
+
+\part{Gerardo Diego}
+
+\include{callar}
+\include{elegia_de_atarazanas}
+\include{la_novela_de_una_tienda}
+
+\part{Jorge Guillén}
+
+\include{cantico}
+
+%\part{Paul Verlaine}
+%\input{colloque_sentimental}
+
+\tableofcontents
+
+\end{document}
