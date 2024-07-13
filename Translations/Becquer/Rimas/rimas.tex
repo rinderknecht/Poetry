@@ -1,15 +1,29 @@
 %-*-latex-*-
 
-\documentclass[a4paper,12pt]{book}
+\documentclass[a4paper,fontsize=13pt,twoside,final]{scrbook}
+
+% Page geometry for L'Harmattan
+%
+\usepackage[bindingoffset=0cm,a4paper,left=55mm,top=6cm,textheight=185mm,textwidth=10cm,includefoot,includehead,dvips]{geometry}% showframe, showcrop
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[spanish,french]{babel}
-\usepackage{ebgaramond}%\usepackage[charter]{mathdesign}
+\usepackage[french]{babel}
+\usepackage{ebgaramond}
 \usepackage{verse}
 \usepackage{url}
 \usepackage{hyphenat}
 
+\selectlanguage{francais}
+
+\hyphenation{Gon-zá-lez thè-mes stro-phes}
+
+% Page style
+%
+%% \usepackage{fancyhdr}
+%% \fancyhf{}
+%% \cfoot{\thepage}
+%% \pagestyle{plain}
 
 \begin{document}
 
@@ -26,15 +40,15 @@ Traduction de Christian Rinderknecht
 \end{center}
 
 \bigskip\bigskip\bigskip
-\begin{center}
-  Mai \oldstylenums{2024}
-\end{center}
 
-\centerline\today
+\vfill
+\begin{center}
+L'Harmattan
+\end{center}
+%\centerline\today
 
 \cleardoublepage
 
-%\selectlanguage{francais}
 \frenchspacing  % Follow French conventions after a period
 
 \part{Biographie de l'auteur}
