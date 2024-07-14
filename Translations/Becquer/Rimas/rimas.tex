@@ -4,19 +4,20 @@
 
 % Page geometry for L'Harmattan
 %
-\usepackage[bindingoffset=0cm,a4paper,left=55mm,top=6cm,textheight=185mm,textwidth=10cm,includefoot,includehead,dvips]{geometry}% showframe, showcrop
+\usepackage[bindingoffset=0cm,a4paper,left=55mm,top=6cm,textheight=185mm,textwidth=10cm,includefoot,includehead,dvips,showframe]{geometry}% showframe, showcrop
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \usepackage{ebgaramond}
+
 \usepackage{verse}
 \usepackage{url}
 \usepackage{hyphenat}
 
-\selectlanguage{francais}
+%\selectlanguage{francais}
 
-\hyphenation{Gon-zá-lez thè-mes stro-phes}
+\hyphenation{Gon-zá-lez thè-mes stro-phes con-trainte}
 
 % Page style
 %
@@ -49,19 +50,19 @@ L'Harmattan
 
 \cleardoublepage
 
-\frenchspacing  % Follow French conventions after a period
+%\frenchspacing  % Follow French conventions after a period
 
 \part{Biographie de l'auteur}
-\include{biographie}
+\input{biographie}
 
 \part{Introduction du traducteur}
-\include{introduction}
+\input{introduction}
 
 \part{Rimes}
-\include{rimes}
+\input{rimes}
 
 \part{Autres rimes}
-\include{autres_rimes}
+\input{autres_rimes}
 
 \bigskip
 
