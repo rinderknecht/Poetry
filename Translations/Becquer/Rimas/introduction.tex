@@ -1,4 +1,21 @@
-%\selectlanguage{francais}
+%-*-latex-*-
+
+\documentclass[a4paper,fontsize=13pt,twoside,final]{scrbook}
+
+% Page geometry for L'Harmattan
+%
+\usepackage[bindingoffset=0cm,a4paper,left=55mm,top=6cm,textheight=185mm,textwidth=10cm,includefoot,includehead,dvips]{geometry}% showframe, showcrop
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{ebgaramond}
+
+\hyphenation{Gon-zá-lez thè-mes stro-phes con-trainte}
+
+\begin{document}
+
+\pagestyle{empty}
 
 Notre traduction reprend l'ordre du \emph{Livre des moineaux}, où
 chaque poème est numéroté avec des chiffres arabes, mais nous
@@ -60,3 +77,5 @@ au symbolisme.
 \bigskip
 \bigskip
 \hfill Christian Rinderknecht
+
+\end{document}
