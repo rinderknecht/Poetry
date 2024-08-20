@@ -4,7 +4,16 @@
 
 % Page geometry for L'Harmattan
 %
-\usepackage[bindingoffset=0cm,a4paper,left=55mm,top=6cm,textheight=185mm,textwidth=10cm,includefoot,includehead,dvips]{geometry}% showframe, showcrop
+\usepackage[bindingoffset=0cm,
+            a4paper,
+            left=55mm,
+            top=6cm,
+            textheight=185mm,
+            textwidth=10cm,
+            footskip=13mm,
+            includefoot,
+            includehead,
+            dvips]{geometry}% showframe, showcrop
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -19,6 +28,8 @@
 
 \hyphenation{Gon-zá-lez thè-mes stro-phes con-trainte}
 
+\frenchspacing  % Follow French conventions after a period
+
 % Page style
 %
 %% \usepackage{fancyhdr}
@@ -28,7 +39,7 @@
 
 \begin{document}
 
-\thispagestyle{empty}
+\pagestyle{empty}
 
 %% \vspace*{70mm}
 
@@ -48,11 +59,36 @@
 %% \end{center}
 %% %\centerline\today
 
-%% \cleardoublepage
+\cleardoublepage
+\
+\cleardoublepage
+\
+\cleardoublepage
+\
 
-%\frenchspacing  % Follow French conventions after a period
+\begin{center}
+  {\Large Gustavo Adolfo \textsc{Bécquer}}
+\end{center}
 
-\setcounter{page}{7}
+\bigskip\bigskip\bigskip\bigskip\bigskip\bigskip
+
+\begin{center}
+  {\Huge\textbf{RIMES}}
+\end{center}
+
+\bigskip\bigskip\bigskip
+
+\vfill
+\begin{center}
+L'Harmattan
+\end{center}
+%\centerline\today
+
+\clearpage
+
+\pagestyle{plain}
+
+%\setcounter{page}{7}
 
 \part{Biographie de l'auteur}
 \input{biographie}
