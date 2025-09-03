@@ -21,6 +21,8 @@
 \usepackage{ebgaramond}
 
 \usepackage{verse}
+\poemlines{1} % Number each verse
+
 \usepackage{url}
 \usepackage{hyphenat}
 
@@ -39,6 +41,20 @@
 
 \selectlanguage{english}
 
+\settowidth{\versewidth}{}
+
+\begin{verse}%[\versewidth]
+  You are so silly. \\
+  You run like the morning wind, \\
+  sometime you'll be knocked down by a car. \\
+  By the way, I scrubbed clean my little table, \\
+  and now the tender light of my bread shines purer. \\
+\end{verse}
+
+\newpage
+
+\selectlanguage{english}
+
 \noindent \textbf{Original Hungarian}
 
 \selectlanguage{hungarian}
@@ -49,7 +65,7 @@
 %% Még elüt valamelyik autó.
 %% Pedig lesikáltam kis asztalomat
 %% és most
-%% tisztábban világit kenyerem enyhe fénye.
+%% tisztábban világít kenyerem enyhe fénye.
 %% No gyere vissza, ha akarod
 %% veszek takarót vaságyamra.
 %% Egyszerü, szürke takarót.
@@ -75,9 +91,9 @@
 %% és fáradt, összetört
 %% álmukban majd elmosolyodnak ők is.
 
-\settowidth{\versewidth}{}
+\settowidth{\versewidth}{tisztábban világít kenyerem enyhe fénye.}
 
-\begin{verse}%[\versewidth]
+\begin{verse}[\versewidth]
   \it
   Olyan bolond vagy \\
   szaladsz \\
@@ -85,7 +101,7 @@
   Még elüt valamelyik autó. \\
   Pedig lesikáltam kis asztalomat \\
   és most \\
-  tisztábban világit kenyerem enyhe fénye. \\
+  tisztábban világít kenyerem enyhe fénye. \\
   No gyere vissza, ha akarod \\
   veszek takarót vaságyamra. \\
   Egyszerü, szürke takarót. \\
@@ -129,10 +145,6 @@ two verses and a conjunction.
 \selectlanguage{english}
 
 \section{Consciousness (\emph{Eszmélet})}
-
-% Number each verse
-
-\poemlines{1}
 
 \poemtitle*{I}
 
