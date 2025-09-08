@@ -16,10 +16,15 @@
 %%             dvips]{geometry}% showframe, showcrop
 
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc} % Default nowadays
 \usepackage[main=english,hungarian,french,spanish]{babel}
-\usepackage{ebgaramond}
 
+% https://tex.stackexchange.com/questions/642987/pdflatex-stops-when-both-german-and-hungarian-languages-are-set-in-babel
+
+\AddToHook{begindocument}[test]{\catcode\string``=12 }
+\DeclareHookRule{begindocument}{test}{before}{babel}
+
+\usepackage{ebgaramond}
 \usepackage{verse}
 \poemlines{1} % Number each verse
 
@@ -41,9 +46,9 @@
 
 \selectlanguage{english}
 
-\settowidth{\versewidth}{}
+\settowidth{\versewidth}{and now the tender light of my bread shines purer.}
 
-\begin{verse}%[\versewidth]
+\begin{verse}[\versewidth]
   You are so silly. \\
   You run like the morning wind, \\
   sometime you'll be knocked down by a car. \\
@@ -619,7 +624,7 @@ metaphor for the creation of poetry. J is the cat in verses 6-7.
   egyszerre\myfoot{adv. \emph{egyszer} `at once' +
   abl. \emph{-re} `onto'} kint\myfoot{adv. `outside'} s
   bent\myfoot{adv. `inside'} egeret.\myfoot{\emph{egér}
-  `mouse" + acc. \emph{-(e)t} $\rightarrow$ \emph{egeret}} \\
+  `mouse' + acc. \emph{-(e)t} $\rightarrow$ \emph{egeret}} \\
 \end{verse}
 
 \noindent Chiastic structure: \\
