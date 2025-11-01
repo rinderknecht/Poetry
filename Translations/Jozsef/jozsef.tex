@@ -1,54 +1,163 @@
-%-*-latex-*-
+\documentclass[11pt]{book}
 
-\documentclass[a4paper,12pt,twoside,final]{book}
-
-% Page geometry for L'Harmattan
+% Geometry
 %
-%% \usepackage[bindingoffset=0cm,
-%%             a4paper,
-%%             left=55mm,
-%%             top=6cm,
-%%             textheight=185mm,
-%%             textwidth=10cm,
-%%             footskip=13mm,
-%%             includefoot,
-%%             includehead,
-%%             dvips]{geometry}% showframe, showcrop
+\usepackage[papersize={12.85cm,19.84cm},%
+            includehead,%
+            includefoot,%
+            bindingoffset=1cm,%
+            showframe,%
+            showcrop]{geometry}%, showframe, showcrop
+
+%\setlength{\evensidemargin}{-50pt}
+%\setlength{\oddsidemargin}{-50pt}
+\setlength{\topmargin}{-50pt}
+\setlength{\textheight}{500pt}
+%\setlength{\textwidth}{530pt}
 
 \usepackage[T1]{fontenc}
-%\usepackage[utf8]{inputenc} % Default nowadays
-\usepackage[main=english,hungarian,french,spanish]{babel}
-
-% https://tex.stackexchange.com/questions/642987/pdflatex-stops-when-both-german-and-hungarian-languages-are-set-in-babel
-
+\usepackage[main=english,hungarian]{babel}
 \AddToHook{begindocument}[test]{\catcode\string``=12 }
 \DeclareHookRule{begindocument}{test}{before}{babel}
-
 \usepackage{ebgaramond}
-\usepackage{verse}
-\poemlines{1} % Number each verse
 
-\usepackage{url}
+\usepackage{microtype}
+
+\usepackage{verse} % \poemlines{1} % Number each verse
+\usepackage[final]{pdfpages}
 \usepackage{hyphenat}
+\usepackage{graphicx}
+\usepackage{pgfornament}
 
-\title{Collected Poems}
-\author{Attila József}
+\frenchspacing  % Follow French conventions after a period
 
-\newcommand{\myfoot}[1]{\footnote{\selectlanguage{english} {#1}}}
+%% TEMPORARY
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%% \usepackage[T1]{fontenc}
+
+\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
+\newcommand*{\centeredornament}{\centerline{\pgfornament[width=6cm]{88}}}
+
+% Footnotes are endnotes in English
+%
+%% \usepackage{endnotes}
+%% \let\footnote=\endnote
+
+%% \newcommand{\myfoot}[1]{\footnote{\selectlanguage{english} {#1}}}
+
+% Title and author
+%
+\title{The Tiger and the Roe Deer\\ {\large A bilingual anthology}}
+\author{{\Large Attila József}\\\\\\
+Translation by Christian Rinderknecht}
+\date{\oldstylenums{2025}}
 
 \begin{document}
 
+\includepdf{front_cover}
+
+\thispagestyle{empty}
+
+\mbox{}
+\thispagestyle{empty}
+
+\newpage\leavevmode\thispagestyle{empty}
+
+\mbox{}
+\thispagestyle{empty}
+
 \maketitle
 
-%% =====================================================================
+\thispagestyle{empty}
 
-\chapter{\oldstylenums{1925}}
+\vspace*{\fill}
+
+\begin{flushright}
+  \textcopyright{} Translation by Christian Rinderknecht,
+  \oldstylenums{2025}.\\
+  \textcopyright{} Cover art by Max Wang ($\Box\Box\Box$), \oldstylenums{2025}.
+\end{flushright}
+
+\newpage
+
+\vspace*{4cm}
+
+\begin{flushright}
+  This translation is dedicated to Réka Dudás.
+\end{flushright}
+
+\thispagestyle{empty}
+
+\newpage\leavevmode\thispagestyle{empty}\newpage
+
+\pagenumbering{arabic}
+
+\newpage\leavevmode\thispagestyle{empty}\newpage
+
+%----------------------------------------------------------------------
+
+\vspace*{-15mm}
+\centeredornament
+%\vspace*{-7mm}
+
+\selectlanguage{english}
+
+\settowidth{\versewidth}{}
+
+\begin{verse}%[\versewidth]
+  Only you should read my poem, \\
+  who knows and loves me, \\
+  since you sail the void \\
+  and knows what will come, like a soothsayer, \\
+  \ \\
+  since the silence appeared in your dreams \\
+  in the form of a human being, \\
+  and in your heart sometimes linger \\
+  the tiger and the tame roe deer. \\
+  \ \\
+  Early June \oldstylenums{1936}
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+%\vspace*{-7mm}
+
+\selectlanguage{hungarian}
+
+%\poemtitle*{}
+
+\settowidth{\versewidth}{}
+
+\begin{verse}%[\versewidth]
+  Csak az olvassa versemet, \\
+  ki ismer engem és szeret, \\
+  mivel a semmiben hajóz \\
+  s hogy mi lesz, tudja, mint a jós, \\
+  \ \\
+  mert álmaiban megjelent \\
+  emberi formában a csend \\
+  s szivében néha elidőz \\
+  a tigris meg a szelid őz. \\
+  \ \\
+  \oldstylenums{1936} június eleje
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+%\vspace*{-7mm}
 
 \selectlanguage{english}
 
 \settowidth{\versewidth}{and now the tender light of my bread shines purer.}
 
-\begin{verse}[\versewidth]
+\begin{verse}%[\versewidth]
   You are so silly. \\
   You run like the morning wind, \\
   sometime you'll be knocked down by a car. \\
@@ -64,7 +173,8 @@
   He doesn't want to ruin my eyes, \\
   which long to see you, \\
   and will look at you very beautifully. \\
-  When you come back, I will kiss you carefully, \\
+  When you come back, \\
+  I will kiss you carefully, \\
   I won't rip off your coat. \\
   I will tell you all the many jokes, \\
   because I devised many since then, \\
@@ -72,299 +182,74 @@
   how you'll look down to the ground, \\
   and we will crack up, \\
   and we will be heard by our neighbours \\
-  and even by the taciturn, austere day labourers \\
-  who, amidst their tired, shattered dreams, \\
+  and even by the taciturn, \\
+  austere day labourers who, \\
+  amidst their tired, shattered dreams, \\
   will then begin to smile too. \\
+  \ \\
+  Autumn \oldstylenums{1925}
 \end{verse}
-
-Autumn
 
 \newpage
 
-\noindent \textbf{French}
-
-\selectlanguage{french}
-
-\settowidth{\versewidth}{et maintenant la lumière tendre de mon pain est plus pure.}
-
-\begin{verse}[\versewidth]
-  Ne sois pas si bête. \\
-  Tu cours comme le vent matinal, \\
-  un jour tu seras renversée par une auto. \\
-  D'ailleurs, j'ai récuré ma petite table, \\
-  et maintenant la lumière suave de mon pain est plus pure. \\
-  Hé bien, reviens; si tu veux \\
-  j'achèterai une couverture pour mon lit de fer. \\
-  Une couverture ordinaire, grise. \\
-  Elle conviendra à ma Pauvreté, qui t'aime, \\
-  et le Seigneur t'aime aussi beaucoup \\
-  et Il m'aime aussi. \\
-  Le Seigneur ne vient jamais dans toute sa splendeur, \\
-  Il ne veut pas abîmer mes yeux, \\
-  qui ont hâte de te voir \\
-  et qui te regarderont avec beauté. \\
-  Quand tu reviendras, je t'embrasserai doucement, \\
-  je n'arracherai pas ton manteau. \\
-  Je te raconterai toutes les nouvelles blagues, \\
-  parce que j'en ai inventé beaucoup depuis, \\
-  et que tu seras gaie et rougieras, \\
-  et tu baisseras les yeux vers le sol, \\
-  et nous éclaterons de rire, \\
-  et nos voisins nous entendrons \\
-  et jusqu'aux journaliers taciturnes et austères \\
-  qui, parmi leurs rêves fatigués et brisés, \\
-  esquisseront un sourire aussi. \\
-\end{verse}
-
-Automne
-
-\newpage
-
-\selectlanguage{english}
-
-\noindent \textbf{Spanish}
-
-\selectlanguage{spanish}
-
-\settowidth{\versewidth}{y ahora la luz suave de mi pan brilla más pura.}
-
-\begin{verse}[\versewidth]
-  No seas tonta. \\
-  Corres como el viento de la madrugada, \\
-  algún día te atropellará un coche. \\
-  De hecho, fregué mi mesita, \\
-  y ahora la luz suave de mi pan brilla más pura. \\
-  Pues regresa; si quieres \\
-  compraré una manta para mi cama de hierro. \\
-  Una manta ordinaria, gris. \\
-  Le caerá bien a mi Pobreza, que te quiere, \\
-  y el Señor también te ama, \\
-  y me ama también. \\
-  El Señor nunca viene con gran esplendor, \\
-  no quiere arruinar mis ojos, \\
-  que anhelan verte, \\
-  y que te mirarán con belleza. \\
-  Cuando regreses, te besaré con cuidado, \\
-  no te arrancaré el abrigo. \\
-  Te contaré todos los nuevos chistes, \\
-  porque hallé muchos desde entonces, \\
-  y qué alegre te pondrás y te sonrojarás, \\
-  y cómo mirarás al suelo, \\
-  y nos reiremos a carcajadas, \\
-  y nos oirán nuestros vecinos \\
-  y hasta los taciturnos y austeros jornaleros \\
-  que, entre sus sueños cansados y quebrados, \\
-  empezarán a sonreirse también. \\
-\end{verse}
-
-Otoño
-
-\newpage
-
-\selectlanguage{english}
-
-\noindent \textbf{Original Hungarian}
+\vspace*{-15mm}
+\centeredornament
+%\vspace*{-7mm}
 
 \selectlanguage{hungarian}
 
-%% Olyan bolond vagy
-%% szaladsz
-%% akár a reggeli szél.
-%% Még elüt valamelyik autó.
-%% Pedig lesikáltam kis asztalomat
-%% és most
-%% tisztábban világít kenyerem enyhe fénye.
-%% No gyere vissza, ha akarod
-%% veszek takarót vaságyamra.
-%% Egyszerű, szürke takarót.
-%% Illik az
-%% szegénységemhez, aki szeret téged
-%% és az Úr is szereti nagyon
-%% és engem is szeret az Úr
-%% nem jön soha nagy fényességgel
-%% Nem akarja, hogy elromoljanak
-%% szemeim, akik
-%% nagyon kívánnak látni téged.
-%% És nagyon szépen néznek majd terád
-%% ha visszajössz
-%% vigyázva foglak megcsókolni,
-%% nem tépem le rólad a kabátot
-%% és elmondom mind a sok tréfát,
-%% mert sokat kieszeltem azóta,
-%% hogy te is örülj,
-%% majd elpirulsz,
-%% lenézel a földre és kacagunk
-%% hangosan, hogy behallatszik szomszédunkba
-%% a szótlan, komoly napszámosokhoz is behallik
-%% és fáradt, összetört
-%% álmukban majd elmosolyodnak ők is.
+\settowidth{\versewidth}{a szótlan, komoly napszámosokhoz is behallik}
 
-\settowidth{\versewidth}{tisztábban világít kenyerem enyhe fénye.}
-
-\begin{verse}[\versewidth]
-  Olyan\myfoot{arch. pron. \emph{oly} `such/so' + deadj. adv.-forming
-    \emph{-an} $\rightarrow$ `such a/an'}
-  bolond\myfoot{adj. `silly/foolish'}
-  vagy\myfoot{vb. \emph{van} `to be' + 2nd pers. sg. ind. pres. indef.} \\
-  szaladsz\myfoot{vb. \emph{szalad} `to run' + 2nd
-    pers. sg. ind. pres. indef. \emph{-sz}} \\
-  akár\myfoot{lit. `just like'} a reggeli\myfoot{\emph{reggel}
-    `morning' + adj.-forming \emph{-i}} szél.\myfoot{`wind'} \\
-  Még\myfoot{adv. `moreover/later/sometime'}
-  elüt\myfoot{vb. pref. \emph{el-} `away' + vb. \emph{üt} `to hit' +
-    3rd pers. sg. ind. pres. indef.}
-  valamelyik\myfoot{pron. pref. \emph{vala} `some-' +
-    inter. \emph{myelik} `which/what' $\rightarrow$ `one/any of'}
-  autó.\myfoot{`car'} \\
-  Pedig\myfoot{conj. expressing contrast `whereas/but/although' or
-    addition `and (by contrast)'}
-  lesikáltam\myfoot{vb. pref. \emph{le-} completion/downward +
-    vb. \emph{sikál} `to scrub/scour (out)' + 1st
-    pers. sg. ind. past.def. \emph{-am}}
-  kis\myfoot{adj. `small'} asztalomat\myfoot{\emph{asztal} `table' +
-    1st pers. sg. single poss. \emph{-(o)m} + acc. \emph{-(a)t}} \\
-  és most\myfoot{adv. `now'} \\
-  tisztábban\myfoot{adj. \emph{tiszta} `clean/clear' + comp. \emph{-bb} +
-    deadj. adv.-forming \emph{-am} $\rightarrow$ `more
-    clearly/cleanly'} világít\myfoot{\emph{világ}
-    `light (arch.)/world' +
-    caus. vb.-forming \emph{-ít} `to make smth ...-like' + 1st
-    pers. sg. ind. pres. indef. `to make shine'}
-  kenyerem\myfoot{\emph{kenyér} `bread' + 1st pers. sg. single
-    poss. \emph{-em}}
-  enyhe\myfoot{\emph{enyh} `light/mild/tender/faint' + 3rd
-    pers. sg. single poss. \emph{-e} `of'} fénye.\myfoot{\emph{fény}
-    `light' + 3rd pers. sg. single poss. \emph{-e}} \\
-  No\myfoot{interj. `well/now'} gyere\myfoot{vb. \emph{jön} `to come' + 2nd
-    pers. sg. ind. pres. indef.} vissza,\myfoot{adv. `back[wards]'}
-  ha\myfoot{conf. `if' + cond. or `when/once'}
-  akarod\myfoot{vb. \emph{akar} `to want' + 2nd
-    pers. sg. ind. pres. def. \emph{-od}} \\
-  veszek\myfoot{vb. \emph{vesz} `to take/grab/buy/get/consider/put on'
-  + 1st pers. sg. ind. pres. indef. \emph{-ek}}
-  takarót\myfoot{vb. \emph{takar} `to cover (protect)' +
-    pres. part. \emph{-ó} $\rightarrow$
-    `cover/blanket' + acc. \emph{-t}} vaságyamra.\myfoot{\emph{vas}
-    `iron' + \emph{ágy} `bed' + 1st pers. sg. single poss. \emph{-am} +
-  subl. \emph{-ra} `onto/on'} \\
-  Egyszerű,\myfoot{\emph{egy} `one' + \emph{-szerű} `-like'
-    $\rightarrow$ `plain/simple/unadorned/humble (< 1945)'}
-  szürke\myfoot{adj. `grey'} takarót. \\
-  Illik\myfoot{vb. `to suit/match/fit' + 3rd
-    pers. sg. ind. pres. indef.} az \\
-  szegénységemhez,\myfoot{\emph{szegény} `poor' + noun-forming
-  \emph{-ség} (state of being) + 1st
-  pers. sg. single poss. \emph{-em} + allat. \emph{-hez} `to'}
-  aki\myfoot{conj. `who'} szeret\myfoot{vb. `to love'+ 3rd
-    pers. sg. ind. pres. indef.} téged\myfoot{pron. \emph{te} `you'
-    sg. + acc.} \\
-  és az Úr\myfoot{`Lord' (the Christian god)} is
-  szereti\myfoot{vb. \emph{szeret} `to love' + 3rd
-    pers. sg. ind. pres. indef. \emph{-i}}
-  nagyon\myfoot{adj. \emph{nagy} `great' + adv.-forming \emph{-on}
-    $\rightarrow$ `very (to a high degree)'} \\
-  és engem\myfoot{pron. \emph{én} `I' + acc. $\rightarrow$ `me'} is
-  szeret\myfoot{vb. `to love'+ 3rd pers. sg. ind. pres. indef.} az Úr \\
-  nem jön\myfoot{vb. `to come' + 3rd pers. sg. ind. pres. indef.}
-  soha\myfoot{adv. `never'} nagy\myfoot{adj. `great'}
-  fényességgel\myfoot{\emph{fény} `light' + adj.-forming \emph{-es}
-    `with/having' $\rightarrow$ `bright' + noun-forming
-  \emph{-ség} (state of being) $\rightarrow$ `brightness' +
-  instr. \emph{-vel} `with' (\emph{-gel} after consonant
-  \emph{g}) $\rightarrow$ `with brightness'} \\
-  Nem akarja,\myfoot{vb. `to want' + 3rd
-    pers. sg. ind. pres. indef. \emph{-ja}} hogy
-  elromoljanak\myfoot{perfect. vb. pref. \emph{el-} +
-    vb. \emph{romlik} `to break down/deteriorate' + 3rd
-    pers. pl. subj. indef. \emph{-janak}} \\
-  szemeim,\myfoot{\emph{szem} `eye' + 1st
-    pers. sg. mult. poss. \emph{-eim}} akik\myfoot{pron. `who' +
-    pl. \emph{-k}} \\
-  nagyon\myfoot{adj. \emph{nagy} `great' + adv.-forming \emph{-on}
-    $\rightarrow$ `very (to a high degree)'}
-  kívánnak\myfoot{vb. \emph{kíván} `to wish' + 3rd
-    pers. pl. ind. pres. indef. \emph{-nak}}
-  látni\myfoot{vb. \emph{lát} `to see' + inf. \emph{-ni}}
-  téged.\myfoot{pron. \emph{te} `you' sg. + acc.} \\
-  És nagyon\myfoot{adj. \emph{nagy} `great' + adv.-forming \emph{-on}
-    $\rightarrow$ `very (to a high degree)'} szépen\myfoot{adj. \emph{szép}
-  `beautiful'} néznek\myfoot{vb. \emph{néznek} `to look at smth' + 3rd
-  pers. pl. ind. pres. indef. \emph{-nek}}
-  majd\myfoot{adv. `sometime/later'} terád\myfoot{pron. sg. \emph{te}
-    `you' (here emph.) + pron. \emph{rá} + 2nd pers. sg. `on/of you'} \\
-  ha\myfoot{conf. `if' + cond. or `when/once'}
-  visszajössz\myfoot{vb. pref. \emph{vissza-} `back-' + vb. \emph{jön}
-  `to come'+ 2nd pers. sg. ind. pres. indef. \emph{-sz}} \\
-  vigyázva\myfoot{vb. \emph{vigyáz} `to protect/pay attention' +
-  adv. part. \emph{-va} result of action or simultaneous actions}
-  foglak\myfoot{vb. aux. \emph{fog} `to will' + 1st
-    pers. sg. ind. pres. 2nd obj. \emph{-lak} `you'}
-  megcsókolni,\myfoot{perfect. vb. pref. \emph{meg-} +
-    vb. \emph{csókol} `to kiss' + inf. \emph{-ni}} \\
-  nem tépem\myfoot{vb. \emph{tép} `to tear/rend' + 1st
-    pers. sg. ind. pres. def. \emph{-em}} le\myfoot{comp. `down'}
-  rólad\myfoot{pron. \emph{róla} `about/off her' + 2nd pers. sg.}
-  a kabátot\myfoot{\emph{kabát} `coat' + acc. \emph{-(o)t}} \\
-  és elmondom\myfoot{vb. \emph{elmond} `to tell' + 1st
-    pers. sg. ind. pres. def. \emph{-om}}
-  mind\myfoot{pron. sg. `all/each of'} a sok\myfoot{adj. `many'}
-  tréfát,\myfoot{\emph{tréfá} `joke' + acc. \emph{-(a)t}} \\
-  mert\myfoot{conj. `because'} sokat\myfoot{\emph{sok} `many' +
-    acc. \emph{-at}} kieszeltem\myfoot{vb. \emph{kieszel} `to devise'
-    + 1st pers. sg. past. \emph{-tem}} azóta,\myfoot{art. \emph{az}
-    `that' + \emph{óta} `since' $\rightarrow$ `since then'} \\
-  hogy te\myfoot{pron. sg. `you'} is\myfoot{doublet of \emph{és}
-    `and', adv. `also'} örülj,\myfoot{vb. \emph{örül} `to rejoice' +
-    2nd pers. sg. subj. indef. \emph{-j}} \\
-  majd\myfoot{adv. `sometime/later'}
-  elpirulsz,\myfoot{perfect. vb. pref. \emph{el-} + vb. \emph{pirul}
-    `to blush' + 2nd pers. sg. ind. pres. indef. \emph{-sz}} \\
-  lenézel\myfoot{vb. `to look down'+ 2nd
-    pers. sg. ind. pres. indef. \emph{-el}} a
-  földre\myfoot{\emph{föld} `earth/ground' + subl. \emph{-re} `onto'}
-  és kacagunk\myfoot{vb. \emph{kacag} `to laugh (a lot)' + 1st
-    pers. pl. ind. pres. indef. \emph{-unk}} \\
-  hangosan,\myfoot{adv. `loudly'} hogy
-  behallatszik\myfoot{vb. pref. \emph{be-} `inwardly' +
-    vb. \emph{hall} `to hear' + caus. \emph{-at}
-    + vb.-forming \emph{-szik} $\rightarrow$ `to cause to sound in'}
-  szomszédunkba\myfoot{\emph{szomszéd} `neighbour' + 1st
-    pers. pl. single poss. \emph{-unk} + illative \emph{-ba} `into'} \\
-  a szótlan,\myfoot{\emph{szó} `word/voice' + privative adj.-forming
-    \emph{-tlan} `-less'} komoly\myfoot{adj. `severe/austere'}
-  napszámosokhoz\myfoot{\emph{napszámos} `day labourer' +
-    pl. \emph{-(o)k} + allat. `\emph{-hoz} `towards'} is
-  behallik\myfoot{syn. \emph{behallatszik}} \\
-  és fáradt,\myfoot{vb. \emph{fárad} `to tire' +
-    past. part. \emph{-t}} összetört\myfoot{\emph{össze} `together' +
-    vb. \emph{tör} `to break' + past. part. \emph{-t}} \\
-  álmukban\myfoot{\emph{álom} `dream'+ 3rd pers. pl. single
-    poss. \emph{-uk} + innes. \emph{-ban} `in'}
-  majd\myfoot{adv. `sometime/later'}
-  elmosolyodnak\myfoot{vb. inf. \emph{elmosolyodni}
-  `to start to smile' + 3rd pers. ind. pres. indef.}
-  ők\myfoot{pron. `they'} is.\myfoot{doublet of \emph{és} `and',
-    adv. `also'} \\
+\begin{verse}%[\versewidth]
+  Olyan bolond vagy \\
+  szaladsz \\
+  akár a reggeli szél. \\
+  Még elüt valamelyik autó. \\
+  Pedig lesikáltam kis asztalomat \\
+  és most \\
+  tisztábban világít kenyerem enyhe fénye. \\
+  No gyere vissza, ha akarod \\
+  veszek takarót vaságyamra. \\
+  Egyszerű, szürke takarót. \\
+  Illik az \\
+  szegénységemhez, aki szeret téged \\
+  és az Úr is szereti nagyon \\
+  és engem is szeret az Úr \\
+  nem jön soha nagy fényességgel \\
+  Nem akarja, hogy elromoljanak \\
+  szemeim, akik \\
+  nagyon kívánnak látni téged. \\
+  És nagyon szépen néznek majd terád \\
+  ha visszajössz \\
+  vigyázva foglak megcsókolni, \\
+  nem tépem le rólad a kabátot \\
+  és elmondom mind a sok tréfát, \\
+  mert sokat kieszeltem azóta, \\
+  hogy te is örülj, \\
+  majd elpirulsz, \\
+  lenézel a földre és kacagunk \\
+  hangosan, hogy behallatszik szomszédunkba \\
+  a szótlan, komoly napszámosokhoz is behallik \\
+  és fáradt, összetört \\
+  álmukban majd elmosolyodnak ők is. \\
+  \ \\
+  1925 Ősze
 \end{verse}
 
-Ősze
+\newpage
 
-\bigskip
-
-\selectlanguage{english}
-
-% Note: The edition by \emph{Szépirodalmi könyvkiadó}, page~169, misses
-% two verses and a conjunction.
-
-%% =====================================================================
-
-\chapter{\oldstylenums{1933}}
+\vspace*{-15mm}
+\centeredornament
+%\vspace*{-7mm}
 
 \selectlanguage{english}
+
+%% % Note: The edition by \emph{Szépirodalmi könyvkiadó}, page~169, misses
+%% % two verses and a conjunction.
 
 \settowidth{\versewidth}{What shard of the vast nighttime}
 
-\begin{verse}[\versewidth]
+\begin{verse}%[\versewidth]
   Freight trains switching; \\
   the dreamy clanking \\
   claps the mute landscape \\
@@ -391,167 +276,183 @@ Otoño
   \ \\
   At the front of the warehouse \\
   a dusty lamp burns. \\
-  It is just visible, not luminous, \\
+  It is just visible, not luminous; \\
   such is wishful thinking: \\
   it blinks brightly, \\
   but the sky is a vast dead light. \\
+  \ \\
+  \oldstylenums{1933}
 \end{verse}
 
 \newpage
 
+\vspace*{-15mm}
+\centeredornament
+%\vspace*{-7mm}
+
 \selectlanguage{hungarian}
-
-%% Tehervonatok tolatnak,
-%% a méla csörömpölés
-%% könnyű bilincseket rak
-%% a néma tájra.
-
-%% Oly könnyen száll a hold,
-%% mint a fölszabadult.
-
-%% A megtört kövek
-%% önnön árnyukon fekszenek,
-%% csillognak
-%% maguknak,
-%% úgy a helyükön vannak,
-%% mint még soha.
-
-%% Milyen óriás éjszaka
-%% szilánkja ez a sulyos éj,
-%% mely úgy hull le ránk,
-%% mint a porra a vasszilánk?
-
-%% Napszülte vágy!
-%% Ha majd árnyat fogad az ágy,
-%% abban az egész éjben
-%% is ébren
-%% maradnál?
-
-%%% The following verses are not in the printed edition:
-%%
-%% A raktár
-%% előtt poros lámpa ég.
-%% Csak látszik, nem világit,
-%% ilyen az ész, ha áhit.
-%% Pislog élénken, holott
-%% nagy halott
-%% fény az ég.
 
 \settowidth{\versewidth}{Ha majd árnyat fogad az ágy,}
 
-\begin{verse}[\versewidth]
-  Tehervonatok\myfoot{\emph{teher} `freight' + vb. \emph{von} `to
-    pull/draw' + noun-forming \emph{-at} $\rightarrow$ `freight
-    train' + pl. \emph{-(o)k}} tolatnak,\myfoot{vb. \emph{tol} `to
-    reverse/back up' + caus. \emph{-at} `to make smth/smb do smth' +
-    3rd pers. pl. ind. pres. indef.} \\
-  a méla\myfoot{`dreamy/pensive'}
-  csörömpölés\myfoot{vb. \emph{csörömpöl} `to
-  clank' + vb. noun-forming \emph{-és} $\rightarrow$ `clanking'} \\
-  könnyű\myfoot{\emph{könnyű} `simple/easy/light'}
-  bilincseket\myfoot{\emph{bilincs} `handcuff/shackle' +
-    pl. acc. \emph{-eket}} rak\myfoot{vb. `to put/set' + 3rd
-    pers. sg. ind. pres. indef.} \\
-  a néma\myfoot{`silent/mute'} tájra.\myfoot{\emph{táj} `landscape/region'
-    + subl. \emph{-ra} `on/onto'} \\
+\begin{verse}%[\versewidth]
+  Tehervonatok tolatnak, \\
+  a méla csörömpölés \\
+  könnyű bilincseket rak \\
+  a néma tájra. \\
   \ \\
-  Oly\myfoot{arch. pron. \emph{oly} `so'}
-  könnyen\myfoot{\emph{könnyű} `easy/light' + super. \emph{-en} `on'
-    $\rightarrow$ `effortlessly/easily'}
-  száll\myfoot{vb. \emph{száll} `to fly' + 3rd
-    pers. sg. ind. pres. indef.} a hold,\myfoot{`moon'} \\
-  mint\myfoot{`like'} a fölszabadult.\myfoot{vb. pref. \emph{föl-}
-    completion (see also \emph{fel-}) + \emph{szabad} `free' +
-    vb.-forming \emph{-ul} $\rightarrow$ `to set free/escape' + past
-    part. \emph{-t}} \\
+  Oly könnyen száll a hold, \\
+  mint a fölszabadult. \\
   \ \\
-  A megtört\myfoot{perfect. vb. pref. \emph{meg-} + vb. \emph{tör} `to
-    break/crush' + past. part. \emph{-t}} kövek\myfoot{\emph{kő}
-    `stone' + pl. \emph{-(e)k}} \\
-  önnön\myfoot{arch. emph. poss. adj. by duplication of
-    pers. pron. \emph{ön} (3rd pers. sg.) $\rightarrow$ `one's own'}
-  árnyukon\myfoot{\emph{árny} `shadow/ghost' + 3rd
-    pers. pl. single-poss. \emph{-uk} + super. \emph{-(o)n} `on'}
-  fekszenek,\myfoot{vb. inf. \emph{fekszik} `to lie (horizontally)' + 3rd
-    pers. pl. ind. pres. indef. \emph{-enek}} \\
-  csillognak\myfoot{vb. \emph{csillog} `to glitter' + 3rd
-    pers. pl. ind. pres. indef.} \\
-  maguknak,\myfoot{\emph{mag(a)} `oneself' + 3rd pers. pl. \emph{-uk}
-    + dat. \emph{-nak}} \\
-  úgy\myfoot{adv. `so (in this/that manner)'; \emph{úgy ... mint ...}
-    `like'} a helyükön\myfoot{\emph{hely} `place/space' + 3rd
-    pers. pl. single-poss. \emph{-ük} `their' + super. \emph{-ön}
-    `on'} vannak,\myfoot{vb. \emph{van} `to be'+ 3rd
-    pers. pl. ind. pres. indef.} \\
-  mint\myfoot{conj. `like'} még\myfoot{adv. `yet/still/moreover'}
-  soha.\myfoot{adv. `never'} \\
+  A megtört kövek \\
+  önnön árnyukon fekszenek, \\
+  csillognak \\
+  maguknak, \\
+  úgy a helyükön vannak, \\
+  mint még soha. \\
   \ \\
-  Milyen\myfoot{pron. `what'} óriás\myfoot{noun/adj. `giant/huge/vast'}
-  éjszaka\myfoot{\emph{éj} `night' + \emph{szaka} `period of'
-    $\rightarrow$ `at night/nighttime/night'} \\
-  szilánkja\myfoot{\emph{szilánk} `chip/shard/splinter' + 3rd
-    pers. sg. single-poss. \emph{-ja}} ez a súlyos\myfoot{\emph{súly}
-    `weight' + adj.-forming \emph{-os} $\rightarrow$
-    adj. `severe/austere'} éj,\myfoot{`night'} \\
-  mely\myfoot{literary, `which/that'} úgy\myfoot{adv. `so (in
-    this/that manner)'; \emph{úgy ... mint ...}}
-    hull\myfoot{vb. `to fall', alt. \emph{hullik} + 3rd
-      pers. sg. ind. pres. indef.}
-  le\myfoot{adv. `down'} ránk,\myfoot{pron. \emph{rá} `upon/on/unto
-    him/her/it' + 1st pers. pl. poss. single-poss. \emph{-nk} `our'
-    $\rightarrow$ `us/on us'} \\
-  mint\myfoot{`like'} a porra\myfoot{\emph{por} `dust' +
-    subl. \emph{-ra} `onto'} a vasszilánk?\myfoot{\emph{vas}
-    `iron' + \emph{szilánk} `shard'} \\
+  Milyen óriás éjszaka \\
+  szilánkja ez a sulyos éj, \\
+  mely úgy hull le ránk, \\
+  mint a porra a vasszilánk? \\
   \ \\
-  Napszülte\myfoot{\emph{nap} `sun/day' + vb. \emph{szül} `to give
-    birth/bear' + 3rd pers. sg. ind. past def. \emph{-te}} vágy!\myfoot{`desire/longing'} \\
-  Ha\myfoot{conf. `if' + cond. or `when/once'}
-  majd\myfoot{adv. `sometime/later'} árnyat\myfoot{\emph{árny}
-    `shadow/ghost' + acc. \emph{-t}} fogad\myfoot{vb. `to receive' +
-    3rd pers. sg. ind. pres. indef.} az ágy,\myfoot{`bed'} \\
-  abban\myfoot{\emph{az} `that' + innes. \emph{-ban} `in'} az
-  egész\myfoot{adj./adv. `whole/wholly'} éjben\myfoot{\emph{éj}
-    `night' + innes. \emph{-ben} `in'} \\
-  is\myfoot{doublet of \emph{és}
-    `and', adv. `also'} ébren\myfoot{adv. `awake'} \\
-  maradnál?\myfoot{vb. \emph{marad} `to stay/remain (also state of
-    being)' + 2nd pers. sg. cond. pres. indef.} \\
+  Napszülte vágy! \\
+  Ha majd árnyat fogad az ágy, \\
+  abban az egész éjben \\
+  is ébren \\
+  maradnál? \\
   \ \\
-  A raktár\myfoot{`warehouse'} \\
-  előtt\myfoot{\emph{elő} `the front (of smth)' + locat. \emph{-tt}}
-  poros\myfoot{\emph{por} `dust' + adj.-forming \emph{-os}
-    $\rightarrow$ `dusty'} lámpa\myfoot{`lamp'} ég.\myfoot{vb. `to
-    burn/be lit'} \\
-  Csak\myfoot{adv. `only/just'} látszik,\myfoot{vb. \emph{lát} `to see' +
-    vb.-forming \emph{-szik} $\rightarrow$ `to be visible/to appear'} nem
-  világit,\myfoot{\emph{világ}
-    `light (arch.)/world' + vb.-forming \emph{-it} $\rightarrow$ `to
-    shine'} \\
-  ilyen\myfoot{det. `such'} az ész,\myfoot{`mind'}
-  ha\myfoot{conf. `if' + cond. or `when/once'} áhit.\myfoot{vb. `to
-    wish (for smth)'} \\
-  Pislog\myfoot{vb. `to blink'} élénken,\myfoot{vb. \emph{él} `to
-    live/exist' + rare adj.-forming \emph{-énk} + super. \emph{-en}
-    `on' $\rightarrow$ `lively'} holott\myfoot{adv. arch. `where';
-    conj. lit. `though/but/for/since'} \\
-  nagy halott\myfoot{noun/adj. `dead'} \\
-  fény\myfoot{\emph{fény} `light'} az ég.\myfoot{\emph{ég} `sky'} \\
+  A raktár \\
+  előtt poros lámpa ég. \\
+  Csak látszik, nem világit, \\
+  ilyen az ész, ha áhit. \\
+  Pislog élénken, holott \\
+  nagy halott \\
+  fény az ég. \\
+  \ \\
+  \oldstylenums{1933}
 \end{verse}
 
-%% =====================================================================
+%% \settowidth{\versewidth}{Ha majd árnyat fogad az ágy,}
 
-\chapter{\oldstylenums{1934}}
+%% \begin{verse}%[\versewidth]
+%%   Tehervonatok\myfoot{\emph{teher} `freight' + vb. \emph{von} `to
+%%     pull/draw' + noun-forming \emph{-at} $\rightarrow$ `freight
+%%     train' + pl. \emph{-(o)k}} tolatnak,\myfoot{vb. \emph{tol} `to
+%%     reverse/back up' + caus. \emph{-at} `to make smth/smb do smth' +
+%%     3rd pers. pl. ind. pres. indef.} \\
+%%   a méla\myfoot{`dreamy/pensive'}
+%%   csörömpölés\myfoot{vb. \emph{csörömpöl} `to
+%%   clank' + vb. noun-forming \emph{-és} $\rightarrow$ `clanking'} \\
+%%   könnyű\myfoot{\emph{könnyű} `simple/easy/light'}
+%%   bilincseket\myfoot{\emph{bilincs} `handcuff/shackle' +
+%%     pl. acc. \emph{-eket}} rak\myfoot{vb. `to put/set' + 3rd
+%%     pers. sg. ind. pres. indef.} \\
+%%   a néma\myfoot{`silent/mute'} tájra.\myfoot{\emph{táj} `landscape/region'
+%%     + subl. \emph{-ra} `on/onto'} \\
+%%   \ \\
+%%   Oly\myfoot{arch. pron. \emph{oly} `so'}
+%%   könnyen\myfoot{\emph{könnyű} `easy/light' + super. \emph{-en} `on'
+%%     $\rightarrow$ `effortlessly/easily'}
+%%   száll\myfoot{vb. \emph{száll} `to fly' + 3rd
+%%     pers. sg. ind. pres. indef.} a hold,\myfoot{`moon'} \\
+%%   mint\myfoot{`like'} a fölszabadult.\myfoot{vb. pref. \emph{föl-}
+%%     completion (see also \emph{fel-}) + \emph{szabad} `free' +
+%%     vb.-forming \emph{-ul} $\rightarrow$ `to set free/escape' + past
+%%     part. \emph{-t}} \\
+%%   \ \\
+%%   A megtört\myfoot{perfect. vb. pref. \emph{meg-} + vb. \emph{tör} `to
+%%     break/crush' + past. part. \emph{-t}} kövek\myfoot{\emph{kő}
+%%     `stone' + pl. \emph{-(e)k}} \\
+%%   önnön\myfoot{arch. emph. poss. adj. by duplication of
+%%     pers. pron. \emph{ön} (3rd pers. sg.) $\rightarrow$ `one's own'}
+%%   árnyukon\myfoot{\emph{árny} `shadow/ghost' + 3rd
+%%     pers. pl. single-poss. \emph{-uk} + super. \emph{-(o)n} `on'}
+%%   fekszenek,\myfoot{vb. inf. \emph{fekszik} `to lie (horizontally)' + 3rd
+%%     pers. pl. ind. pres. indef. \emph{-enek}} \\
+%%   csillognak\myfoot{vb. \emph{csillog} `to glitter' + 3rd
+%%     pers. pl. ind. pres. indef.} \\
+%%   maguknak,\myfoot{\emph{mag(a)} `oneself' + 3rd pers. pl. \emph{-uk}
+%%     + dat. \emph{-nak}} \\
+%%   úgy\myfoot{adv. `so (in this/that manner)'; \emph{úgy ... mint ...}
+%%     `like'} a helyükön\myfoot{\emph{hely} `place/space' + 3rd
+%%     pers. pl. single-poss. \emph{-ük} `their' + super. \emph{-ön}
+%%     `on'} vannak,\myfoot{vb. \emph{van} `to be'+ 3rd
+%%     pers. pl. ind. pres. indef.} \\
+%%   mint\myfoot{conj. `like'} még\myfoot{adv. `yet/still/moreover'}
+%%   soha.\myfoot{adv. `never'} \\
+%%   \ \\
+%%   Milyen\myfoot{pron. `what'} óriás\myfoot{noun/adj. `giant/huge/vast'}
+%%   éjszaka\myfoot{\emph{éj} `night' + \emph{szaka} `period of'
+%%     $\rightarrow$ `at night/nighttime/night'} \\
+%%   szilánkja\myfoot{\emph{szilánk} `chip/shard/splinter' + 3rd
+%%     pers. sg. single-poss. \emph{-ja}} ez a súlyos\myfoot{\emph{súly}
+%%     `weight' + adj.-forming \emph{-os} $\rightarrow$
+%%     adj. `severe/austere'} éj,\myfoot{`night'} \\
+%%   mely\myfoot{literary, `which/that'} úgy\myfoot{adv. `so (in
+%%     this/that manner)'; \emph{úgy ... mint ...}}
+%%     hull\myfoot{vb. `to fall', alt. \emph{hullik} + 3rd
+%%       pers. sg. ind. pres. indef.}
+%%   le\myfoot{adv. `down'} ránk,\myfoot{pron. \emph{rá} `upon/on/unto
+%%     him/her/it' + 1st pers. pl. poss. single-poss. \emph{-nk} `our'
+%%     $\rightarrow$ `us/on us'} \\
+%%   mint\myfoot{`like'} a porra\myfoot{\emph{por} `dust' +
+%%     subl. \emph{-ra} `onto'} a vasszilánk?\myfoot{\emph{vas}
+%%     `iron' + \emph{szilánk} `shard'} \\
+%%   \ \\
+%%   Napszülte\myfoot{\emph{nap} `sun/day' + vb. \emph{szül} `to give
+%%     birth/bear' + 3rd pers. sg. ind. past def. \emph{-te}} vágy!\myfoot{`desire/longing'} \\
+%%   Ha\myfoot{conj. `if', `when/once'}
+%%   majd\myfoot{adv. `sometime/later'} árnyat\myfoot{\emph{árny}
+%%     `shadow/ghost' + acc. \emph{-t}} fogad\myfoot{vb. `to receive' +
+%%     3rd pers. sg. ind. pres. indef.} az ágy,\myfoot{`bed'} \\
+%%   abban\myfoot{\emph{az} `that' + innes. \emph{-ban} `in'} az
+%%   egész\myfoot{adj./adv. `whole/wholly'} éjben\myfoot{\emph{éj}
+%%     `night' + innes. \emph{-ben} `in'} \\
+%%   is\myfoot{doublet of \emph{és}
+%%     `and', adv. `also'} ébren\myfoot{adv. `awake'} \\
+%%   maradnál?\myfoot{vb. \emph{marad} `to stay/remain (also state of
+%%     being)' + 2nd pers. sg. cond. pres. indef.} \\
+%%   \ \\
+%%   A raktár\myfoot{`warehouse'} \\
+%%   előtt\myfoot{\emph{elő} `the front (of smth)' + locat. \emph{-tt}}
+%%   poros\myfoot{\emph{por} `dust' + adj.-forming \emph{-os}
+%%     $\rightarrow$ `dusty'} lámpa\myfoot{`lamp'} ég.\myfoot{vb. `to
+%%     burn/be lit'} \\
+%%   Csak\myfoot{adv. `only/just'} látszik,\myfoot{vb. \emph{lát} `to see' +
+%%     vb.-forming \emph{-szik} $\rightarrow$ `to be visible/to appear'} nem
+%%   világit,\myfoot{\emph{világ}
+%%     `light (arch.)/world' + vb.-forming \emph{-it} $\rightarrow$ `to
+%%     shine'} \\
+%%   ilyen\myfoot{det. `such'} az ész,\myfoot{`mind'}
+%%   ha\myfoot{conj. `if', `when/once'} áhit.\myfoot{vb. `to
+%%     wish (for smth)'} \\
+%%   Pislog\myfoot{vb. `to blink'} élénken,\myfoot{vb. \emph{él} `to
+%%     live/exist' + rare adj.-forming \emph{-énk} + super. \emph{-en}
+%%     `on' $\rightarrow$ `lively'} holott\myfoot{adv. arch. `where';
+%%     conj. lit. `though/but/for/since'} \\
+%%   nagy halott\myfoot{noun/adj. `dead'} \\
+%%   fény\myfoot{\emph{fény} `light'} az ég.\myfoot{\emph{ég} `sky'} \\
+%% \end{verse}
+
+%% \oldstylenums{1933}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+%\vspace*{-7mm}
 
 \selectlanguage{english}
 
-\section{Consciousness (\emph{Eszmélet})}
+\begin{center}
+  \textbf{Consciousness (\oldstylenums{1934})}
+\end{center}
 
 \poemtitle*{I}
 
 \settowidth{\versewidth}{Overnight they alighted on the trees}
 
-\begin{verse}[\versewidth]
+\begin{verse}%[\versewidth]
   Dawn unbinds sky from earth \\
   and upon its clear, soft word \\
   beetles and children \\
@@ -559,65 +460,604 @@ Otoño
   there is no moisture in the air, \\
   the bright levity floats! \\
   Overnight they alighted on the trees \\
-  like small butterflies, the leaves. \\
+  like small butterflies, the leaves.
 \end{verse}
 
-\noindent \textbf{French}
+\bigskip
 
-\selectlanguage{french}
+\poemtitle*{II}
 
-\settowidth{\versewidth}{Avec la nuit, elles se posèrent sur les arbres}
+\selectlanguage{english}
 
-\begin{verse}[\versewidth]
-  L'aube détache le ciel de la terre \\
-  et, au son de sa voix claire et douce, \\
-  scarabées et enfants virevoltent \\
-  en entrant sur la scène du jour; \\
-  l'air n'est pas humide, \\
-  la brillante légèreté flotte! \\
-  Avec la nuit, elles se posèrent sur les arbres \\
-  comme de petits papillons, les feuilles. \\
+\settowidth{\versewidth}{Now my dream comes down as a blur into my members}
+
+\begin{verse}%[\versewidth]
+  I saw paintings daubed with blue, \\
+  red, yellow in my dreams \\
+  and felt that everything was just so ---\\
+  not one speck of dust flying madly about. \\
+  Now my dream comes down as a blur into my members, \\
+  and the iron world is the order. \\
+  During the day a moon rises inwardly and, \\
+  when the night is out, a sun shines herewithin.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+%\vspace*{-7mm}
+
+\selectlanguage{hungarian}
+
+\begin{center}
+  \textbf{Eszmélet (\oldstylenums{1934})}
+\end{center}
+
+\poemtitle*{I}
+
+\settowidth{\versewidth}{a hajnal s tiszta, lágy szavára}
+
+\begin{verse}%[\versewidth]
+  Földtől eloldja az eget \\
+  a hajnal s tiszta, lágy szavára \\
+  a bogarak, a gyerekek \\
+  kipörögnek a napvilágra; \\
+  a levegőben semmi pára, \\
+  a csilló könnyűség lebeg! \\
+  Az éjjel rászálltak a fákra, \\
+  mint kis lepkék, a levelek.
+\end{verse}
+
+\bigskip
+
+\poemtitle*{II}
+
+\settowidth{\versewidth}{Nappal hold kél bennem s ha kinn van}
+
+\begin{verse}%[\versewidth]
+  Kék, piros, sárga, összekent \\
+  képeket láttam álmaimban \\
+  és úgy éreztem, ez a rend --- \\
+  egy szalló porszem el nem hibbant. \\
+  Most homályként száll tagjaimban \\
+  álmom s a vas világ a rend. \\
+  Nappal hold kél bennem s ha kinn van \\
+  az éj --- egy nap süt idebent.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+%\vspace*{-7mm}
+
+\selectlanguage{english}
+
+\poemtitle*{III}
+
+\settowidth{\versewidth}{however clever, the cat cannot catch at once}
+
+\begin{verse}%[\versewidth]
+  I am thin, at times I only eat bread; \\
+  amidst those idle and blithering souls, \\
+  I seek in vain more certainty, like the die. \\
+  No chuck roast reaches my mouth \\
+  while I cuddle a small child to my heart --- \\
+  however clever, the cat cannot catch at once \\
+  the mouse outdoors and the one indoors.
+\end{verse}
+
+\bigskip
+\poemtitle*{IV}
+
+\settowidth{\versewidth}{and so everything is determined.}
+
+\begin{verse}%[\versewidth]
+  Just like a pile of logs, \\
+  the world lies in a jumble; \\
+  each thing presses, weighs on, \\
+  holds fast to the next, \\
+  and so everything is determined. \\
+  Only what is not has a shrub, \\
+  only that will be that flower; \\
+  what is falls to pieces.
+\end{verse}
+
+\bigskip
+
+\poemtitle*{V}
+
+\settowidth{\versewidth}{stubbornly leaping at the bright, dewy coal.}
+
+\begin{verse}%[\versewidth]
+  At the freight train station, \\
+  I lay down behind the tree's butt \\
+  like a chunk of silence; \\
+  a grey weed reached my mouth, \\
+  raw, strange-sweet. \\
+  Playing dead, I watched the guard \\
+  --- sensing what? --- \\
+  and his shadow on the quiet wagons \\
+  stubbornly leaping at the bright, dewy coal.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+%\vspace*{-7mm}
+
+\selectlanguage{hungarian}
+
+\poemtitle*{III}
+
+\settowidth{\versewidth}{számhoz s szivemhez kisgyerek ---}
+
+\begin{verse}%[\versewidth]
+  Sovány vagyok, csak kenyeret \\
+  eszem néha, e léha, locska \\
+  lelkek közt ingyen keresek \\
+  bizonyosabbat, mint a kocska. \\
+  Nem dörgölődzik sült lopcska \\
+  számhoz s szivemhez kisgyerek --- \\
+  ügyeskedhet, nem fog a macska \\
+  egyszerre kint s bent egeret.
+\end{verse}
+
+\bigskip
+
+\poemtitle*{IV}
+
+\settowidth{\versewidth}{Csak ami nincs, annak van bokra,}
+
+\begin{verse}%[\versewidth]
+  Akár egy halom hasított fa, \\
+  hever egymáson a világ, \\
+  szorítjanyomja, összefogja \\
+  egyík dolog a másikát \\
+  s így mindenik determinált. \\
+  Csak ami nincs, annak van bokra, \\
+  csak ami lesz, az a virág, \\
+  ami van, széthull darabokra.
+\end{verse}
+
+\bigskip
+
+\poemtitle*{V}
+
+\settowidth{\versewidth}{mint egy darab csönd; szürke gyom}
+
+\begin{verse}%[\versewidth]
+  A teherpályaudvaron \\
+  úgy lapultam a fa tövéhez, \\
+  mint egy darab csönd; szürke gyom \\
+  ért számhoz, nyers, különös-édes. \\
+  Holtan lestem az őrt, mit érez, \\
+  s a hallgatag vagónokon \\
+  árnyát, mely ráugrott a fényes, \\
+  harmatos szénre konokon.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+%\vspace*{-7mm}
+
+\selectlanguage{english}
+
+\poemtitle*{VI}
+
+\settowidth{\versewidth}{Your wound is the world --- on fire, burning up ---}
+
+\begin{verse}%[\versewidth]
+  Behold the anguish inside, \\
+  yet the explanation lies outside. \\
+  Your wound is the world \\
+  --- on fire, burning up --- \\
+  and you feel your soul, the fever. \\
+  You are captive as long as your heart rebels \\
+  --- so you will be free if it indulges \\
+  not building for yourself a house \\
+  where a landlord settles in.
+\end{verse}
+
+\bigskip
+
+\poemtitle*{VII}
+
+\settowidth{\versewidth}{from under the steam of my dreams,}
+
+\begin{verse}%[\versewidth]
+  I looked up from beneath the evening \\
+  to the cogwheels of the heavens --- \\
+  from the glittering threads of chance \\
+  the loom of the past wove the law; \\
+  and I looked up again onto the sky \\
+  from beneath the steam of my dreams, \\
+  and I saw the fabric of the law \\
+  always tearing up somewhere.
+\end{verse}
+
+\bigskip
+
+\poemtitle*{VIII}
+
+\settowidth{\versewidth}{The silence listened intently --- One struck.}
+
+\begin{verse}%[\versewidth]
+  The silence listened intently --- One struck. \\
+  You could visit your childhood; \\
+  between the damp cement walls \\
+  you could imagine a bit of freedom --- \\
+  I thought. And as soon as I stood up, \\
+  the stars, the Great Bear were glittering above\\
+  like the grilles up in the silent cell.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+%\vspace*{-7mm}
+
+\selectlanguage{hungarian}
+
+\poemtitle*{VI}
+
+\settowidth{\versewidth}{nem raksz magadnak olyan házat,}
+
+\begin{verse}%[\versewidth]
+  Im itt a szenvedés belül, \\
+  ám ott kívül a magyarázat. \\
+  Sebed a világ --- ég, hevül \\
+  s te lelkedet érzed, a lázat. \\
+  Rab vagy, amíg a szíved lázad --- \\
+  úgy szabadulsz, ha kényedül \\
+  nem raksz magadnak olyan házat, \\
+  melybe háziúr települ.
+\end{verse}
+
+\bigskip
+
+\poemtitle*{VII}
+
+\settowidth{\versewidth}{törvényt szőtt a mult szövőszéke}
+
+\begin{verse}%[\versewidth]
+  Én fölnéztem az est alól \\
+  az eget fogaskerekére --- \\
+  csilló véletlen szálaiból \\
+  törvényt szőtt a mult szövőszéke \\
+  és megint fölnéztem az égre \\
+  álmaim gőzei alól \\
+  s láttam, a törvény szövedéke \\
+  mindig fölfeslik valahol.
+\end{verse}
+
+\bigskip
+
+\poemtitle*{VIII}
+
+\settowidth{\versewidth}{gondoltam. S hát hát amint fölállok}
+
+\begin{verse}%[\versewidth]
+  Fülelt a csend --- egyet ütött \\
+  Fölkereshetnéd ifjúságod; \\
+  nyirkos cementfalak között \\
+  képzelhetsz egy kis sabadságot --- \\
+  gondoltam. S hát hát amint fölállok \\
+  a csillagok, a Göncölök \\
+  úgy fénylenek fönt, mint a rácsok \\
+  a hallgatag cella fölött.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+%\vspace*{-7mm}
+
+\selectlanguage{english}
+
+\poemtitle*{IX}
+
+\settowidth{\versewidth}{and that only a memory may be forgotten;}
+
+\begin{verse}%[\versewidth]
+  I heard iron weeping, \\
+  I heard rain laughing. \\
+  I saw that the past was cracked \\
+  and that only memories may be forgotten, \\
+  and how I cannot but love, \\
+  bending under my burdens --- \\
+  why should I also forge a weapon \\
+  out of you, golden self-awareness!
+\end{verse}
+
+\bigskip
+
+\poemtitle*{X}
+
+\settowidth{\versewidth}{he who knows that he receives so much life}
+
+\begin{verse}%[\versewidth]
+  He is a grown man he who has \\
+  neither mother nor father in his heart, \\
+  he who knows that he receives life \\
+  as a supplement to death, and will return it \\
+  anytime, like a found object \\
+  --- therefore he treasures it, \\
+  he who is neither a god nor a priest, \\
+  neither to himself nor to others.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+%\vspace*{-7mm}
+
+\selectlanguage{hungarian}
+
+\poemtitle*{IX}
+
+\settowidth{\versewidth}{s hogy nem tudok mást, mint szeretni,}
+
+\begin{verse}%[\versewidth]
+  Hallottam sírni a vasat, \\
+  hallottam az esőt nevetni. \\
+  Láttam, hogy a mult meghasadt \\
+  s csak képzetet lehet feledni; \\
+  s hogy nem tudok mást, mint szeretni, \\
+  görnyedve terheim alatt --- \\
+  minek is kell fegyvert veretni \\
+  belőled, arany öntudat!
+\end{verse}
+
+\bigskip
+
+\poemtitle*{X}
+
+\settowidth{\versewidth}{s mint talált tárgyat visszaadja}
+
+\begin{verse}%[\versewidth]
+  Az meglett ember, akinek \\
+  szívében nincs se anyja, apja, \\
+  ki tudja, hogy az életet \\
+  halálra ráadásul kapja \\
+  s mint talált tárgyat visszaadja \\
+  bármikor --- ezért őrzi meg, \\
+  ki nem istene és nem papja \\
+  se magának, sem senkinek.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+%\vspace*{-7mm}
+
+\selectlanguage{english}
+
+\poemtitle*{XI}
+
+\settowidth{\versewidth}{It plopped into the squishy, tepid puddle,}
+
+\begin{verse}%[\versewidth]
+  I saw happiness; it was soft, bright \\
+  and one and half a quintal. \\
+  On the coarse grass of the farmyard \\
+  its curly smile swayed. \\
+  It plopped into the squishy, tepid puddle, \\
+  squinted, further grunted at me once --- \\
+  To this day I see how hesitantly \\
+  the sunlight toyed with its bristles.
+\end{verse}
+
+\bigskip
+
+\poemtitle*{XII}
+
+\settowidth{\versewidth}{and I stand in the light from the compartments,}
+
+\begin{verse}%[\versewidth]
+  I live by a railroad. \\
+  Many a train comes and goes, \\
+  and I watch from afar \\
+  how the bright windows fly by \\
+  in the wavering, fluffy darkness. \\
+  So the lit-up days rush into the eternal night, \\
+  and I stand in the compartments' light, \\
+  I rest on my elbow and remain silent.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+%\vspace*{-7mm}
+
+\selectlanguage{hungarian}
+
+\poemtitle*{XI}
+
+\settowidth{\versewidth}{hunyorgott, röffent még felém ---}
+
+\begin{verse}%[\versewidth]
+  Láttam a boldogságot én, \\
+  lágy volt, szőke és másfél mázsa. \\
+  Az udvar szigorú gyöpén \\
+  imbolygott göndör mosolygása. \\
+  Ledőlt a puha, langy tócsába, \\
+  hunyorgott, röffent még felém --- \\
+  ma is látom, mily tétovázva \\
+  babrált pihéi közt a fény.
+\end{verse}
+
+\bigskip
+
+\poemtitle*{XII}
+
+\settowidth{\versewidth}{s én állok minden fülke-fényben,}
+
+\begin{verse}%[\versewidth]
+  Vasútnál lakom. Erre sok \\
+  vonat jön-megy és el-elnézem, \\
+  hogy' szállnak fényes ablakok \\
+  a lengedező szösz-sötétben. \\
+  Így iramlanak örök éjben \\
+  kivilágított nappalok \\
+  s én állok minden fülke-fényben, \\
+  én könyöklök és hallgatok.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+%\vspace*{-7mm}
+
+\selectlanguage{english}
+
+%\poemtitle*{}
+
+\settowidth{\versewidth}{You will toddle and when your bad leg has tottered enough,}
+
+\begin{verse}%[\versewidth]
+  You will grow old and come to regret \\
+  how you hurt me \\
+  --- which you are proud of today. \\
+  The conscience will come knocking \\
+  and won't leave you alone in any memory. \\
+  \ \\
+  You will have an old dog that will settle next to you. \\
+  You will rest during the day, dozing off on a chair \\
+  because you are afraid alone at night. \\
+  Shadows will fall on the trembling old lady. \\
+  \ \\
+  Your old dog will whine sometimes, \\
+  but the room falls silent again, all is in order, \\
+  and yet someone from the past \\
+  is missing in the lonely silence. \\
+  \ \\
+  You will toddle \\
+  and when your bad leg has tottered enough, \\
+  you will sit down. Your youthful picture stands\hspace*{-4mm} \\
+  above in a golden frame. \\
+  You will mutter to it: `I didn't embrace him, \\
+  obviously I didn't love him.' \\
+  \ \\
+  \hfill \ldots
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+%\vspace*{-7mm}
+
+\selectlanguage{hungarian}
+
+%\poemtitle*{}
+
+\settowidth{\versewidth}{s nem lesz emlék, melyben magadra hagyna.}
+
+\begin{verse}%[\versewidth]
+  Majd megöregszel és bánni fogod, \\
+  hogy bántasz --- azt, amire büszke vagy ma. \\
+  A lelkiismeret majd bekopog \\
+  s nem lesz emlék, melyben magadra hagyna. \\
+  \ \\
+  Lesz vén ebed s az melléd települ. \\
+  Nappal pihensz majd, széken szunyókálva, \\
+  mert éjjel félni fogsz majd egyedül. \\
+  Árnyak ütnek a rezgő anyókára. \\
+  \ \\
+  Az öreg kutya néha majd nyafog, \\
+  de a szobában csend lesz, csupa rend lesz; \\
+  hanem valaki hiányozni fog \\
+  a multból ahhoz a magányos csendhez. \\
+  \ \\
+  Majd tipegsz s ha eleget totyogott \\
+  rossz lábod, leülsz. Fönn aranykeretben \\
+  áll ifju képed. Hozzá motyogod: \\
+  \textqq{Nem öleltem meg, hiszen nem szerettem.} \\
+  \ \\
+  \hfill \ldots
 \end{verse}
 
 \newpage
 
 \selectlanguage{english}
 
-\noindent \textbf{Spanish}
-
-\selectlanguage{spanish}
-
-\settowidth{\versewidth}{Con la noche se asentaron en los árboles}
-
-\begin{verse}[\versewidth]
-  El amanecer desata el cielo de la tierra \\
-  y, al son de su voz clara y suave, \\
-  escarabajos y niños entran \\
-  y giran en la luz del día; \\
-  el aire no es húmedo, \\
-  ¡la brillante levedad flota! \\
-  Con la noche se asentaron en los árboles \\
-  como pequeñas mariposas, las ojas. \\
+\begin{verse}%[\versewidth]
+  `What could I have done?' --- you ask, \\
+  but your toothless mouth can no longer answer; \\
+  facing the sun outside, you close your eyes, \\
+  you can barely wait for the moon to rise. \\
+  \ \\
+  Because when you fall asleep, the bed will leap\hspace*{-2mm} \\
+  like a foal trying to throw off its harness. \\
+  And fear, not desire, will occupy your head: \\
+  should you love him, \\
+  should you not love him? \\
+  \ \\
+  Decide for yourself. I regret \\
+  that I cannot answer if you ask: is he alive? \\
+  Because the sorrow inside is tired, \\
+  it falls asleep like a child, and I with it. \\
+  \ \\
+  November \oldstylenums{1936}
 \end{verse}
 
-\selectlanguage{english}
-
-\noindent \textbf{Original Hungarian}
+\newpage
 
 \selectlanguage{hungarian}
 
-%% Földtől eloldja az eget
-%% a hajnal s tiszta, lágy szavára
-%% a bogarak, a gyerekek
-%% kipörögnek a napvilágra;
-%% a levegőben semmi pára,
-%% a csilló könnyűség lebeg!
-%% Az éjjel rászálltak a fákra,
-%% mint kis lepkék, a levelek.
+\begin{verse}%[\versewidth]
+  \textqq{Mit is tehettem volna?} --- kérdezed, \\
+  de fogatlan szád már nem válaszolhat; \\
+  s ki a nap előtt lehunyod szemed, \\
+  alig várod, hogy feljöjjön, a holdat. \\
+  \ \\
+  Mert ha elalszol, ugrál majd az ágy, \\
+  mint a csikó, hogy a hámot levesse. \\
+  S a félelem tünődik, nem a vágy, \\
+  a fejedben: Szeress-e, ne szeress-e. \\
+  \ \\
+  Magadban döntöd el. Én fájlalom, \\
+  hogy nem felelhetek, ha kérded: él-e. \\
+  Mert elfárad bennem a fájdalom, \\
+  elalszik, mint a gyermek s én is véle. \\
+  \ \\
+  \oldstylenums{1936} november
+\end{verse}
 
-\settowidth{\versewidth}{a hajnal s tiszta, lágy szavára}
+\newpage
 
-\begin{verse}[\versewidth]
+\vspace*{-15mm}
+\centeredornament
+%\vspace*{-7mm}
+
+\section*{Glossary}
+\input{glossary}
+
+
+
+
+
+
+
+%----------------------------------------------------------------------
+
+\thispagestyle{empty} \ \clearemptydoublepage
+\thispagestyle{empty} \ \clearemptydoublepage
+
+\end{document}
+
+\begin{verse}%[\versewidth]
   Földtől\myfoot{\emph{föld} `earth' +
   abl. \emph{-től} `without/from'}
   eloldja\myfoot{vb. pref. \emph{el-} `away' + vb. \emph{old} `to
@@ -642,8 +1082,8 @@ Otoño
   a csilló\myfoot{vb. \emph{csillog} `to glitter' +
   adj.-forming \emph{-o} $\rightarrow$
   \emph{csilló}; usually \emph{csillogó}}
-  könnyűség\myfoot{\emph{könnyű} `simple/easy/light' + noun-forming
-  \emph{-ség} (state of being)}
+  könnyűség\myfoot{\emph{könnyű} `simple/easy/light' + abst. noun-forming
+  \emph{-ség}}
   lebeg!\myfoot{vb. \emph{lebeg} `to float (in the air)', 3rd
   pers. sg. ind. pres. indef.} \\
   Az éjjel\myfoot{poetic \emph{éj} `night' + instr. \emph{-vel}
@@ -664,22 +1104,8 @@ Otoño
 
 \newpage
 
-\poemtitle*{II}
 
-\selectlanguage{english}
 
-\settowidth{\versewidth}{Now my dream comes down as a blur into my members}
-
-\begin{verse}[\versewidth]
-  I saw paintings daubed with blue, \\
-  red, yellow in my dreams \\
-  and felt that everything was just so ---\\
-  not one speck of dust flying madly about. \\
-  Now my dream comes down as a blur into my members, \\
-  and the iron world is the order. \\
-  During the day a moon rises inwardly and, \\
-  when the night is out, a sun shines herewithin. \\
-\end{verse}
 
 \bigskip
 
@@ -692,64 +1118,7 @@ verse~8 brings us back to the night --- this cyclic structure
 supporting the mismatched, recurring alternance of days and
 nights.
 
-\bigskip
-
-\noindent \textbf{French}
-
-\selectlanguage{french}
-
-\settowidth{\versewidth}{Maintenant mon rêve descend, estompé, dans mes membres}
-
-\begin{verse}[\versewidth]
-  J'ai vu des tableaux barbouillés de bleu, \\
-  rouge et jaune dans mes rêves \\
-  et je sentis que tout était en ordre --- \\
-  pas un seul grain de poussière qui vole folement. \\
-  Maintenant mon rêve descend, estompé, dans mes membres, \\
-  et le monde de fer est l'ordre. \\
-  Avec le jour, une lune point en moi et, \\
-  à la nuit tombée, un soleil brille ci-dedans. \\
-\end{verse}
-
-\bigskip
-
-\noindent \textbf{Spanish}
-
-\selectlanguage{spanish}
-
-\settowidth{\versewidth}{Ahora mi sueño se pone, esfumado, en mis miembros,}
-
-\begin{verse}[\versewidth]
-  Vi cuadros embadurnados con azul, \\
-  rojo y amarillo en mis sueños \\
-  y sentí que todo estaba en orden --- \\
-  ni una sola mota de polvo que vuela locamente. \\
-  Ahora mi sueño se pone, esfumado, en mis miembros, \\
-  y el mundo de hierro es el orden. \\
-  Con el día, una luna sale en mí y, \\
-  al llegar la noche, un sol brilla aquí dentro. \\
-\end{verse}
-
-\newpage
-
-\selectlanguage{english}
-
-\noindent \textbf{Original Hungarian}
-
-\selectlanguage{hungarian}
-
-%% Kék, piros, sárga, összekent
-%% képeket láttam álmaimban
-%% és úgy éreztem, ez a rend ---
-%% egy szalló porszem el nem hibbant.
-%% Most homályként száll tagjaimban
-%% álmom s a vas világ a rend.
-%% Nappal hold kél bennem s ha kinn van
-%% az éj --- egy nap süt idebent.
-
-\settowidth{\versewidth}{Nappal hold kél bennem s ha kinn van}
-
-\begin{verse}[\versewidth]
+\begin{verse}%[\versewidth]
   Kék, piros, sárga, összekent\myfoot{\emph{össze} `together' +
   \emph{ken} `smear' $\rightarrow$ \emph{összeken} + 3rd
   pers. sg. past indef. \emph{-t}} \\
@@ -793,25 +1162,27 @@ nights.
 1-4: e-ent(8)/ai-an(9)/a-rend(8)/i-an(9) \\
 5-8: i-an(9)/a-rend(8)/ai-an(9)/e-ent(8)
 
-\newpage
-
-\selectlanguage{english}
-
-\poemtitle*{III}
-
-\settowidth{\versewidth}{however clever, the cat cannot catch at once}
-
-\begin{verse}[\versewidth]
-  I am thin, at times I only eat bread; \\
-  amidst those idle and blithering souls, \\
-  I seek in vain more certainty, like the die. \\
-  No chuck roast reaches my mouth \\
-  while I cuddle a small child to my heart --- \\
-  however clever, the cat cannot catch at once \\
-  the mouse outdoors and the one indoors. \\
-\end{verse}
 
 \bigskip
+
+\noindent \textbf{Cursory remark}
+
+\medskip
+
+This is likely a memory from J's childhood, when his family was so
+poor that he would occasionally steal lumps of coal from the wagons at
+the freight train station nearby his home.
+
+
+\bigskip
+
+\noindent \textbf{Cursory remark}
+
+\medskip
+
+`To be or not to be' is usually construed as the dichotomy between
+life and death. J tells us that not-to-be is potential beauty, whereas
+to-be is actual death.
 
 \noindent \textbf{Cursory remark}
 
@@ -823,59 +1194,11 @@ metaphor for the creation of poetry. J is the cat in verses 6-7.
 
 \bigskip
 
-\noindent \textbf{French}
-
-\selectlanguage{french}
-
-\settowidth{\versewidth}{aussi fûté soit-il, le chat ne peut attrapper d'un coup}
-
-\begin{verse}[\versewidth]
-  Je suis maigre, parfois je ne mange que du pain; \\
-  entouré par ces âmes oisives et bavardes, \\
-  je cherche en vain plus de certitude, comme le dé. \\
-  Aucun rôti de palette ne trouve ma bouche \\
-  quand j'étreins un enfant sur mon cœur --- \\
-  aussi fûté soit-il, le chat ne peut attrapper d'un coup \\
-  la souris dehors et celle dedans. \\
-\end{verse}
-
-\bigskip
-
-\noindent \textbf{Spanish}
-
-\selectlanguage{spanish}
-
-\settowidth{\versewidth}{por muy astuto que sea, el gato no puede pillar a la vez}
-
-\begin{verse}[\versewidth]
-  Estoy flaco, a veces sólo como pan; \\
-  rodeado por esas almas ociosas y facundas, \\
-  busco en vano más certidumbre, como el dado. \\
-  Ninguna paleta asada halla mi boca \\
-  cuando ciño a un niño sobre mi corazón --- \\
-  por muy astuto que sea, el gato no puede pillar a la vez \\
-  el ratón de fuera y el de dentro. \\
-\end{verse}
-
-\newpage
-
-\selectlanguage{english}
-
 \noindent \textbf{Original Hungarian}
 
-%% Sóvany vagyok, csak kenyeret
-%% eszem néha, e léha, locska
-%% lelkek közt ingyen keresek
-%% bizonyosabbat, mint a kocska.
-%% Nem dörgölődzik sült lopcska
-%% számhoz s szivemhez kisgyerek ---
-%% ügyeskedhet, nem fog a macska
-%% egyszerre kint s bent egeret.
 
-\settowidth{\versewidth}{számhoz s szivemhez kisgyerek ---}
-
-\begin{verse}[\versewidth]
-  Sóvany\myfoot{`slim/thin', fig. `poor'} vagyok, csak
+\begin{verse}%[\versewidth]
+  Sovány\myfoot{`slim/thin', fig. `poor'} vagyok, csak
   kenyeret\myfoot{\emph{kenyér} `bread' + acc. \emph{-(e)t}
   $\rightarrow$ \emph{kenyeret}} \\
   eszem\myfoot{vb. \emph{esz} `to eat', rare without verbal
@@ -921,89 +1244,14 @@ metaphor for the creation of poetry. J is the cat in verses 6-7.
 
 \selectlanguage{english}
 
-\poemtitle*{IV}
-
-\settowidth{\versewidth}{and so everything is determined.}
-
-\begin{verse}[\versewidth]
-  Just like a pile of logs, \\
-  the world lies in a jumble; \\
-  each thing presses, weighs on, \\
-  holds fast to the next, \\
-  and so everything is determined. \\
-  Only what is not has a shrub, \\
-  only that will be that flower; \\
-  what is falls to pieces. \\
-\end{verse}
 
 \bigskip
-
-\noindent \textbf{Cursory remark}
-
-\medskip
-
-`To be or not to be' is usually construed as the dichotomy between
-life and death. J tells us that not-to-be is potential beauty, whereas
-to-be is actual death.
-
-\bigskip
-
-\noindent \textbf{French}
-
-\selectlanguage{french}
-
-\settowidth{\versewidth}{Seul ce qui n'est pas a un arbrisseau,}
-
-\begin{verse}[\versewidth]
-  Tout comme un tas de bûches, \\
-  le monde gît en vrac; \\
-  chaque chose presse, pèse, \\
-  s'arrime à l'autre, \\
-  et ainsi tout est déterminé. \\
-  Seul ce qui n'est pas a un arbrisseau, \\
-  seul cela sera cette fleur; \\
-  ce qui est tombera en pièces. \\
-\end{verse}
-
-\bigskip
-
-\noindent \textbf{Spanish}
-
-\selectlanguage{spanish}
-
-\settowidth{\versewidth}{Sólo lo que no es tiene un arbusto,}
-
-\begin{verse}[\versewidth]
-  Así como un montón de leña, \\
-  el mundo yace a granel; \\
-  cada cosa aprieta, pesa, \\
-  se arrima a la próxima, \\
-  y así todo está determinado. \\
-  Sólo lo que no es tiene una mata, \\
-  sólo eso será esta flor; \\
-  lo que es caera a pedazos. \\
-\end{verse}
-
-\newpage
-
-\selectlanguage{english}
 
 \noindent \textbf{Original Hungarian}
 
 \selectlanguage{hungarian}
 
-%% Akár egy halom hasított fa,
-%% hever egymáson a világ,
-%% szorítjanyomja, összefogja
-%% egyík dolog a másikát
-%% s így mindenik determinált.
-%% Csak ami nincs, annak van bokra,
-%% csak ami lesz, az a virág,
-%% ami van, széthull darabokra.
-
-\settowidth{\versewidth}{Csak ami nincs, annak van bokra,}
-
-\begin{verse}[\versewidth]
+\begin{verse}%[\versewidth]
   Akár\myfoot{conj. lit. `just like'} egy
   halom\myfoot{`pile/heap'} hasított\myfoot{vb.
   \emph{hasít} `to cleave/split' +
@@ -1047,89 +1295,14 @@ to-be is actual death.
 
 \selectlanguage{english}
 
-\poemtitle*{V}
-
-\settowidth{\versewidth}{stubbornly leaping at the bright, dewy coal.}
-
-\begin{verse}[\versewidth]
-  At the freight train station, \\
-  I lay down behind the tree's butt, \\
-  like a chunk of silence; \\
-  a grey weed reached my mouth, \\
-  raw, strange-sweet. \\
-  Playing dead, I watched the guard, sensing what, \\
-  and his shadow on the quiet wagons \\
-  stubbornly leaping at the bright, dewy coal. \\
-\end{verse}
-
 \bigskip
-
-\noindent \textbf{Cursory remark}
-
-\medskip
-
-This is likely a memory from J's childhood, when his family was so
-poor that he would occasionally steal lumps of coal from the wagons at
-the freight train station nearby his home.
-
-\bigskip
-
-\noindent \textbf{French}
-
-\selectlanguage{french}
-
-\settowidth{\versewidth}{s'entêtait à bondir sur les charbons reluisants, couverts de rosée.}
-
-\begin{verse}[\versewidth]
-  À la gare de fret, \\
-  je m'étalai derrière le pied de l'arbre, \\
-  comme une masse de silence; \\
-  une herbe grise atteignit ma bouche, \\
-  crue, étrange-sucrée. \\
-  Faisant le mort, je regardais le garde, ressentant quoi, \\
-  et son ombre qui, sur les wagons silencieux, \\
-  s'entêtait à bondir sur les charbons reluisants, couverts de rosée. \\
-\end{verse}
-
-\bigskip
-
-\noindent \textbf{Spanish}
-
-\selectlanguage{spanish}
-
-\settowidth{\versewidth}{que se empeñaba en saltar sobre los relucientes, rociados carbones.}
-
-\begin{verse}[\versewidth]
-  A la estación de tren de carga, \\
-  me tumbé detrás del pie del árbol, \\
-  como una masa de silencio; \\
-  una hierba gris alcanzó mi boca, \\
-  cruda, extraña-dulce. \\
-  Haciendome el muerto, miraba al guardia, que sentía qué, \\
-  y, sobre los quietos vagones, a su sombra \\
-  que se empeñaba en saltar sobre los relucientes, rociados carbones. \\
-\end{verse}
-
-\newpage
-
-\selectlanguage{english}
 
 \noindent \textbf{Original Hungarian}
 
 \selectlanguage{hungarian}
 
-%% A teherpályaudvaron
-%% úgy lapultam a fa tövéhez,
-%% mint egy darab csönd; szürke gyom
-%% ért számhoz, nyers, különös-édes.
-%% Holtan lestem az őrt, mit érez,
-%% s a hallgatag vagónokon
-%% árnyát, mely ráugrott a fényes,
-%% harmatos szénre konokon.
 
-\settowidth{\versewidth}{Csak ami nincs, annak van bokra,}
-
-\begin{verse}[\versewidth]
+\begin{verse}%[\versewidth]
   A teherpályaudvaron\myfoot{\emph{teher} `freight' + \emph{pálya}
   `track' + \emph{udvar} `courtyard' + super. \emph{-(o)n} `on'} \\
   úgy\myfoot{adv. `so (in this/that manner)'; \emph{úgy ... mint ...}
@@ -1152,7 +1325,7 @@ the freight train station nearby his home.
   Holtan\myfoot{\emph{holt} `dead' + adv.-forming \emph{-an}}
   lestem\myfoot{vb. \emph{les} `to spy' + 1st
   pers. sg. past indef. \emph{-tem}} az őrt,\myfoot{\emph{őr} `guard' +
-  acc. \emph{-t}} mit\myfoot{inter. `what'}
+  acc. \emph{-t}} mit\myfoot{interj. `what'}
   érez,\myfoot{vb. `to feel/smell/taste',
   3rd pers. sg. ind. pres. indef.} \\
   s a hallgatag\myfoot{vb. \emph{hallgat} `to remain silent/to
@@ -1171,1271 +1344,6 @@ the freight train station nearby his home.
   super. \emph{-(o)n} `on (that manner)'} \\
 \end{verse}
 
-\selectlanguage{english}
-
-\noindent Chiastic structure: \\
-1-4: a-o(8)/é-e(9)/e-o(8)/é-e(9) \\
-5-8: é-e(9)/o-o(8)/é-e(9)/o-o(8)
-
 \newpage
 
-\selectlanguage{english}
-
-\poemtitle*{VI}
-
-\settowidth{\versewidth}{Your wound is the world --- on fire, burning up ---}
-
-\begin{verse}[\versewidth]
-  Behold the anguish inside, \\
-  yet the explanation lies outside. \\
-  Your wound is the world --- on fire, burning up --- \\
-  and you feel your soul, the fever. \\
-  You are captive as long as your heart rebels --- \\
-  so you will be free if it indulges \\
-  not building for yourself a house \\
-  where a landlord settles in. \\
-\end{verse}
-
-\bigskip
-
-\noindent \textbf{Cursory remark}
-
-\medskip
-
-We are not captives of the world, but of our own heart, which invited
-the world (the landlord) in for us to contend with. The inner struggle
-is felt as anguish and yields a feverish soul.
-
-\bigskip
-
-\noindent \textbf{French}
-
-\selectlanguage{french}
-
-\settowidth{\versewidth}{Ta blessure est le monde --- en feu, s'échauffant ---}
-
-\begin{verse}[\versewidth]
-  Voici le tourment intérieur, \\
-  pourtant l'explication se trouve à l'extérieur. \\
-  Ta blessure est le monde --- en feu, s'échauffant --- \\
-  et tu sens ton âme, la fièvre. \\
-  Tu es captif tant que ton cœur se révolte --- \\
-  ainsi tu seras libre s'il se complait \\
-  à ne pas bâtir pour toi une maison \\
-  où un propriétaire vient demeurer. \\
-\end{verse}
-
-\bigskip
-
-\noindent \textbf{Spanish}
-
-\selectlanguage{spanish}
-
-\settowidth{\versewidth}{Tu herida es el mundo --- en llamas, caldeando ---}
-
-\begin{verse}[\versewidth]
-  He aquí el tormento interior, \\
-  aunque la explicación yace fuera. \\
-  Tu herida es el mundo --- en llamas, caldeando --- \\
-  y sientes tú alma, la fiebre. \\
-  Quedas cautivo mientras tu corazón se rebela --- \\
-  así serás libre si él se complace \\
-  en no edificarte una casa \\
-  donde un dueño se aposenta. \\
-\end{verse}
-
-\newpage
-
-\selectlanguage{english}
-
-\noindent \textbf{Original Hungarian}
-
-\selectlanguage{hungarian}
-
-%% Im itt a szenvedés belül,
-%% ám ott kívül a magyarázat.
-%% Sebed a világ --- ég, hevül
-%% s te lelkedet érzed, a lázat.
-%% Rab vagy, amíg a szíved lázad ---
-%% úgy szabadulsz, ha kényedül
-%% nem raksz magadnak olyan házat,
-%% melybe háziúr települ.
-
-\settowidth{\versewidth}{nem raksz magadnak olyan házat,}
-
-\begin{verse}[\versewidth]
-  Im\myfoot{literary, abbrv. \emph{íme} `here is/behold'}
-  itt a szenvedés\myfoot{vb. \emph{szenved} `to suffer'
-  + noun-forming \emph{-és}} belül,\myfoot{`inside'} \\
-  ám\myfoot{poetic, interj. contrad. `but'} ott
-  kívül\myfoot{adv. `outdoor/outside'} a
-  magyarázat.\myfoot{vb. \emph{magyaráz} `to explain' +
-  noun-forming \emph{-at}} \\
-  Sebed\myfoot{\emph{seb} `wound' + 2nd
-  pers. sg. single poss. \emph{-ed}} a világ --- ég,\myfoot{vb.
-  `to be on fire', 3rd pers. sg. ind. pres. indef.}
-  hevül\myfoot{vb. `to grow hot', 3rd
-  pers. sg. ind. pres. indef.} \\
-  s te\myfoot{inform. sg. `you'} lelkedet\myfoot{\emph{lélek} `soul' + 2nd
-  pers. sg. single poss. \emph{-ed} $\rightarrow$ \emph{lelked} +
-  acc. \emph{-(e)t}} érzed,\myfoot{vb. \emph{érez} `to feel', 2nd
-  pers. sg. ind. pres. def.} a lázat.\myfoot{\emph{láz} `fever' +
-  acc. \emph{-(a)t}} \\
-  Rab\myfoot{`captive'} vagy, amíg\myfoot{adv. `as long as';
-  `until' if followed by negated verb} a
-  szíved\myfoot{\emph{szíved} `heart' + 2nd pers. sg. single
-  poss. \emph{-ed}} lázad\myfoot{vb. \emph{to rebel}, 3rd
-  pers. sg. ind. pres. indef.} --- \\
-  úgy\myfoot{\emph{úgy ... ha ...} `then ... if ...'}
-  szabadulsz,\myfoot{\emph{szabad} `free' + vb.-forming \emph{-ul}
-  + 2nd pers. sg. ind. pres. indef. \emph{-sz}} ha\myfoot{`if'}
-  kényedül\myfoot{literary, vb. `to indulge', 3rd
-  pers. sg. ind. pres. indef.} \\
-  nem raksz\myfoot{vb. \emph{rak} `to set up/to build', 2rd
-  pers. sg. ind. pres. indef. \emph{-sz}}
-  magadnak\myfoot{\emph{maga} `oneself' + 2nd pers. sg. single
-  poss. \emph{-d} + dat. \emph{-nak}}
-  olyan\myfoot{pron. `such/that kind of thing'}
-  házat,\myfoot{\emph{ház} `house' + acc. \emph{-(a)t}} \\
-  melybe\myfoot{literary, arch. \emph{mely}
-   which' + illative \emph{-be} `into (the inside of)'}
-  háziúr\myfoot{\emph{ház} `house' + adj.-forming `of the'
-  \emph{-i} + \emph{úr} `master'} települ.\myfoot{vb. `to
-  settle (somewhere)', 3rd pers. sg. ind. pres. indef.} \\
-\end{verse}
-
-\selectlanguage{english}
-
-\noindent Chiastic structure: \\
-1-4: e-ül(8)/á-at(9)/e-ül(8)/á-at(9) \\
-5-8: á-ad(9)/e-ül(8)/á-at(9)/e-ül(8)
-
-\newpage
-
-\selectlanguage{english}
-
-\poemtitle*{VII}
-
-\settowidth{\versewidth}{from under the steam of my dreams,}
-
-\begin{verse}[\versewidth]
-  I looked up from beneath the evening \\
-  to the cogwheels of the heavens --- \\
-  from the glittering threads of chance \\
-  the loom of the past wove the law; \\
-  and I looked up again onto the sky \\
-  from beneath the steam of my dreams, \\
-  and I saw the fabric of the law \\
-  always tearing up somewhere. \\
-\end{verse}
-
-\bigskip
-
-\noindent \textbf{Cursory remark}
-
-\medskip
-
-Whereas verses 1-2 echo the ancient mechanical understanding of the
-firmament as concentric spheres, and verses 2-4 hearken back at the
-mythological Fates (Parc\ae), verses 5-8 evoke the image of an
-aerostat, whose aeronaut is J, where J's dreams are the steam that
-tries to lift him up, and the law is the envelope, whose tears are J's
-constant misfortune. (The metaphor is a little off, as balloons use
-hot air, not steam.)
-
-\bigskip
-
-\noindent \textbf{French}
-
-\selectlanguage{french}
-
-\settowidth{\versewidth}{j'ai levé les yeux aux rouages des cieux ---}
-
-\begin{verse}[\versewidth]
-  Par dessous le soir, \\
-  j'ai levé les yeux aux rouages des cieux --- \\
-  des fils scintillants de la chance \\
-  le métier du passé avait tissé la loi; \\
-  par dessous la vapeur de mes rêves, \\
-  j'ai regardé à nouveau dans les cieux \\
-  et j'ai vu le tissu de la loi \\
-  toujours se déchirer quelque part. \\
-\end{verse}
-
-\bigskip
-
-\noindent \textbf{Spanish}
-
-\selectlanguage{spanish}
-
-\settowidth{\versewidth}{levanté los ojos a las ruedas dentadas de los cielos ---}
-
-\begin{verse}[\versewidth]
-  Por debajo del atardecer, \\
-  levanté los ojos a las ruedas dentadas de los cielos --- \\
-  de los hilos brillantes de la suerte \\
-  el telar del pasado había tejado la ley; \\
-  por debajo del vapor de mis sueños, \\
-  miré de nuevo en los cielos \\
-  y vi el tejido de la ley \\
-  siempre destramarse en alguna parte. \\
-\end{verse}
-
-\newpage
-
-\selectlanguage{english}
-
-\noindent \textbf{Original Hungarian}
-
-\selectlanguage{hungarian}
-
-%% Én fölnéztem az est alól
-%% az eget fogaskerekére ---
-%% csilló véletlen szálaiból
-%% törvényt szőtt a mult szövőszéke
-%% és megint fölnéztem az égre
-%% álmaim gőzei alól
-%% s láttam, a törvény szövedéke
-%% mindig fölfeslik valahol.
-
-\settowidth{\versewidth}{törvényt szőtt a mult szövőszéke}
-
-\begin{verse}[\versewidth]
-  Én fölnéztem\myfoot{vb. pref. \emph{föl-} `upwards' + vb.
-  \emph{néz} `to look' + 1st pers. sg. past. def. \emph{-tem}} az
-  est\myfoot{arch. `(in the) evening'} alól\myfoot{\emph{al}
-  `lower part' + abl. \emph{-l} `from'} \\
-  az eget\myfoot{\emph{ég} `sky' + acc. \emph{-(e)t}}
-  fogaskerekére\myfoot{\emph{fogas} `tooth' +
-  \emph{kerék} `wheel': `cogwheel' + 3rd pers. sg. single
-  poss. \emph{-e} + subl. \emph{-re} `towards'} --- \\
-  csilló\myfoot{vb. \emph{csillog} `to glitter' +
-  adj.-forming \emph{-o} $\rightarrow$
-  \emph{csilló}; usually \emph{csillogó}}
-  véletlen\myfoot{`chance'} szálaiból\myfoot{\emph{szál}
-  `thread' + 3rd pers. sg. poss. \emph{-a} + poss. pl. \emph{-i} +
-  elative \emph{-ból} `from/out of'} \\
-  törvényt\myfoot{\emph{törveny} `law/principle' + acc. \emph{-t}}
-  szőtt\myfoot{vb. \emph{sző} `to weave', past part.} a
-  mult\myfoot{\textbf{\emph{múlt}}? rare, past part. `past',
-  inf. \emph{múlik}} szövőszéke\myfoot{\emph{szövő} `weaver' +
-  \emph{szék} `chair': `loom' + 3rd pers. sg. single poss. \emph{-e}} \\
-  és megint\myfoot{\emph{meg} `again' (short action) +
-  adv.-forming \emph{-int}} fölnéztem az égre\myfoot{\emph{ég}
-  `sky' + subl. sg. \emph{-re} `onto'} \\
-  álmaim\myfoot{\emph{álom} `dream' +
-  1st pers. sg. poss. \emph{-a} + poss. pl. \emph{-i} + 1st
-  pers. sg. pers. \emph{-m}} gőzei\myfoot{\emph{gőz} `steam,
-  vapour' + 3rd pers. sg. poss. \emph{-e} + pl. poss. \emph{-i}} alól \\
-  s láttam,\myfoot{vb. \emph{lát} `to see' +
-  short base \emph{-t}, 1st pers. sg. past def. \emph{-tam}} a törvény
-  szövedéke\myfoot{\emph{szövedék} `fabric/cloth/web' + 3rd
-  pers. sg. single poss. \emph{-e}} \\
-  mindig\myfoot{\emph{mind} `always' (repetition) + term. `until'
-  \emph{-ig}} fölfeslik\myfoot{vb. pref. \emph{föl-} `upwards'+
-  arch., poetic, vb.
-  \emph{feslik} `to come unstitched', 3rd pers. sg. ind. pres. indef.}
-  valahol.\myfoot{`somewhere'} \\
-\end{verse}
-
-\selectlanguage{english}
-
-\noindent Chiastic structure: \\
-1-4: a-ól(8)/é-e(9)/a-ól(9)/é-e(9) \\
-5-8: é-e(9)/a-ól(8)/é-e(9)/a-ol(8)
-
-\newpage
-
-\selectlanguage{english}
-
-\poemtitle*{VIII}
-
-\settowidth{\versewidth}{The silence listened intently --- One struck.}
-
-\begin{verse}[\versewidth]
-  The silence listened intently --- One struck. \\
-  You could visit your childhood; \\
-  between the damp cement walls \\
-  you could imagine a bit of freedom --- \\
-  I thought. And as soon as I stood up, \\
-  the stars, the Great Bear \\
-  were glittering above, \\
-  like the grilles up in the silent cell. \\
-\end{verse}
-
-\bigskip
-
-\noindent \textbf{Cursory remark}
-
-\medskip
-
-This is likely a memory of J's imprisonment in \oldstylenums{1931}.
-
-\bigskip
-
-\noindent \textbf{French}
-
-\selectlanguage{french}
-
-\settowidth{\versewidth}{Le silence écoutait attentivement --- Une heure sonna.}
-
-\begin{verse}[\versewidth]
-  Le silence écoutait attentivement --- Une heure sonna. \\
-  Tu pourrais visiter ton enfance; \\
-  entre les murs de ciment humide \\
-  tu pourrais imaginer un peu de liberté --- \\
-  me dis-je. Et dès que je fus sur pied, \\
-  les étoiles, la Grande Ourse \\
-  scintillaient au-dessus, \\
-  comme les grilles en haut dans ma cellule. \\
-\end{verse}
-
-\bigskip
-
-\noindent \textbf{Spanish}
-
-\selectlanguage{spanish}
-
-\settowidth{\versewidth}{El silencio escuchaba atentamente --- La una sonó.}
-
-\begin{verse}[\versewidth]
-  El silencio escuchaba atentamente --- La una sonó. \\
-  Podrías visitar tu infancia; \\
-  entre las paredes de cemento húmedo \\
-  podrías imaginar un poco de libertad --- \\
-  pensé. Y al ponerme en pie, \\
-  las estrellas, la Osa Mayor \\
-  destellaban por encima, \\
-  como las rejas arriba en mi celda. \\
-\end{verse}
-
-\newpage
-
-\selectlanguage{english}
-
-\noindent \textbf{Original Hungarian}
-
-\selectlanguage{hungarian}
-
-%% Fülelt a csend --- egyet ütött
-%% Fölkereshetnéd ifjúságod;
-%% nyirkos cementfalak között
-%% képzelhetsz egy kis sabadságot ---
-%% gondoltam. S hát hát amint fölállok
-%% a csillagok, a Göncölök
-%% úgy fénylenek fönt, mint a rácsok
-%% a hallgatag cella fölött.
-
-\settowidth{\versewidth}{gondoltam. S hát hát amint fölállok}
-
-\begin{verse}[\versewidth]
-  Fülelt\myfoot{\emph{fül} `ear' + vb.-forming \emph{-el}: `to
-  listen (intently)' + 3rd pers. ind. past indef. \emph{-t}} a
-  csend\myfoot{`silence'. alt. \emph{csönd}}
-  --- egyet\myfoot{\emph{egy} + acc. \emph{-t}}
-  ütött\myfoot{vb. \emph{üt} `to strike' + 3rd
-  pers. sg. ind. past indef. \emph{-(ö)tt}} \\
-  Fölkereshetnéd\myfoot{\emph{föl-}
-  `upwards' + \emph{keres} `to seek': `to visit' +
-  pot. `may/might' \emph{-het} + 2nd
-  pers. sg. ind. pres. cond. \emph{-ned}, alt. \emph{felkeres}}
-  ifjúságod;\myfoot{adj. \emph{ifjú} `young' + noun-forming
-  \emph{-ság} (state of being): `youth' + 2nd pers. informal sg.
-  poss. single poss. \emph{-od}: `your childhood' (informal)} \\
-  nyirkos\myfoot{adj. `humid/damp'}
-  cementfalak\myfoot{\emph{cement} `cement'+ \emph{fal} `wall' +
-  pl. \emph{-ak}} között\myfoot{post. `between/amid', \emph{köz}
-  `interval' + locat. \emph{-(ö)tt}} \\
-  képzelhetsz\myfoot{\emph{kép} `image' + vb.-forming
-  \emph{-(z)el}: `to imagine' + pot. \emph{-het} + 2nd
-  pers. sg. ind. pres. \emph{-sz}} egy kis
-  sabadságot\myfoot{\emph{szabad} `free' + \emph{-ság} (state of
-  being): `freedom' + acc. \emph{-(a)t}} --- \\
-  gondoltam.\myfoot{vb. \emph{gondol} `to
-  think/plan/guess/worry' + 1st pers. sg. ind. past
-  \emph{-tam}} S hát\myfoot{`back body','well...',
-  `then/and/but' (questioning back), `surely'}
-  amint\myfoot{\emph{az} + \emph{mint} `like': `as soon as',
-  literary `as'} fölállok\myfoot{\emph{föl-}
-  `upwards' +  vb. \emph{áll} `to stand' + 1st
-  pers. sg. ind. pres. indef. \emph{-ok}, alt. \emph{felállok}} \\
-  a csillagok,\myfoot{\emph{csillag} `star' + pl. \emph{-ak}} a
-  Göncölök\myfoot{\emph{Göncöl} + pl. \emph{-ök}: `the Great Bear'
-  (constellation)} \\
-  úgy\myfoot{adv. `so (in this/that manner)'; \emph{úgy ... mint ...}
-    `like'} fénylenek\myfoot{\emph{fény} `light' +
-  freq. vb.-forming \emph{-lik}: `to glitter' + 3rd
-  pers. pl. ind. pres. indef. \emph{-ek}}
-  fönt,\myfoot{adv. `above/up/awake/upstairs', alt. \emph{fent}}
-  mint a rácsok\myfoot{\emph{rács} `grid/grille' + pl. \emph{-ok}} \\
-  a hallgatag\myfoot{vb. \emph{hallgat} `to remain silent/to
-  listen' + adj.-forming \emph{-ag}} cella\myfoot{`cell'}
-  fölött.\myfoot{\emph{föl-} `up/upwards' +  locat. \emph{-(ö)tt}:
-  `above', alt. \emph{elett}} \\
-\end{verse}
-
-\selectlanguage{english}
-
-\noindent Chiastic structure: \\
-1-4: ü-ött(8)/á-o(9)/ö-ö(8)/á-o(9) \\
-5-8: á-o(9)/ö-ö(8)/á-o(9)/ö-ött(8)
-
-\newpage
-
-\selectlanguage{english}
-
-\poemtitle*{IX}
-
-\settowidth{\versewidth}{and that only a memory may be forgotten;}
-
-\begin{verse}[\versewidth]
-  I heard iron weeping, \\
-  I heard rain laughing. \\
-  I saw that the past was cracked \\
-  and that only memories may be forgotten, \\
-  and how I cannot but love, \\
-  bending under my burdens --- \\
-  why should I also forge a weapon \\
-  out of you, golden self-awareness! \\
-\end{verse}
-
-\bigskip
-
-\noindent \textbf{Cursory remark}
-
-\medskip
-
-Verses 1-2 refer to the sounds of iron being forged and quenched in
-water. The blacksmith is fixing a crack, which reminds J of a painful
-past event, possibly a break\hyp{}up. Verses 3-6 form a chiasm:
-verse~5 echoes verse~4: to avoid his love fading away, he will keep
-loving; verse~6 answers verse~3: instead of hammering the crack to
-make it disappear, J bends under it. Then there is no need to forge a
-sword blade to become strong. J's self\hyp{}consciousness is golden
-like the glow of the kiln's interior.
-
-\bigskip
-
-\noindent \textbf{French}
-
-\selectlanguage{french}
-
-\settowidth{\versewidth}{et que seuls les souvenirs peuvent s'oublier,}
-
-\begin{verse}[\versewidth]
-  J'ai entendu le fer sangloter, \\
-  j'ai entendu la pluie rire. \\
-  Je vis que le passé était craquelé \\
-  et que seuls les souvenirs peuvent s'oublier, \\
-  et comment je ne peux qu'aimer, \\
-  pliant sous mes fardeaux --- \\
-  pourquoi devrais-je aussi forger une arme \\
-  de toi, for intérieur doré! \\
-\end{verse}
-
-\bigskip
-
-\noindent \textbf{Spanish}
-
-\selectlanguage{spanish}
-
-\settowidth{\versewidth}{y que solos los recuerdos pueden olvidarse,}
-
-\begin{verse}[\versewidth]
-  Oí el hierro sollozar, \\
-  oí la lluvia reírse. \\
-  Vi que el pasado estaba agrietado \\
-  y que solos los recuerdos pueden olvidarse, \\
-  y cómo sólo puedo amar, \\
-  doblándome debajo de mis cargas --- \\
-  ¿por qué debería también fraguar un arma \\
-  de ti, fuero interior dorado! \\
-\end{verse}
-
-\newpage
-
-\selectlanguage{english}
-
-\noindent \textbf{Original Hungarian}
-
-\selectlanguage{hungarian}
-
-%% Hallottam sírni a vasat,
-%% hallottam az esőt nevetni.
-%% Láttam, hogy a mult meghasadt
-%% s csak képzetet lehet feledni;
-%% s hogy nem tudok mást, mint szeretni,
-%% görnyedve terheim alatt ---
-%% minek is kell fegyvert veretni
-%% belőled, arany öntudat!
-
-\settowidth{\versewidth}{s hogy nem tudok mást, mint szeretni,}
-
-\begin{verse}[\versewidth]
-  Hallottam\myfoot{vb. \emph{hall} `to hear' + 1st
-  pers. sg. ind. past def. \emph{-ottam}} sírni\myfoot{vb.
-  \emph{sír} `to cry/weep' + inf. \emph{-ni}} a
-  vasat,\myfoot{\emph{vas} `iron' + acc. \emph{-(a)t}} \\
-  hallottam az esőt\myfoot{vb. \emph{es}, inf. \emph{esik} +
-  pres. part. \emph{-ő} + acc. \emph{-t}} nevetni.\myfoot{vb.
-  \emph{nevet} `to laugh', inf. \emph{nevetni}} \\
-  Láttam,\myfoot{vb. \emph{lát} `to see' +
-  short base \emph{-t}, 1st pers. sg. past def. \emph{-tam}}
-  hogy\myfoot{adv. `how'} a mult\myfoot{\textbf{\emph{múlt}}?
-  rare, past part. `past', inf. \emph{múlik}}
-  meghasadt\myfoot{perfect. vb. pref. \emph{meg-} + vb.
-  \emph{hasad} `to crack/split apart' + past
-  part. \emph{-t}} \\
-  s csak\myfoot{adv. `only'} képzetet\myfoot{\emph{képzet}
-  `idea/image/notion' + acc. \emph{-t}}
-  lehet\myfoot{pot. vb. \emph{van/lesz}:
-  `may be/may become', 3rd pers. sg. ind.}
-  feledni;\myfoot{lit. vb. \emph{feled} `to forget', alt. \emph{felejt}} \\
-  s hogy\myfoot{adv. `how'} nem tudok\myfoot{vb.
-  \emph{tud} `to know'/aux. `can + inf.' + 1st
-  pers. sg. ind. pres. indef. \emph{-ok}}
-  mást,\myfoot{adj. \emph{más} `other/different' + acc. \emph{-t}}
-  mint\myfoot{comp. different degrees `than'}
-  szeretni,\myfoot{inf. vb. \emph{szeret} `to love'} \\
-  görnyedve\myfoot{vb. \emph{görnyed} `to bend (under a
-  burden)' + adv.-forming \emph{-ve}} terheim\myfoot{\emph{teher}
-  `freight/burden' + 1st
-  pers. sg. poss. mult. poss. \emph{-eim} $\rightarrow$ \emph{terheim}}
-  alatt\myfoot{post. \emph{al-} `lower part'+ locat. \emph{-(a)tt}}
-  --- \\
-  minek\myfoot{\emph{mi} + dat. \emph{-nek}: `for what'}
-  is\myfoot{doublet of \emph{és} `and', adv. `also'}
-  kell\myfoot{aux. vb. `must/need to/have to + inf.'}
-  fegyvert\myfoot{\emph{fegyever} `weapon' + acc. \emph{-t}}
-    veretni\myfoot{inf. vb. `to hammer', alt. \emph{veretés}} \\
-  belőled,\myfoot{pron. \emph{belőle} `out of him/her/it' + 2nd
-  pers. sg. \emph{-d}} arany\myfoot{`gold/golden'}
-  öntudat!\myfoot{`self-awareness'} \\
-\end{verse}
-
-\selectlanguage{english}
-
-\noindent Chiastic structure: \\
-1-4: a-at(8)/et-ni(9)/a-a[dt](8)/e[d]-ni(9) \\
-5-8: e[t]-ni(9)/a-a[tt](8)/et-ni(9)/u-at(8)
-
-\newpage
-
-\selectlanguage{english}
-
-\poemtitle*{X}
-
-\settowidth{\versewidth}{he who knows that he receives so much life}
-
-\begin{verse}[\versewidth]
-  He is a grown man he who has \\
-  neither mother nor father in his heart, \\
-  he who knows that he receives life \\
-  as a supplement to death, and will return it \\
-  anytime, like a found object \\
-  --- therefore he treasures it, \\
-  he who is neither a god nor a priest, \\
-  neither to himself nor to others. \\
-\end{verse}
-
-\bigskip
-
-\noindent \textbf{Cursory remark}
-
-\medskip
-
-An integral man (the Hungarian language is actually gender neutral)
-knows that his parents cannot protect him anymore from the truth of
-mortality. This truth is not treasured by gods, as they are immortal,
-nor Christian priests, who preach eternal life.
-
-\bigskip
-
-\noindent \textbf{French}
-
-\selectlanguage{french}
-
-\settowidth{\versewidth}{tel un supplément à la mort, et qu'il la rendra}
-
-\begin{verse}[\versewidth]
-  Il est un homme accompli celui qui n'a \\
-  ni mère ni père en son cœur, \\
-  celui qui sait qu'il reçoit la vie \\
-  tel un supplément à la mort, et la rendra \\
-  à tout moment, comme un objet trouvé \\
-  --- par conséquent il la garde, \\
-  celui qui n'est ni un dieu ni un prêtre, \\
-  ni pour lui-même ni pour autrui. \\
-\end{verse}
-
-\bigskip
-
-\noindent \textbf{Spanish}
-
-\selectlanguage{spanish}
-
-\settowidth{\versewidth}{en cualquier momento, como un objeto encontrado}
-
-\begin{verse}[\versewidth]
-  Es un hombre mayor el que no tiene \\
-  madre o padre en su corazón, \\
-  el que sabe que acoge la vida \\
-  como un suplemento a la muerte, y la devolverá \\
-  en cualquier momento, como un objeto encontrado \\
-  --- por lo cual la guardará \\
-  el que no es ni un diós ni un sacerdote, \\
-  ni para él mismo ni para los demás. \\
-\end{verse}
-
-\newpage
-
-\selectlanguage{english}
-
-\noindent \textbf{Original Hungarian}
-
-\selectlanguage{hungarian}
-
-%% Az meglett ember, akinek
-%% szívében nincs se anyja, apja,
-%% ki tudja, hogy az életet
-%% halálra ráadásul kapja
-%% s mint talált tárgyat visszaadja
-%% bármikor --- ezért őrzi meg,
-%% ki nem istene és nem papja
-%% se magának, sem senkinek.
-
-\settowidth{\versewidth}{s mint talált tárgyat visszaadja}
-
-\begin{verse}[\versewidth]
-  Az meglett\myfoot{obs. `adult'} ember\myfoot{`person'},
-  akinek\myfoot{pron. \emph{aki} `who' + attr. poss. \emph{-nek}} \\
-  szívében\myfoot{\emph{szív} `heart' + poss. `his' \emph{-e} +
-  innes. `in' \emph{-ben}} nincs se anyja,\myfoot{\emph{anya}
-  `mother' + 3rd pers. sg. single poss. \emph{-(j)a}}
-  apja,\myfoot{\emph{apa} `father' + 3rd pers. sg. single
-  poss. \emph{-(j)a}} \\
-  ki\myfoot{pron. rel. arch. `he who', alt. \emph{aki}}
-  tudja,\myfoot{vb. \emph{tud} `to know' + 3rd
-  pers. sg. ind. pres. def. \emph{-ja}}
-  hogy\myfoot{conj. `so that'} az életet\myfoot{\emph{élet}
-  `life' + acc. \emph{-(e)t}} \\
-  halálra\myfoot{vb. \emph{hal} `to die' + arch. noun-forming
-  \emph{-ál} $\rightarrow$ `death' + subl. `on/for' \emph{-ra}
-  $\rightarrow$ `to death'}
-  ráadásul\myfoot{\emph{ráadás} `addition/extra' + essive
-  `as/with the intention of' \emph{-ul}}
-  kapja\myfoot{vb. \emph{kap} `to receive' + 3rd
-  pers. sg. ind. pres. def. \emph{-ja}} \\
-  s mint\myfoot{`like'} talált\myfoot{vb. \emph{talált} `to
-  find' + past part.} tárgyat\myfoot{\emph{tárgy}
-  `object/thing/subject' + acc. \emph{-(a)t}}
-  visszaadja\myfoot{vb. \emph{visszaad} `to give back' + 3rd
-  pers. sg. ind. pres. def. \emph{-ja}} \\
-  bármikor\myfoot{\emph{bár} `any' + adv. \emph{mikor} `when'
-  $\rightarrow$ `any time'} --- ezért\myfoot{conj. `therefore'}
-  őrzi\myfoot{vb. \emph{őriz} `to guard' + 3rd
-  pers. sg. ind. pres. def. \emph{-i}} meg,\myfoot{arch. emph.} \\
-  ki\myfoot{`he who'} nem istene\myfoot{\emph{isten} `god' +
-  3rd pers. sg. sing. poss. \emph{-e}} és nem
-  papja\myfoot{\emph{pap} `priest' + 3rd
-  pers. sg. sing. poss. \emph{-(j)a}} \\
-  se\myfoot{alt. \emph{sem}, \emph{sem ..., sem ...}  `neither
-  ... nor ...'} magának,\myfoot{pron. refl. 3rd pers. `himself'}
-  sem senkinek.\myfoot{pron. \emph{senki} `no one/nobody'} \\
-\end{verse}
-
-\selectlanguage{english}
-
-\noindent Chiastic structure: \\
-1-4: ki-nek(8)/ap-ja(9)/e-e(8)/a[p]-ja(9)\\
-5-8: a[d]-ja(9)/i-e(8)/ap-ja(9)/ki-nek(8)
-
-\newpage
-
-\selectlanguage{english}
-
-\poemtitle*{XI}
-
-\settowidth{\versewidth}{It plopped into the squishy, tepid puddle,}
-
-\begin{verse}[\versewidth]
-  I saw happiness; it was soft, bright \\
-  and one and half a quintal. \\
-  On the coarse grass of the farmyard \\
-  its curly smile swayed. \\
-  It plopped into the squishy, tepid puddle, \\
-  squinted, further grunted at me once --- \\
-  To this day I see how hesitantly \\
-  the sunlight toyed with its bristles. \\
-\end{verse}
-
-\bigskip
-
-\noindent \textbf{Cursory remark}
-
-\medskip
-
-While this seems a rather descriptive poem, the first and last two
-verses are subjective. Also the last verse echoes the first, in the
-fashion of a chiasm: verse~1 is about seeing happiness, and the last
-features light and playfulness: the Hungarian uses \emph{fény} for
-`light', but it could figuratively also mean `joy', hence my
-translation: `the sunlight toyed'.
-
-\bigskip
-
-\noindent \textbf{French}
-
-\selectlanguage{french}
-
-\settowidth{\versewidth}{Il s'affala dans la marre tende et tiède,}
-
-\begin{verse}[\versewidth]
-  J'ai vu le bonheur; il était doux, brillant \\
-  et un quintal et demi. \\
-  Sur la mauvaise herbe de la cour de ferme \\
-  son sourire courbé se balançait. \\
-  Il s'affala dans la marre tendre et tiède, \\
-  plissa les yeux, puis me grogna une fois --- \\
-  Jusqu'à ce jour, je vois avec quelle hésitation \\
-  la lumière du jour s'amusait avec ses soies. \\
-\end{verse}
-
-\bigskip
-
-\noindent \textbf{Spanish}
-
-\selectlanguage{spanish}
-
-\settowidth{\versewidth}{entrecerró los ojos, pues me gruñó una vez ---}
-
-\begin{verse}[\versewidth]
-  Vi la felicidad; era suave, brillante \\
-  y un quintal y medio. \\
-  En la maleza del patio de la granja \\
-  su sonriza curva se balanceaba. \\
-  Se abatió en el charco blando y tibio, \\
-  entrecerró los ojos, pues me gruñó una vez --- \\
-  hasta hoy veo con que vacilación \\
-  la luz del día jugueteaba con sus cerdas. \\
-\end{verse}
-
-\newpage
-
-\selectlanguage{english}
-
-\noindent \textbf{Original Hungarian}
-
-\selectlanguage{hungarian}
-
-%% Láttam a boldogságot én,
-%% lágy volt, szőke és másfél mázsa.
-%% Az udvar szigorú gyöpén
-%% imbolygott göndör mosolygása.
-%% Ledőlt a puha, langy tócsába,
-%% hunyorgott, röffent még felém ---
-%% ma is látom, mily tétovázva
-%% babrált pihéi közt a fény.
-
-\settowidth{\versewidth}{hunyorgott, röffent még felém ---}
-
-\begin{verse}[\versewidth]
-  Láttam\myfoot{vb. \emph{lát} `to see' +
-  short base \emph{-t}, 1st pers. sg. past def. \emph{-tam}} a
-  boldogságot\myfoot{adj. \emph{boldog} `happy' + noun-forming
-  \emph{-ság} (state of being) + acc. \emph{-(o)t}}
-  én,\myfoot{pron. `I'} \\
-  lágy\myfoot{adj. `soft'} volt,\myfoot{vb. \emph{van} `to
-  be'+ 3rd pers. sg. ind. past indef.} szőke\myfoot{adj. \emph{sző}
-  `blonde' + dim. \emph{-ke}} és másfél\myfoot{\emph{más}
-  `other/different' + \emph{fél} `half' $\rightarrow$ `one and a
-  half'} mázsa.\myfoot{`quintal'} \\
-  Az udvar\myfoot{`yard'} szigorú\myfoot{adj. `severe/strict'}
-  gyöpén\myfoot{\emph{gyep} `lawn/grass' + super. \emph{-(e)n} `on'} \\
-  imbolygott\myfoot{vb. \emph{imbolyog} `to sway'+ 3rd
-  pers. sg. single poss. \emph{-e}} göndör\myfoot{adj. `curly'}
-  mosolygása.\myfoot{\emph{mosolygás} `smile' + 3rd
-  pers. sg. single poss. \emph{-a}} \\
-  Ledőlt\myfoot{vb. \emph{ledoől} `to fall down' + 3rd
-  pers. sg. ind. past indef. \emph{-t}} a puha,\myfoot{`soft/squishy'}
-  langy\myfoot{arch. poetic \emph{langyos} `tepid'}
-  tócsába,\myfoot{\emph{tócsa} `puddle' + illative \emph{-ba}
-  `into'} \\
-  hunyorgott,\myfoot{vb \emph{hunyorg} `to squint' + 3rd
-  pers. sg. ind. past. indef. \emph{-rgott}}
-  röffent\myfoot{\emph{röffen} `to grunt once (of a pig)'}
-  még\myfoot{adv. `still/moreover'} felém\myfoot{post. \emph{felé}
-  `to/towards' + 1st pers. sg. poss \emph{-m} $\rightarrow$
-  pron. `towards me'} --- \\
-  ma\myfoot{adv. `today'} is\myfoot{doublet of \emph{és} `and',
-  adv. `also'} látom,\myfoot{vb. \emph{lát} `to see'+ 1st
-  pers. sg. ind. pres. def.} mily\myfoot{poetic `how ...(!)'}
-  tétovázva\myfoot{vb. \emph{tétova} `to hesitate'
-  (inf. \emph{tétovazik}) $\rightarrow$ adv. part. `doing smth
-  hesitantly'} \\
-  babrált\myfoot{vb. \emph{babrál} `to fiddle'}
-  pihéi\myfoot{\emph{pihe} `down, fluff' + adj.-forming \emph{-i}}
-  közt\myfoot{post. `between/amid' from \emph{között}: \emph{köz}
-  `interval' + locat. \emph{-(ö)tt}} a fény.\myfoot{`light/glitter',
-  fig. `happiness/joy'} \\
-\end{verse}
-
-\selectlanguage{english}
-
-\noindent Chiastic structure: \\
-1-4: o-é(8)/á-a(9)/ö-é(8)/á-a(9) \\
-5-8: á-a(9)/e-é(8)/á-a(9)/a-é(8)
-
-\newpage
-
-\selectlanguage{english}
-
-\poemtitle*{XII}
-
-\settowidth{\versewidth}{and I stand in the light from the compartments,}
-
-\begin{verse}[\versewidth]
-  I live by a railroad. \\
-  Many a train comes and goes, \\
-  and I watch from afar \\
-  how the bright windows fly by \\
-  in the wavering, fluffy darkness. \\
-  So the lit-up days rush into the eternal night, \\
-  and I stand in the light from the compartments, \\
-  I rest on my elbow and remain silent. \\
-\end{verse}
-
-\bigskip
-
-\noindent \textbf{French}
-
-\selectlanguage{french}
-
-\settowidth{\versewidth}{Ainsi les jours luisants se pressent dans la nuit éternelle,}
-
-\begin{verse}[\versewidth]
-  Je vis près du chemin de fer. \\
-  Nombreux sont les trains \\
-  qui viennent et vont, et j'observe de loin \\
-  comment les fenêtres illuminées défilent \\
-  dans l'obscurité vacillante et peluchée. \\
-  Ainsi les jours luisants se pressent dans la nuit éternelle, \\
-  et je me tiens dans la lumière des compartiments, \\
-  je m'accoude et garde le silence. \\
-\end{verse}
-
-\bigskip
-
-\noindent \textbf{Spanish}
-
-\selectlanguage{spanish}
-
-\settowidth{\versewidth}{Así los días lucientes se apuran en la noche eterna,}
-
-\begin{verse}[\versewidth]
-  Vivo cerca del ferrocarril. \\
-  Son muchos los trenes \\
-  que vienen y van, y miro desde lejos \\
-  cómo las brillantes ventanas vuelan de paso \\
-  en la oscuridad vacilante y vellosa. \\
-  Así los días lucientes se apuran en la noche eterna, \\
-  y me quedo en la luz de los compartimentos, \\
-  me acodo y guardo silencio. \\
-\end{verse}
-
-\newpage
-
-\selectlanguage{english}
-
-\noindent \textbf{Original Hungarian}
-
-\selectlanguage{hungarian}
-
-%% Vasútnál lakom. Erre sok
-%% vonat jön-megy és el-elnézem,
-%% hogy' szállnak fényes ablakok
-%% a lengedező szösz-sötétben.
-%% Így iramlanak örök éjben
-%% kivilágított nappalok
-%% s én állok minden fülke-fényben,
-%% én könyöklök és hallgatok.
-
-\settowidth{\versewidth}{s én állok minden fülke-fényben,}
-
-\begin{verse}[\versewidth]
-  Vasútnál\myfoot{\emph{vas} `iron' + \emph{ut} `way/road'+
-    adess. \emph{-nál} `at/by'} lakom.\myfoot{vb. \emph{lak} `to
-    dwell', inf. \emph{lakik}, 1st pers. sg. ind. pres. \emph{-(o)m}}
-  Erre\myfoot{pron. \emph{ez} `this/it' + subl. sg. \emph{-re}
-    `onto/to'}
-  sok\myfoot{`much/many'} \\
-  vonat\myfoot{vb. \emph{von} `to pull/draw' + noun-forming
-    \emph{-at} $\rightarrow$ `train'} jön\myfoot{vb. `to come' + 3rd
-    pers. sg. ind. pres. indef.}-megy\myfoot{vb. `to go/travel/pass by
-    (of time)' + 3rd pers. sg. ind. pres. indef.} és
-  el\myfoot{adv./conj. `afar/far
-    away'}-elnézem,\myfoot{vb. pref. \emph{el-} `continuity over a long
-    time' + vb. \emph{nez} `to look at'} \\
-  hogy'\myfoot{short. \textbf{\emph{hogyan?}} `how'}
-  szállnak\myfoot{vb. \emph{száll} `to fly/land/come down' + 3rd
-  pers. pl. ind. pres. indef.} fényes\myfoot{\emph{fény}
-    `light/glitter' + adj.-forming \emph{-es} $\rightarrow$ `bright'}
-  ablakok\myfoot{\emph{ablak} `window' + pl. \emph{-(o)k}} \\
-  a lengedező\myfoot{vb. \emph{leng} `to swing/sway/wave' +
-    freq. vb.-forming \emph{-edezik} (unrounded front\hyp{}vowel) +
-    pres. part. \emph{-ő} $\rightarrow$ `swinging/waving'}
-  szösz\myfoot{`harl/fluff'}-sötétben.\myfoot{adj./subst. \emph{sötét}
-    `dark[ness]' + iness. sg. \emph{-ben} `in'} \\
-  Így\myfoot{`just so'} iramlanak\myfoot{\emph{ir} `movement' +
-  rare instr. vb.-forming \emph{-amlik} (inf.) $\rightarrow$ `to
-  rush/hurry' + 3rd pers. pl. ind. pres. indef. \emph{-(a)nak}}
-  örök\myfoot{`perpetual/eternal'} éjben\myfoot{poetic \emph{éj} `night' +
-  innes. `in' \emph{-ben}} \\
-  kivilágított\myfoot{vb. pref. \emph{ki} `outwardly' + \emph{világ}
-    `light (arch.)/world' $\rightarrow$ arch. `illumination' +
-    caus. vb.-forming \emph{-ít} `to make smth ...-like' $\rightarrow$
-    `to illuminate' + past part. \emph{-ott}}
-  nappalok\myfoot{\emph{nap} `day' + instr. \emph{-val}
-  `with' $\rightarrow$ \emph{nappal} + pl. \emph{-(o)k}} \\
-  s én\myfoot{pron. `I'} állok\myfoot{vb. \emph{áll} `to stand' + 1st
-    pers. sg. ind. pres. indef. \emph{-ok}}
-  minden\myfoot{det. `every'} fülke\myfoot{\emph{fül}
-    `semi\hyp{}circular obj./shape' + dim. \emph{-ke} $\rightarrow$
-    `compartment'}-fényben,\myfoot{\emph{fény}
-    `light/glitter' + innes. \emph{-ben} `in'} \\
-  én könyöklök\myfoot{\emph{könyök} `elbow' + vb.-forming \emph{-öl}
-    $\rightarrow$ `to rest on one's elbow' + 1st
-    pers. sg. ind. pers. \emph{-ök}} és
-    hallgatok.\myfoot{vb. \emph{hallgat} `to remain silent/to listen'
-      + 1st pers. sg. ind. pres. indef. \emph{-ok}} \\
-\end{verse}
-
-\selectlanguage{english}
-
-\noindent Chiastic structure: \\
-1-4: o(8)/é-e(9)/a-o(8)/é-e(9) \\
-5-8: é-e(9)/a-o(8)/é-e(9)/o(8)
-
-%% =====================================================================
-
-\chapter{\oldstylenums{1936}}
-
-\selectlanguage{english}
-
-\poemtitle*{}
-
-\settowidth{\versewidth}{You will toddle and when your bad leg has tottered enough,}
-
-\begin{verse}[\versewidth]
-  You will grow old and come to regret \\
-  how you hurt me --- which you are proud of today. \\
-  The conscience will come knocking \\
-  and won't leave you alone in any memory. \\
-  \ \\
-  You will have an old dog that will settle next to you. \\
-  You will rest during the day, dozing off on a chair \\
-  because you are afraid alone at night. \\
-  Shadows will fall on the trembling old lady. \\
-  \ \\
-  Your old dog will whine sometimes, \\
-  but the room falls silent again, all is in order, \\
-  and yet someone from the past \\
-  is missing in the lonely silence. \\
-  \ \\
-  You will toddle and when your bad leg has tottered enough, \\
-  you will sit down. Your youthful picture stands \\
-  above in a golden frame. You will mutter to it: \\
-  `I didn't embrace him, obviously I didn't love him.' \\
-  \ \\
-  `What could I have done?' --- you ask, \\
-  but your toothless mouth can no longer answer; \\
-  facing the sun outside, you close your eyes, \\
-  you can barely wait for the moon to rise. \\
-  \ \\
-  Because when you fall asleep, the bed will leap \\
-  like a foal trying to throw off its harness. \\
-  And fear, not desire, will occupy your head: \\
-  should you love him, should you not love him? \\
-  \ \\
-  Decide for yourself. I regret \\
-  that I cannot answer if you ask: is he alive? \\
-  Because the sorrow inside is tired, \\
-  it falls asleep like a child, and I with it. \\
-\end{verse}
-
-\newpage
-
-\noindent \textbf{French}
-
-\selectlanguage{french}
-
-\settowidth{\versewidth}{}
-
-\begin{verse}%[\versewidth]
-  Tu vieilliras et regretteras combien tu m'as blessé \\
-  --- ce dont tu t'enorgueillis aujourd'hui. \\
-  La conscience viendra heurter à la porte \\
-  et ne te laissera seule dans aucun souvenir. \\
-  \ \\
-  Tu auras un vieux chien qui s'installera à tes côtés. \\
-  Tu te reposeras durant le jour, t'assoupissant sur une chaise \\
-  parce que tu as peur seule la nuit. \\
-  Les ombres couvriront la vieille dame tremblante. \\
-  \ \\
-  Ton vieux chien gémira parfois, \\
-  mais la pièce redevient silencieuse, tout est en ordre, \\
-  et pourtant quelqu'un du passé \\
-  manque dans le silence solitaire. \\
-  \ \\
-  Tu chancelleras et quand ta mauvaise jambe aura assez titubé, \\
-  tu t'asseyeras. Ton portrait de jeunesse trône \\
-  dans un cadre doré. Tu lui marmonneras: \\
-  «~Je ne l'ai pas serré dans mes bras, c'est que je ne l'aimais pas.~» \\
-  \ \\
-  «~Qu'aurais-je pu faire?~» --- tu te demandes, \\
-  mais ta bouche édentée ne peut plus répondre; \\
-  face au soleil dehors, tu fermes les yeux, \\
-  tu peux à peine attendre que la lune se lève. \\
-  \ \\
-  Car quand tu t'endors, le lit bondit \\
-  comme un poulain qui essaie de se défaire de son harnais. \\
-  Et la peur, non le désir, occupera ta tête: \\
-  devrais-tu l'aimer, devrais-tu ne pas l'aimer? \\
-  \ \\
-  Décide toi-même. Je suis au regret \\
-  de ne pouvoir répondre si tu demandes: est-il vivant? \\
-  Parce que la peine dedans est fatiguée, \\
-  elle s'endort comme un enfant, et moi avec. \\
-\end{verse}
-
-\newpage
-
-\selectlanguage{hungarian}
-
-%% Majd megöregszel és bánni fogod,
-%% hogy bántasz --- azt, amire büszke vagy ma.
-%% A lelkiismeret majd bekopog
-%% s nem lesz emlék, melyben magadra hagyna.
-
-%% Lesz vén ebed s az melléd települ.
-%% Nappal pihensz majd, széken szunyókálva,
-%% mert éjjel félni fogsz majd egyedül.
-%% Árnyak ütnek a rezgő anyókára.
-
-%% Az öreg kutya néha majd nyafog,
-%% de a szobában csend lesz, csupa rend lesz;
-%% hanem valaki hiányozni fog
-%% a multból ahhoz a magányos csendhez.
-
-%% Majd tipegsz s ha eleget totyogott
-%% rossz lábod, leülsz. Fönn aranykeretben
-%% áll ifju képed. Hozzá motyogod:
-%% "Nem öleltem meg, hiszen nem szerettem."
-
-%% "Mit is tehettem volna?" --- kérdezed,
-%% de fogatlan szád már nem válaszolhat;
-%% s ki a nap előtt lehunyod szemed,
-%% alig várod, hogy feljöjjön, a holdat.
-
-%% Mert ha elalszol, ugrál majd az ágy,
-%% mint a csikó, hogy a hámot levesse.
-%% S a félelem tünődik, nem a vágy,
-%% a fejedben: Szeress-e, ne szeress-e.
-
-%% Magadban döntöd el. Én fájlalom,
-%% hogy nem felelhetek, ha kérded: él-e.
-%% Mert elfárad bennem a fájdalom,
-%% elalszik, mint a gyermek s én is véle.
-
-\poemtitle*{}
-
-\settowidth{\versewidth}{s nem lesz emlék, melyben magadra hagyna.}
-
-\begin{verse}[\versewidth]
-  Majd\myfoot{adv. `sometime/later'}
-  megöregszel\myfoot{perfect. vb. pref. \emph{meg-} +
-    vb. inf. \emph{öregszik} `to grow/become old' + 2nd
-    pers. sg. inform. pres. indef.} és bánni\myfoot{vb. \emph{megbán}
-    `to regret': perfect. vb. pref. \emph{meg-} + vb. \emph{bán} `to
-    mind (negatively)/be bothered'} fogod,\myfoot{aux. vb. \emph{fog} `to
-    will' + 2nd pers. sg. ind. pres. def. (e.g. \emph{Meg fog bánni.})} \\
-  hogy\myfoot{adv. `how'} bántasz\myfoot{vb. \emph{bán} `to
-    be bothered' + caus. \emph{-t}: `to hurt' + 2nd
-    pers. sg. ind. pres. indef.} --- azt,\myfoot{\emph{az} `that' +
-    acc. \emph{-t}} amire\myfoot{\emph{ami} `that/which' +
-    subl. \emph{-re} `onto'} büszke\myfoot{`proud'}
-  vagy\myfoot{vb. \emph{van} `to be' + 2nd
-    pers. sg. ind. pres. indef.} ma.\myfoot{`today'} \\
-  A lelkiismeret\myfoot{arch. dial. \emph{lelki} `his/her soul'
-    (alt. \emph{lelke}) + arch. dial. \emph{ismereti} `his/her/its
-    knowledge' (alt. \emph{ismerete}) $\rightarrow$ `(moral)
-    conscience'} majd bekopog\myfoot{vb. pref. \emph{be-} `inwardly' +
-    vb. \emph{kopog} `to knock'} \\
-  s\myfoot{poetic abbrv. \emph{es} `and'
-  (does not count as a syllable)} nem lesz\myfoot{vb. \emph{van} `to
-    be', 3rd pers. sg. ind. fut. indef.}
-  emlék,\myfoot{`memory'} melyben\myfoot{lit. \emph{mely}
-    `which/that' + innes. \emph{-ben} `in'} magadra\myfoot{\emph{maga}
-    `oneself/itself' + subl. \emph{-ra} `into'}
-  hagyna.\myfoot{vb. \emph{hagy} `to allow/leave' + 3rd
-    pers. sg. cond. pres. indef. \emph{-na}} \\
-  \ \\
-  Lesz\myfoot{vb. `to be', 3rd pers. sg. ind. fut. indef.} vén\myfoot{adj. `old'} ebed\myfoot{noun. \emph{eb} `dog' + 2nd
-    pers. sg. single-poss. poss. $\rightarrow$ `your dog'} s az
-  melléd\myfoot{post. \emph{mellé} `next to' + 2nd pers. sg. single
-  poss. \emph{-d} $\rightarrow$ pron. `next yo you'}
-  települ.\myfoot{vb. `to settle somewhere' + 3rd
-    pers. sg. pres. ind. indef.} \\
-  Nappal\myfoot{\emph{nap} `day' + instr. \emph{-val}
-  `with' $\rightarrow$ \emph{nappal}} pihensz\myfoot{vb. `to rest' +
-    2nd pers. sg. inform. ind. pres. indef.}
-  majd,\myfoot{adv. `sometime/later'}  széken\myfoot{\emph{szék}
-    `chair' +  super. \emph{-en} `on'}
-  szunyókálva,\myfoot{(vb. pref. \emph{el-} `away' +)
-    vb. \emph{szunyókál} `to take a nap/to doze off' +
-    adv.-part. \emph{-va}} \\
-  mert\myfoot{conj. `because'} éjjel\myfoot{poetic \emph{éj} `night' +
-    instr. \emph{-vel} `with' $\rightarrow$ \emph{éjjel}}
-  félni\myfoot{inf. vb. \emph{fél} `to fear/be afraid of'}
-  fogsz\myfoot{aux. vb. `to will' + 2nd
-    pers. sg. inform. ind. pres. def.}
-  majd\myfoot{adv. `sometime/later'} egyedül.\myfoot{\emph{egy} `one'
-    + noun-forming \emph{-ed} + adv.-forming \emph{-ül} $\rightarrow$
-    `alone'} \\
-  Árnyak\myfoot{\emph{árny} `shadow/ghost' + non. pl. \emph{-ak}}
-  ütnek\myfoot{vb. \emph{üt} `to hit' + 3rd
-  pers. pl. ind. pres. indef. \emph{-nek}} a
-  rezgő\myfoot{poetic, arch. vb. \emph{rezg} `to tremble/quiver'
-    (alt. \emph{rezeg}) + pres. part. \emph{-ő}}
-  anyókára.\myfoot{\emph{anyó} `elderly woman' + dim. \emph{-ka}
-    (term of endearment; rare. term of address to the wife by her
-    husband in old age) + subl. \emph{-ra} `onto'} \\
-  \ \\
-  Az öreg\myfoot{`old'} kutya\myfoot{`dog'}
-  néha\myfoot{adv. `sometimes'} majd\myfoot{adv. `sometime/later'}
-  nyafog,\myfoot{vb. `to whine' + 3rd pers. sg. ind. pres. indef.} \\
-  de\myfoot{conj. `but'} a szobában\myfoot{\emph{szoba} `room' +
-    innes. \emph{-ban} `in'} csend\myfoot{`silence/hush'}
-  lesz,\myfoot{vb. \emph{van} `to be', 3rd pers. sg. ind. fut. indef.}
-  csupa\myfoot{`all/mere/pure'} rend\myfoot{`order'} lesz; \\
-  hanem\myfoot{conf. `if' + cond. or `when/once' + \emph{nem} `no':
-    conj. `but (following a negative sentence, making it positive)'}
-  valaki\myfoot{pron. pref. \emph{vala} `some-' + pron. rel. arch. \emph{ki}
-    `who (the person(s) that)' $\rightarrow$ `somebody/someone'}
-  hiányozni\myfoot{\emph{hiány} `lack/absence/break' + vb.-forming
-    \emph{-zik} $\rightarrow$ `(smb) to be missing/missed',
-    inf. \emph{hiányozni}} fog\myfoot{aux. vb. \emph{fog} `to will'} \\
-  a multból\myfoot{\textbf{\emph{múlt}}? rare, past part. `past' +
-    elative \emph{-ból} `from/out of'} ahhoz\myfoot{conf. `if' +
-    cond. or `when/once' + allat. \emph{-hoz} `towards'} a
-  magányos\myfoot{adv./adj. \emph{magán} `separate[ly]' + adj.-forming
-    \emph{-os} $\rightarrow$ `lonely (psych.)'}
-  csendhez.\myfoot{`silence' + allat. \emph{-hez} `to'} \\
-  \ \\
-  Majd tipegsz\myfoot{vb. \emph{tipeg} `to toddle' + 2nd
-    pers. sg. inform. ind. pres} s\myfoot{poetic abbrv. \emph{es} `and'
-  (does not count as a syllable)} ha\myfoot{conf. `if' + cond. or
-    `when/once'} eleget\myfoot{\emph{elég} `enough' + acc. \emph{-et}
-    $\rightarrow$ adv.} totyogott\myfoot{vb. \emph{totyog} `to toddle'
-    (syn. \emph{tipeg}) + 2nd pers. form. ind. pres. indef.} \\
-  rossz\myfoot{adj. `bad'} lábod,\myfoot{\emph{láb} `leg
-    (human/animal)/foot/pillar/support/stand' + 2nd
-    pers. inform. poss. single-poss. \emph{-od}}
-  leülsz.\myfoot{vb. pref. \emph{le-} completion/downward + \emph{ül}
-    `to sit' $\rightarrow$ `to sit down'} Fönn\myfoot{adv. `above',
-    alt. `fent/fenn'}
-  aranykeretben\myfoot{\emph{arany} `gold' + \emph{keret} `frame' +
-    innes. \emph{-ben} `in'} \\
-  áll\myfoot{vb. `to stand'} ifju\myfoot{\textbf{\emph{ifjú}}?
-    adj./noun `young'} képed.\myfoot{\emph{kép} `picture' + 2nd
-    pers. sg. single-poss. poss. \emph{-ed}} Hozzá\myfoot{pron. `to
-    it/him/her'} motyogod:\myfoot{vb. \emph{motyog} `to mumble/mutter'
-  + 2nd pers. sg. ind. pres. def. \emph{-od}} \\
-  "Nem öleltem\myfoot{vb. \emph{ölel} `to embrace' + 1st
-    pers. ind. past} meg,\myfoot{perfect. vb. pref. \emph{meg-} (with
-    \emph{ölel})} hiszen\myfoot{conj. `as/because (smth obvious)'} nem
-  szerettem."\myfoot{vb. \emph{szeret} `to love' + 1st
-    pers. sg. ind. past} \\
-  \ \\
-  "Mit\myfoot{inter. `what'} is\myfoot{doublet of \emph{és}
-    `and', adv. `also'} tehettem\myfoot{vb. \emph{tesz} `to do' +
-    poten. \emph{-het} + 1st pers. sg. ind. past}
-  volna?"\myfoot{vb. \emph{van} `to be' + 3rd
-    pers. sg. cond. pres. `would be'} ---
-  kérdezed,\myfoot{vb. \emph{kérdez} `to ask' + 2nd
-    pers. sg. ind. pres.} \\
-  de\myfoot{adv. `how!'/conj. `but/surely'} fogatlan\myfoot{\emph{fog}
-  `tooth' + priv. adj.-forming \emph{-less}} szád\myfoot{\emph{száj}
-    `mouth' + 2nd pers. sg. single-poss. poss.}
-  már\myfoot{adv. `already/yet/any more'} nem
-  válaszolhat;\myfoot{\emph{válasz} `reply/answer' + vb.-forming
-    \emph{-ol} + poten. \emph{-hat} + 3rd pers. sg. ind. pres. indef.} \\
-  s\myfoot{poetic abbrv. \emph{es} `and'
-  (does not count as a syllable)} ki\myfoot{adv. `out[wardly]'} a nap\myfoot{\emph{nap} `sun/day'}
-  előtt\myfoot{\emph{elő} `the front part of smth' + locat. \emph{-tt}
-  `in front of/ahead of/before/prior to'}
-  lehunyod\myfoot{vb. pref. \emph{le-} completion/downward +
-    vb. \emph{huny} `to close (one's eyes)' + 2nd
-    pers. sg. ind. pres. def.} szemed,\myfoot{\emph{szem} `eye' + 2nd
-    pers. sg. single-poss. poss. \emph{-ed} (but plural implied here!)} \\
-  alig\myfoot{adv. `barely'}
-  várod,\myfoot{vb. \emph{vár} `to wait' + 2nd
-    pers. sg. ind. pres. def.} hogy\myfoot{conj. `that'}   feljöjjön,\myfoot{vb. pref. \emph{fel-} `upwards' (see also
-    \emph{föl-}) + vb. \emph{jön} `to come' + 3rd
-    pers. sg. subj. pres. indef.} a holdat.\myfoot{`moon' +
-    acc. \emph{-(a)t}} \\
-  \ \\
-  Mert\myfoot{conj. `because'} ha\myfoot{conf. `if' + cond. or
-    `when/once'} elalszol\myfoot{vb. pref. \emph{el-} `away' +
-    vb. \emph{alszik} `to sleep' $\rightarrow$ `to fall asleep' + 2nd
-    pers. sg. ind. pres. indef.},
-  ugrál\myfoot{vb. \emph{ugrik} `to jump' + freq. \emph{-ál}
-    $\rightarrow$ `to bounce/leap (repeatedly)'} majd\myfoot{adv. `sometime/later'} az ágy,\myfoot{`bed'} \\
-  mint\myfoot{conj. `like'} a csikó,\myfoot{`foal'} hogy a
-  hámot\myfoot{\emph{hám} `harness' + acc. \emph{-(o)t}}
-  levesse.\myfoot{vb. \emph{levet} `to buck/throw off' + 3rd
-    pers. sg. subj. pres. def.} \\
-  S\myfoot{poetic abbrv. \emph{es} `and'} a
-  félelem\myfoot{vb. \emph{fél} `to be afraid' + noun-forming
-    \emph{-elem} $\rightarrow$ fear'}
-  tünődik,\myfoot{\textbf{\emph{tűnődik}}? vb. `to ponder/wonder'} nem
-  a vágy,\myfoot{`desire/longing'} \\
-  a fejedben:\myfoot{\emph{fej} `head' + 2nd
-    pers. sg. single-poss. poss. \emph{-ed} + innes. \emph{-ben} `in'}
-  Szeress-e,\myfoot{vb. \emph{szeret} `to love' + 2nd
-    pers. sg. subj. + polar inter. \emph{-e} }
-  ne\myfoot{\emph{nem} becomes \emph{ne} in imperative/subjunctive}
-  szeress-e. \\
-  \ \\
-  Magadban\myfoot{\emph{maga} `oneself' + 2nd pers. sg. single
-  poss. \emph{-d} + iness. \emph{-ban} `in'}
-  döntöd\myfoot{perfect. vb. pref. \emph{el-} + vb. \emph{dönt} `to
-    decide' + 2nd pers. sg. ind. pres. def.}
-  el.\myfoot{perfect. vb. pref. \emph{el-}} Én\myfoot{pron. `I'}
-  fájlalom,\myfoot{vb. \emph{fáj} `to hurt' + vb.-forming \emph{-lal}
-    $\rightarrow$ literary, arch. `to regret' + 1st
-    pers. sg. ind. pres. def.} \\
-  hogy nem felelhetek,\myfoot{\emph{fél} `human being' + vb.-forming
-    \emph{-el} $\rightarrow$ vb. \emph{felel} `to answer/reply' +
-    poten. 1st pers. sg. ind. pres. indef.} ha\myfoot{conf. `if' +
-    cond. or `when/once'} kérded:\myfoot{arch. vb. \emph{kérd} `to
-    ask/question' + 2nd pers. sg. ind. pres. def.}
-  él-e.\myfoot{vb. \emph{él} `to live' + 3rd
-    pers. sg. ind. pres. indef.} \\
-  Mert\myfoot{conj. `because'}
-  elfárad\myfoot{perfect. vb. pref. \emph{el-} + vb. \emph{fárad} `to
-    tire/to be tired' + 3rd pers. sg. ind. pres. indef.}
-  bennem\myfoot{pron. \emph{benne} `inside smth/smb' + 1st
-    pers. sg. pers. \emph{-m}} a fájdalom,\myfoot{vb. \emph{fáj} `to
-    ache' + noun-forming \emph{-dalom} $\rightarrow$
-    `pain/grief/sorrow'} \\
-  elalszik,\myfoot{perfect. vb. pref. \emph{el-} +
-    vb. \emph{alszik} `to sleep' $\rightarrow$ `to fall asleep' + 3rd
-    pers. sg. ind. pres. indef.} mint\myfoot{conj. `like'} a
-  gyermek\myfoot{arch. `child', alt. \emph{gyerek}} s én is
-  véle.\myfoot{poetic, arch. form of \emph{vele} `with it/him/her'} \\
-\end{verse}
-
-1936. nov.
-
-\end{document}
+\theendnotes
