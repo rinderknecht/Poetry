@@ -5,9 +5,8 @@
 \usepackage[papersize={12.85cm,19.84cm},%
             includehead,%
             includefoot,%
-            bindingoffset=1cm,%
-            showframe,%
-            showcrop]{geometry}%, showframe, showcrop
+            bindingoffset=1cm%
+            ]{geometry}%, showframe, showcrop
 
 %\setlength{\evensidemargin}{-50pt}
 %\setlength{\oddsidemargin}{-50pt}
@@ -31,6 +30,10 @@
 
 \frenchspacing  % Follow French conventions after a period
 \hfuzz 2pt      % Do not report overhang less than 2pt
+
+% For subsubsections to appear in the table of contents
+%
+%\setcounter{tocdepth}{3}
 
 %% TEMPORARY ($\Box$)
 
@@ -92,6 +95,11 @@ Translation by Christian Rinderknecht}
 
 \newpage\leavevmode\thispagestyle{empty}\newpage
 
+\def\contentsname{\empty}
+\tableofcontents
+
+\newpage\leavevmode\thispagestyle{empty}\newpage
+
 \pagenumbering{arabic}
 
 \newpage\leavevmode\thispagestyle{empty}\newpage
@@ -104,9 +112,10 @@ Translation by Christian Rinderknecht}
 
 \selectlanguage{english}
 
-%\settowidth{\versewidth}{}
+\addcontentsline{toc}{chapter}{The Tiger and the Roe Deer}
+\addcontentsline{toc}{section}{\emph{Only you should read my poem}}
 
-\begin{verse}%[\versewidth]
+\begin{verse}
   Only you should read my poem, \\
   you who knows and loves me, \\
   since you sail the void \\
@@ -128,11 +137,7 @@ Translation by Christian Rinderknecht}
 
 \selectlanguage{hungarian}
 
-%\poemtitle*{}
-
-%\settowidth{\versewidth}{}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   Csak az olvassa versemet, \\
   ki ismer engem és szeret, \\
   mivel a semmiben hajóz \\
@@ -154,11 +159,9 @@ Translation by Christian Rinderknecht}
 
 \selectlanguage{english}
 
-\poemtitle*{A Tired Man}
+\poemtitle{A Tired Man}
 
-%\settowidth{\versewidth}{}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   Solemn peasants in the fields \\
   commence their silent journey home. \\
   We lie next to each other, the river and I; \\
@@ -188,9 +191,7 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{Megfáradt ember}
 
-%\settowidth{\versewidth}{}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   A földeken néhány komoly paraszt \\
   hazafelé indul hallgatag. \\
   Egymás mellett fekszünk: a folyó meg én, \\
@@ -217,11 +218,9 @@ Translation by Christian Rinderknecht}
 
 \selectlanguage{english}
 
-\poemtitle*{Why did you speak harshly to me?}
+\poemtitle{Why did you speak harshly to me?}
 
-%\settowidth{\versewidth}{}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   Why did you speak harshly to me? \\
   I didn't hurt you, my friend; \\
   for some reason you are angry, \\
@@ -257,9 +256,7 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{Miért mondottál rosszat nékem}
 
-%\settowidth{\versewidth}{}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   Miért mondottál rosszat nékem? \\
   Én nem bántottalak, barátom, \\
   Hogyha valamiért haragszol, \\
@@ -292,9 +289,9 @@ Translation by Christian Rinderknecht}
 
 \selectlanguage{english}
 
-%\settowidth{\versewidth}{and now the tender light of my bread shines purer.}
+\addcontentsline{toc}{section}{\emph{You are so silly}}
 
-\begin{verse}%[\versewidth]
+\begin{verse}
   You are so silly. \\
   You run like the morning wind, \\
   sometime you'll be knocked down by a car. \\
@@ -335,9 +332,7 @@ Translation by Christian Rinderknecht}
 
 \selectlanguage{hungarian}
 
-%\settowidth{\versewidth}{a szótlan, komoly napszámosokhoz is behallik}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   Olyan bolond vagy \\
   szaladsz \\
   akár a reggeli szél. \\
@@ -381,12 +376,12 @@ Translation by Christian Rinderknecht}
 
 \selectlanguage{english}
 
+\addcontentsline{toc}{section}{\emph{Freight trains switching}}
+
 %% % Note: The edition by \emph{Szépirodalmi könyvkiadó}, page~169, misses
 %% % two verses and a conjunction.
 
-%\settowidth{\versewidth}{What shard of the vast nighttime}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   Freight trains switching; \\
   the dreamy clanking \\
   claps the mute landscape \\
@@ -429,9 +424,7 @@ Translation by Christian Rinderknecht}
 
 \selectlanguage{hungarian}
 
-%\settowidth{\versewidth}{Ha majd árnyat fogad az ágy,}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   Tehervonatok tolatnak, \\
   a méla csörömpölés \\
   könnyű bilincseket rak \\
@@ -481,11 +474,13 @@ Translation by Christian Rinderknecht}
   \textbf{Consciousness (\oldstylenums{1934})}
 \end{center}
 
+\addcontentsline{toc}{section}{\emph{Consciousness}}
+
 \poemtitle*{I}
 
-\settowidth{\versewidth}{Overnight they alighted on the trees}
+\addcontentsline{toc}{subsection}{I.\ \emph{Dawn unbinds sky from earth}}
 
-\begin{verse}%[\versewidth]
+\begin{verse}
   Dawn unbinds sky from earth \\
   and upon its clear, soft word \\
   beetles and children spin forth \\
@@ -500,11 +495,11 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{II}
 
+\addcontentsline{toc}{subsection}{II. \ \emph{I saw paintings daubed with blue}}
+
 \selectlanguage{english}
 
-\settowidth{\versewidth}{Now my dream comes down as a blur into my members}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   I saw paintings daubed with blue, \\
   red, yellow in my dreams \\
   and felt that everything was just so ---\\
@@ -529,9 +524,7 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{I}
 
-\settowidth{\versewidth}{a hajnal s tiszta, lágy szavára}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   Földtől eloldja az eget \\
   a hajnal s tiszta, lágy szavára \\
   a bogarak, a gyerekek \\
@@ -546,9 +539,7 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{II}
 
-\settowidth{\versewidth}{Nappal hold kél bennem s ha kinn van}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   Kék, piros, sárga, összekent \\
   képeket láttam álmaimban \\
   és úgy éreztem, ez a rend --- \\
@@ -569,9 +560,9 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{III}
 
-\settowidth{\versewidth}{however clever, the cat cannot catch at once}
+\addcontentsline{toc}{subsection}{III.\ \emph{I am thin, at times I only eat bread}}
 
-\begin{verse}%[\versewidth]
+\begin{verse}
   I am thin, at times I only eat bread; \\
   amidst those idle and blithering souls, \\
   I seek in vain more certainty, like the die. \\
@@ -582,11 +573,12 @@ Translation by Christian Rinderknecht}
 \end{verse}
 
 \bigskip
+
 \poemtitle*{IV}
 
-\settowidth{\versewidth}{and so everything is determined.}
+\addcontentsline{toc}{subsection}{IV. \ \emph{Just like a pile of logs}}
 
-\begin{verse}%[\versewidth]
+\begin{verse}
   Just like a pile of logs, \\
   the world lies in a jumble; \\
   each thing presses, weighs on, \\
@@ -601,9 +593,9 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{V}
 
-\settowidth{\versewidth}{stubbornly leaping at the bright, dewy coal.}
+\addcontentsline{toc}{subsection}{V. \ \emph{At the freight train station}}
 
-\begin{verse}%[\versewidth]
+\begin{verse}
   At the freight train station, \\
   I lay down behind the tree \\
   like a chunk of silence; \\
@@ -625,9 +617,7 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{III}
 
-\settowidth{\versewidth}{számhoz s szivemhez kisgyerek ---}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   Sovány vagyok, csak kenyeret \\
   eszem néha, e léha, locska \\
   lelkek közt ingyen keresek \\
@@ -642,9 +632,7 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{IV}
 
-\settowidth{\versewidth}{Csak ami nincs, annak van bokra,}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   Akár egy halom hasított fa, \\
   hever egymáson a világ, \\
   szorítjanyomja, összefogja \\
@@ -659,9 +647,7 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{V}
 
-\settowidth{\versewidth}{mint egy darab csönd; szürke gyom}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   A teherpályaudvaron \\
   úgy lapultam a fa tövéhez, \\
   mint egy darab csönd; szürke gyom \\
@@ -682,9 +668,9 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{VI}
 
-\settowidth{\versewidth}{Your wound is the world --- on fire, burning up ---}
+\addcontentsline{toc}{subsection}{VI. \ \emph{Behold the anguish inside}}
 
-\begin{verse}%[\versewidth]
+\begin{verse}
   Behold the anguish inside, \\
   yet the explanation lies outside. \\
   Your wound is the world \\
@@ -700,9 +686,9 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{VII}
 
-\settowidth{\versewidth}{from under the steam of my dreams,}
+\addcontentsline{toc}{subsection}{VII. \ \emph{I looked up from beneath the evening}}
 
-\begin{verse}%[\versewidth]
+\begin{verse}
   I looked up from beneath the evening \\
   to the cogwheels of the heavens: \\
   from the glittering threads of chance \\
@@ -717,9 +703,9 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{VIII}
 
-\settowidth{\versewidth}{The silence listened intently --- One struck.}
+\addcontentsline{toc}{subsection}{VIII. \ \emph{The silence listened intently}}
 
-\begin{verse}%[\versewidth]
+\begin{verse}
   The silence listened intently --- One struck. \\
   You could visit your childhood; \\
   between the damp cement walls \\
@@ -739,9 +725,7 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{VI}
 
-%\settowidth{\versewidth}{nem raksz magadnak olyan házat,}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   Im itt a szenvedés belül, \\
   ám ott kívül a magyarázat. \\
   Sebed a világ --- ég, hevül \\
@@ -756,9 +740,7 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{VII}
 
-%\settowidth{\versewidth}{törvényt szőtt a mult szövőszéke}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   Én fölnéztem az est alól \\
   az eget fogaskerekére --- \\
   csilló véletlen szálaiból \\
@@ -773,9 +755,7 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{VIII}
 
-%\settowidth{\versewidth}{gondoltam. S hát hát amint fölállok}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   Fülelt a csend --- egyet ütött \\
   Fölkereshetnéd ifjúságod; \\
   nyirkos cementfalak között \\
@@ -796,9 +776,9 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{IX}
 
-\settowidth{\versewidth}{and that only a memory may be forgotten;}
+\addcontentsline{toc}{subsection}{IX. \ \emph{I heard iron weeping}}
 
-\begin{verse}%[\versewidth]
+\begin{verse}
   I heard iron weeping, \\
   I heard rain laughing. \\
   I saw that the past was cracked \\
@@ -813,9 +793,9 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{X}
 
-\settowidth{\versewidth}{he who knows that he receives so much life}
+\addcontentsline{toc}{subsection}{X. \ \emph{He is a grown man}}
 
-\begin{verse}%[\versewidth]
+\begin{verse}
   He is a grown man he who has \\
   neither mother nor father in his heart, \\
   he who knows that he receives life \\
@@ -836,9 +816,7 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{IX}
 
-%\settowidth{\versewidth}{s hogy nem tudok mást, mint szeretni,}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   Hallottam sírni a vasat, \\
   hallottam az esőt nevetni. \\
   Láttam, hogy a mult meghasadt \\
@@ -853,9 +831,7 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{X}
 
-\settowidth{\versewidth}{s mint talált tárgyat visszaadja}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   Az meglett ember, akinek \\
   szívében nincs se anyja, apja, \\
   ki tudja, hogy az életet \\
@@ -876,9 +852,9 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{XI}
 
-\settowidth{\versewidth}{It plopped into the squishy, tepid puddle,}
+\addcontentsline{toc}{subsection}{XI. \ \emph{I saw happiness}}
 
-\begin{verse}%[\versewidth]
+\begin{verse}
   I saw happiness; it was soft, bright \\
   and one and half a quintal. \\
   On the coarse grass of the farmyard \\
@@ -893,9 +869,9 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{XII}
 
-\settowidth{\versewidth}{and I stand in the light from the compartments,}
+\addcontentsline{toc}{subsection}{XII. \emph{I live by a railroad}}
 
-\begin{verse}%[\versewidth]
+\begin{verse}
   I live by a railroad. \\
   Many a train comes and goes, \\
   and I watch from afar \\
@@ -916,9 +892,7 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{XI}
 
-%\settowidth{\versewidth}{hunyorgott, röffent még felém ---}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   Láttam a boldogságot én, \\
   lágy volt, szőke és másfél mázsa. \\
   Az udvar szigorú gyöpén \\
@@ -933,9 +907,7 @@ Translation by Christian Rinderknecht}
 
 \poemtitle*{XII}
 
-%\settowidth{\versewidth}{s én állok minden fülke-fényben,}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   Vasútnál lakom. Erre sok \\
   vonat jön-megy és el-elnézem, \\
   hogy' szállnak fényes ablakok \\
@@ -954,11 +926,9 @@ Translation by Christian Rinderknecht}
 
 \selectlanguage{english}
 
-%\poemtitle*{}
+\addcontentsline{toc}{section}{\emph{You will grow old and come to regret}}
 
-%\settowidth{\versewidth}{You will toddle and when your bad leg has tottered enough,}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   You will grow old and come to regret \\
   how you hurt me \\
   --- which you are proud of today. \\
@@ -998,11 +968,7 @@ Translation by Christian Rinderknecht}
 
 \selectlanguage{hungarian}
 
-%\poemtitle*{}
-
-%\settowidth{\versewidth}{s nem lesz emlék, melyben magadra hagyna.}
-
-\begin{verse}%[\versewidth]
+\begin{verse}
   Majd megöregszel és bánni fogod, \\
   hogy bántasz --- azt, amire büszke vagy ma. \\
   A lelkiismeret majd bekopog \\
@@ -1039,7 +1005,7 @@ Translation by Christian Rinderknecht}
 
 \selectlanguage{english}
 
-\begin{verse}%[\versewidth]
+\begin{verse}
   Because when you fall asleep, the bed will leap\hspace*{-2mm} \\
   like a foal trying to throw off its harness. \\
   And fear, not desire, will occupy your head: \\
@@ -1063,7 +1029,7 @@ Translation by Christian Rinderknecht}
 
 \selectlanguage{hungarian}
 
-\begin{verse}%[\versewidth]
+\begin{verse}
   Mert ha elalszol, ugrál majd az ágy, \\
   mint a csikó, hogy a hámot levesse. \\
   S a félelem tünődik, nem a vágy, \\
@@ -1084,6 +1050,9 @@ Translation by Christian Rinderknecht}
 %\vspace*{-7mm}
 
 \section*{Glossary}
+
+\addcontentsline{toc}{chapter}{Glossary}
+
 \input{glossary}
 
 %----------------------------------------------------------------------
