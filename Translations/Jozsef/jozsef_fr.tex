@@ -31,15 +31,13 @@
 \frenchspacing  % Follow French conventions after a period
 \hfuzz 2pt      % Do not report overhang less than 2pt
 
-%% TEMPORARY
-
-%% TEMPORARY ($\Box$)
-
-\usepackage{amsmath}
-\usepackage{amssymb}
-
 \newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
 \newcommand*{\centeredornament}{\centerline{\pgfornament[width=6cm]{88}}}
+
+% Chinese
+
+\usepackage{CJKutf8}
+\newcommand{\zh}[1]{\begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
 
 % Title and author
 %
@@ -71,7 +69,7 @@ Traduction de Christian Rinderknecht}
 \begin{flushright}
   \textcopyright{} Traduction de Christian Rinderknecht,
   \oldstylenums{2025}.\\
-  \textcopyright{} Couverture conçue par Max Wang ($\Box\Box\Box$), \oldstylenums{2025}.
+  \textcopyright{} Couverture conçue par Max Wang (\zh{王震旦}), \oldstylenums{2025}.
 \end{flushright}
 
 \newpage
