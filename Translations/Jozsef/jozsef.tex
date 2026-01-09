@@ -19,7 +19,7 @@
 \AddToHook{begindocument}[test]{\catcode\string``=12 }
 \DeclareHookRule{begindocument}{test}{before}{babel}
 \usepackage{ebgaramond}
-
+%\usepackage{emptypage}
 \usepackage{microtype}
 
 \usepackage{verse}
@@ -96,8 +96,7 @@ Translation by Christian Rinderknecht}
 \thispagestyle{empty}
 
 \newpage\leavevmode\thispagestyle{empty}\newpage
-
-\newpage\leavevmode\thispagestyle{empty}\newpage
+\clearpage
 
 \pagenumbering{arabic}
 
@@ -696,6 +695,45 @@ Translation by Christian Rinderknecht}
   de ágyban végzem, néha ezt remélem. \\
   Akárhogyan lesz, immár kész a leltár. \\
   Éltem --- és ebbe más is belehalt már. \\
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{english}
+
+\poemtitle{Yellow grasses}
+
+\begin{verse}
+  Yellow grasses
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{Sárga füvek}
+
+\begin{verse}
+  Sárga füvek a homokon, \\
+  csontos öreg nő ez a szél, \\
+  a tócsa ideges barom, \\
+  a tenger nyugodt, elbeszél. \\
+  \ \\
+  Dúdolom halk leltáromat. \\
+  hazám az eladott kabát, \\
+  buckákra omlott alkonyat, \\
+  nincs szivem folytatni tovább. \\
+  \ \\
+  Csillan a nyüzsögő idő \\
+  korallszirtje, a holt világ, \\
+  a nyirfa, a bérház, a nő \\
+  az áramló kék égen át. \\
 \end{verse}
 
 \newpage
