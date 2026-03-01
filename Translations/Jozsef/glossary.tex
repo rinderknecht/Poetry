@@ -1,4 +1,46 @@
-\selectlanguage{english}
+\documentclass[11pt]{article}
+
+% Geometry
+%
+\usepackage[papersize={12.85cm,19.84cm},%
+            includehead,%
+            includefoot,%
+            bindingoffset=1cm%, showframe, showcrop
+            ]{geometry}
+
+%\setlength{\evensidemargin}{-50pt}
+%\setlength{\oddsidemargin}{-50pt}
+\setlength{\topmargin}{-50pt}
+\setlength{\textheight}{500pt}
+%\setlength{\textwidth}{530pt}
+
+\usepackage[T1]{fontenc}
+\usepackage[main=english,hungarian]{babel}
+\AddToHook{begindocument}[test]{\catcode\string``=12 }
+\DeclareHookRule{begindocument}{test}{before}{babel}
+\usepackage{ebgaramond}
+%\usepackage{emptypage}
+\usepackage{microtype}
+
+%\usepackage{verse}
+%\poemlines{0} % No verse numbering
+\usepackage[final]{pdfpages}
+\usepackage{hyphenat}
+%\usepackage{pgfornament}
+
+\frenchspacing  % Follow French conventions after a period
+\hfuzz 2pt      % Do not report overhang less than 2pt
+
+% Title and author
+%
+\title{Companion English-Hungarian Glossary\\
+to \emph{The Tiger and the Roe Deer}}
+\author{Christian Rinderknecht\\}
+\date{\oldstylenums{2026}}
+
+\begin{document}
+
+\maketitle
 
 \noindent \textbf{\large A} \\
 \textbf{abban} \emph{az} `that' + iness. \emph{-ban} `in' \\
@@ -16,7 +58,7 @@ pers. sg. poss. mult.\hyp{}poss. \emph{-aim} + super. \emph{-on} `on' \\
 \textbf{akárhogyan} lit. \emph{akár} `just like' + \emph{hogyan} `how'
 $\rightarrow$ `anyway, anyhow, whatever', alt. \emph{akárhogy} \\
 \textbf{akarja} vb. `to want' + 3rd
-  pers. sg. ind. pres. indef. \emph{-ja} \\
+pers. sg. ind. pres. indef. \emph{-ja} \\
 \textbf{akarod} vb. \emph{akar} `to want' + 2nd
 pers. sg. ind. pres. def. \emph{-od} \\
 \textbf{aki} conj. `who' \\
@@ -2319,3 +2361,5 @@ pers. sg. ind. pres. indef. \\
 \noindent \textbf{\large Zs} \\
 \textbf{zsidó} noun. `Jew' \textbar\textbar{} adj. `Jewish' \\
 \textbf{zsenge} `first born, young, immature' \\
+
+\end{document}
