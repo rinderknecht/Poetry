@@ -1,0 +1,35 @@
+\select@language {english} \contentsline {chapter}{The Tiger and the Roe Deer}{2}{}%
+\select@language {english} \contentsline {section}{\emph {Only you should read my poems}}{2}{}%
+\select@language {english} \contentsline {section}{A tired man}{4}{}%
+\select@language {english} \contentsline {section}{Net}{6}{}%
+\select@language {english} \contentsline {section}{Why did you speak harshly to me?}{8}{}%
+\select@language {english} \contentsline {section}{\emph {The slow dance of the waves}}{10}{}%
+\select@language {english} \contentsline {section}{Woodcutter}{12}{}%
+\select@language {english} \contentsline {section}{\emph {You are so silly}}{14}{}%
+\select@language {english} \contentsline {section}{\emph {Freight trains switching}}{16}{}%
+\select@language {english} \contentsline {section}{Consciousness}{18}{}%
+\select@language {english} \contentsline {subsection}{I.\ \emph {Dawn unbinds sky from earth}}{18}{}%
+\select@language {english} \contentsline {subsection}{II. \ \emph {I saw paintings daubed with blue}}{18}{}%
+\select@language {english} \contentsline {subsection}{III.\ \emph {I am thin, at times I only eat bread}}{20}{}%
+\select@language {english} \contentsline {subsection}{IV. \ \emph {Just like a pile of logs}}{20}{}%
+\select@language {hungarian} \contentsline {subsection}{V. \ \emph {At the freight train station}}{22}{}%
+\select@language {hungarian} \contentsline {subsection}{VI. \ \emph {Behold the anguish inside}}{22}{}%
+\select@language {english} \contentsline {subsection}{VII. \ \emph {I looked up from beneath the evening}}{24}{}%
+\select@language {english} \contentsline {subsection}{VIII. \ \emph {The silence listened intently}}{24}{}%
+\select@language {english} \contentsline {subsection}{IX. \ \emph {I heard iron weeping}}{26}{}%
+\select@language {english} \contentsline {subsection}{X. \ \emph {He is a grown man}}{26}{}%
+\select@language {english} \contentsline {subsection}{XI. \ \emph {I saw happiness}}{28}{}%
+\select@language {english} \contentsline {subsection}{XII. \emph {I live by the railroad}}{28}{}%
+\select@language {english} \contentsline {section}{They unload the wood}{30}{}%
+\select@language {english} \contentsline {section}{The inventory is ready}{32}{}%
+\select@language {english} \contentsline {section}{Yellow grasses}{34}{}%
+\select@language {english} \contentsline {section}{I praise you with grief, with joy}{36}{}%
+\select@language {english} \contentsline {section}{Put your hand}{38}{}%
+\select@language {english} \contentsline {section}{\emph {Light memories, where have you gone?}}{40}{}%
+\select@language {english} \contentsline {section}{The sea merely came}{42}{}%
+\select@language {english} \contentsline {section}{The leaves in the tree}{44}{}%
+\select@language {english} \contentsline {section}{You turned me into a child}{46}{}%
+\select@language {english} \contentsline {section}{Ever since}{48}{}%
+\select@language {english} \contentsline {section}{They say}{50}{}%
+\select@language {english} \contentsline {section}{For Flora}{52}{}%
+\select@language {english} \contentsline {section}{Attila \textsc {József}}{56}{}%
