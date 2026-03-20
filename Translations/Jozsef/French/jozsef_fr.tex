@@ -1,0 +1,1721 @@
+\documentclass[11pt]{book}
+
+% Geometry
+%
+\usepackage[papersize={12.85cm,19.84cm},%
+            includehead,%
+            includefoot,%
+            bindingoffset=1cm%, showframe, showcrop
+            ]{geometry}
+
+%\setlength{\evensidemargin}{-50pt}
+%\setlength{\oddsidemargin}{-50pt}
+\setlength{\topmargin}{-50pt}
+\setlength{\textheight}{500pt}
+%\setlength{\textwidth}{530pt}
+
+\usepackage[T1]{fontenc}
+\usepackage[main=francais,hungarian]{babel}
+\AddToHook{begindocument}[test]{\catcode\string``=12 }
+\DeclareHookRule{begindocument}{test}{before}{babel}
+\usepackage{ebgaramond}
+
+\usepackage{microtype}
+
+\usepackage{verse} % \poemlines{1} % Number each verse
+\usepackage[final]{pdfpages}
+\usepackage{hyphenat}
+\usepackage{pgfornament}
+
+\frenchspacing  % Follow French conventions after a period
+\hfuzz 2pt      % Do not report overhang less than 2pt
+
+% For subsubsections to appear in the table of contents
+%
+%\setcounter{tocdepth}{3}
+
+\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
+\newcommand*{\centeredornament}{\centerline{\pgfornament[width=6cm]{88}}}
+
+% Chinese
+
+\usepackage{CJKutf8}
+\newcommand{\zh}[1]{\begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
+
+% Title and author
+%
+\title{Le tigre et le chevreuil\\ {\large Une anthologie bilingue}}
+\author{{\Large Attila \textsc{József}}\\\\\\
+Traduction de Christian Rinderknecht}
+\date{\oldstylenums{2026}}
+
+\begin{document}
+
+\includepdf{front_cover_fr}
+
+\thispagestyle{empty}
+
+\mbox{}
+\thispagestyle{empty}
+
+\newpage\leavevmode\thispagestyle{empty}
+
+\mbox{}
+\thispagestyle{empty}
+
+\maketitle
+
+\thispagestyle{empty}
+
+\vspace*{\fill}
+
+\begin{flushright}
+  \textcopyright{} Traduction de Christian Rinderknecht,
+  \oldstylenums{2026}.\\
+  \textcopyright{} Couverture conçue par Max Wang (\zh{王震旦}), \oldstylenums{2026}.
+\end{flushright}
+
+\newpage
+
+\vspace*{4cm}
+
+\begin{flushright}
+  Cette traduction est dédiée à Nic \textsc{Volanschi}, \\
+  \textsc{Juhász} Dávid et \textsc{Dudás} Réka.
+\end{flushright}
+
+\thispagestyle{empty}
+
+\newpage\leavevmode\thispagestyle{empty}\newpage
+
+\thispagestyle{empty}
+
+\def\contentsname{\empty}
+\tableofcontents
+
+\thispagestyle{empty}
+\newpage
+\leavevmode\thispagestyle{empty}
+\pagenumbering{arabic}
+\newpage
+\clearpage
+
+%----------------------------------------------------------------------
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\addcontentsline{toc}{chapter}{Le tigre et le chevreuil}
+\addcontentsline{toc}{section}{\emph{Seul toi devrait lire mes poèmes}}
+
+\poemtitle*{[Seul toi devrait lire mes poèmes]}
+\label{seul_toi_devrait_lire_mes_poemes}
+
+\begin{verse}
+  Seul toi devrait lire mes poèmes, \\
+  toi qui me connaît et m'aime, \\
+  puisque tu navigues le néant \\
+  et sais ce qui adviendra, comme le devin,
+
+  car le silence\footnote{Le narrateur parfois fait référence à son âme
+  comme étant un silence (\emph{csend}), comme ici, ou un mutisme
+  (\emph{némaság}). Voir \emph{Les feuilles dans l'arbre},
+  page~\pageref{les_feuilles_dans_l_arbre}.} apparut dans tes rêves \\
+  sous forme humaine, \\
+  et dans ton cœur parfois s'attardent \\
+  le tigre et le chevreuil docile.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{[Csak az olvassa versemet]}
+
+\begin{verse}
+  Csak az olvassa versemet, \\
+  ki ismer engem és szeret, \\
+  mivel a semmiben hajóz \\
+  s hogy mi lesz, tudja, mint a jós,
+
+  mert álmaiban megjelent \\
+  emberi formában a csend \\
+  s szivében néha elidőz \\
+  a tigris meg a szelid őz.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\poemtitle{Un homme fatigué}
+
+\begin{verse}
+  Dans les champs, des paysans solennels \\
+  commencent à rentrer chez eux en silence. \\
+  Nous sommes allongés côte à côte, \\
+  la rivière et moi; \\
+  des herbes tendres dorment sous mon cœur.
+
+  Une vaste sérénité coule avec la rivière placide,\hspace*{-4mm} \\
+  soucis et fardeaux s'en vont devenir rosée; \\
+  ni homme ni enfant, ni hongrois ni frère, \\
+  seulement un homme fatigué, allongé ici.
+
+  Le soir prodigue sa paix, \\
+  je suis une tranche de son pain chaud; \\
+  le ciel aussi se repose \\
+  sur la tranquille rivière Maros, \\
+  et elles s'assoient dehors, sur mon front, \\
+  les étoiles.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{Megfáradt ember}
+
+\begin{verse}
+  A földeken néhány komoly paraszt \\
+  hazafelé indul hallgatag. \\
+  Egymás mellett fekszünk: a folyó meg én, \\
+  gyenge füvek alusznak a szívem alatt.
+
+  A folyó csöndes, nagy nyugalmat görget, \\
+  harmattá vált bennem a gond és teher; \\
+  se férfi, se gyerek, se magyar, se testvér, \\
+  csak megfáradt ember, aki itt hever.
+
+  A békességet szétosztja az este, \\
+  meleg kenyeréből egy karaj vagyok, \\
+  pihen most az ég is, a nyugodt Marosra \\
+  s homlokomra kiülnek a csillagok.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\poemtitle{Filet}
+
+\begin{verse}
+  Mes cheveux tombent, je n'ai pas de pain. \\
+  ma plume est usée, \\
+  mon oncle le pêcheur est décédé. \\
+  D'autres vivent ainsi aussi.
+
+  Je jette mes nerfs comme un filet \\
+  pour attraper quelque chose à manger \\
+  et des rêves légers sur des eaux pesantes.
+
+  Il est peut-être déchiré, je me dis, mon filet. \\
+  Je le sors pour le suspendre, je le ramende \\
+  et voilà que je vois:
+
+  Le ciel est mon filet étendu, gelé --- scintillant;\hspace*{-1mm} \\
+  elles sont ses nœuds glacés qui brillent, \\
+  les étoiles.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{Háló}
+
+\begin{verse}
+  Hull a hajam, nincs kenyerem, \\
+  tollam vásik, \\
+  halász bátyám így veszett el. \\
+  Él így más is.
+
+  Idegeim elmerítem, \\
+  mint a hálót, \\
+  húst fogni s a nehéz vizen \\
+  könnyű álmot.
+
+  Szakadt lehet -- gondolkozom, -- \\
+  az én hálóm. \\
+  Kiaggatom, megfoltozom. \\
+  S íme, látom --
+
+  Kiterített fagyos hálóm \\
+  az ég, ragyog -- \\
+  jeges bogai szikrázón \\
+  a csillagok.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\poemtitle{Pourquoi m'avoir parlé durement?}
+
+\begin{verse}
+  Pourquoi m'avoir parlé durement? \\
+  Je ne t'ai pas fait du mal, mon ami; \\
+  tu es en colère pour quelque raison, \\
+  je te demande sincèrement pardon \\
+  et je voudrais que tu m'accompagnes \\
+  maintenant voir les bûcherons \\
+  et t'allonger avec moi dans la forêt; \\
+  le feuillage ondulera au-dessus de nos têtes, \\
+  des fonds marins nous regarderons le ciel \\
+  où les nuages naissant se muent en feuilles. \\
+  Là-bas, une vaste sérénité nous enveloppera \\
+  et sera si bonne pour nous maintenant, \\
+  triplement bonne si deux la reçoivent, \\
+  et c'est pourquoi j'aimerais que tu sois avec moi \\
+  jusqu'à ce qu'on entende sonner la cloche dans le soir; \\
+  nous nous échardonnerons l'un l'autre \\
+  et flânerons jusqu'à la maison \\
+  tout aussi fatigués, \\
+  comme les bineurs, taciturnes laboureurs qui,\hspace*{-1mm} \\
+  dans la puissance pacificatrice des champs, \\
+  ont semé des graines qui rendent au centuple.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{Miért mondottál rosszat nékem}
+
+\begin{verse}
+  Miért mondottál rosszat nékem? \\
+  Én nem bántottalak, barátom, \\
+  Hogyha valamiért haragszol, \\
+  szívesen bocsánatot kérek \\
+  s szeretném, ha most velem jönnél, \\
+  megnézzük majd a favágókat \\
+  s leheverünk együtt az erdőn, \\
+  fejünk fölött hullámzanak a lombok, \\
+  hűs tengerfenékről az eget nézzük, \\
+  ahol meg zsenge felhők lombosodnak. \\
+  Ott nagy nyugalom karol majd belénk \\
+  és nékünk az most olyanigen jó lesz, \\
+  háromszoros a jó, ha kettő kapja, \\
+  azért szeretném, hogyha velem lennél, \\
+  míg odahallik este a harangszó, \\
+  a bogáncsokat leszedjük egymásról \\
+  s hazaballagunk éppolyan fáradtan, \\
+  miként a kapás, szótalan munkások, \\
+  akik a földek békés erejébe \\
+  százannyit termő magokat vetettek.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\poemtitle*{[La lente danse des vagues]}
+\addcontentsline{toc}{section}{\emph{La lente danse des vagues}}
+
+\begin{verse}
+  La lente danse des vagues et, là, \\
+  la douce pente du feuillage \\
+  ont lentement fait venir la nuit \\
+  et ont appelé une foule d'étoiles \\
+  à trembloter à travers les cieux.
+
+  Ainsi sont-elles. Et les émotions aussi \\
+  se meuvent calmement dans le cœur, \\
+  balançant; le reflet de la souvenance, \\
+  le pouvoir de l'amour ondulent \\
+  comme les vastes eaux du lac.
+
+  Je ne comprends pas, \\
+  je ressens seulement tout. \\
+  Ici filles et garçons dansent le tango, \\
+  beaucoup calculant, agréables et vains.
+
+  Car c'est une station thermale à la mode en \\
+  été. Mais, discrètement, car la nature a le temps,\hspace*{-1mm} \\
+  la forêt éternelle fredonne derrière la musique.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{[A hullámok lágy tánca]}
+
+\begin{verse}
+  A hullámok lágy tánca s odaát \\
+  a lombok gyenge lejtése az éjjelt \\
+  lassudan hozták s csillagok raját \\
+  hívták reszketni az egekre széjjel.
+
+  Így ők. S az érzelmek is csendesen \\
+  mozdulnak benn a szívben ringatóan, \\
+  emlékezés visszfénye, szerelem \\
+  hatalma ring, mint a nagy víz a tóban.
+
+  Én nem értem, csak érzem az egészet. \\
+  Itt tangót jár a sok lány és fiú, \\
+  a sok számító, kedves és hiú.
+
+  Mert ez itt egy divatos nyári fürdő. \\
+  De némán, hiszen ráér a természet, \\
+  a zene mögött zúg az örök erdő.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\poemtitle{Bûcheron}
+
+\begin{verse}
+  Je découpe l'arbre en un tas frais, \\
+  ses nœuds grincent brillamment, \\
+  le givre tombe sur mes cheveux plumeux \\
+  et atteint mon cou pour chatouiller \\
+  --- mes minutes filent sur du velours.
+
+  Là-haut la gelée fait étinceler sa hache, \\
+  elle miroite sur terre, ciel, yeux, fronts; \\
+  l'aube balance et disperse les éclats de lumière \\
+  --- cependant quelqu'un ici-bas tronçonne \\
+  et aussi grommelle: \\
+  «~J'ébranche et je n'obtiens que les brindilles...~»
+
+  --- Hé! Déracinons la souche,\footnote{Le hongrois \emph{tőke}
+  signifie aussi `capital économique', révélant la lecture politique
+  de ce poème.} ne geins pas, \\
+  ne soupire pas à la moindre écharde! \\
+  Les bois des notables continueront à râler, \\
+  mais si tu vises le destin et frappes juste, \\
+  ta hache de bûcheron sourira.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{Favágó}
+
+\begin{verse}
+  Vágom a fát hűvös halomba, \\
+  fényesül a görcse sikongva, \\
+  zúzmara hull szárnyas hajamra, \\
+  csiklándani benyúl nyakamba --- \\
+  bársonyon futnak perceim.
+
+  Fönn, fönn a fagy baltája villog, \\
+  szikrádzik föld, ég, szem, a homlok, \\
+  hajnal suhint, forgács-fény röppen --- \\
+  amott is vág egy s dörmög közben: \\
+  tövit töröm s a gallya jut.
+
+  --- Ejh, döntsd a tőkét, ne siránkozz, \\
+  ne szisszenj minden kis szilánkhoz! \\
+  Ha odasujtsz körül a sorshoz, \\
+  az úri pusztaság rikoltoz --- \\
+  a széles fejsze mosolyog.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\addcontentsline{toc}{section}{\emph{Ne sois pas si bête}}
+
+\poemtitle*{[Ne sois pas si bête]}
+
+\begin{verse}
+  Ne sois pas si bête. \\
+  Tu cours comme le vent matinal, \\
+  un jour tu seras renversée par une auto. \\
+  D'ailleurs, j'ai récuré ma petite table, \\
+  et maintenant la lumière suave de mon pain est plus pure. \\
+  Hé bien, reviens; si tu veux j'achèterai \\
+  une couverture pour mon lit de fer. \\
+  Une couverture ordinaire, grise. \\
+  Elle conviendra à ma Pauvreté, qui t'aime, \\
+  et le Seigneur t'aime aussi beaucoup \\
+  et Il m'aime aussi. \\
+  Le Seigneur ne vient jamais \\
+  dans toute sa splendeur, \\
+  Il ne veut pas abîmer mes yeux, \\
+  qui ont hâte de te voir \\
+  et qui te regarderont avec beauté. \\
+  Quand tu reviendras, \\
+  je t'embrasserai doucement, \\
+  je n'arracherai pas ton manteau. \\
+  Je te raconterai toutes les nouvelles blagues, \\
+  parce que j'en ai inventé beaucoup depuis, \\
+  et que tu seras gaie et rougiras, \\
+  et tu baisseras les yeux vers le sol, \\
+  et nous nous esclafferons, \\
+  et nos voisins nous entendrons \\
+  et jusqu'aux journaliers taciturnes et austères \\
+  qui, parmi leurs rêves fatigués et brisés, \\
+  esquisseront un sourire aussi.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{[Olyan bolond vagy]}
+
+\begin{verse}
+  Olyan bolond vagy \\
+  szaladsz \\
+  akár a reggeli szél. \\
+  Még elüt valamelyik autó. \\
+  Pedig lesikáltam kis asztalomat \\
+  és most \\
+  tisztábban világít kenyerem enyhe fénye. \\
+  No gyere vissza, ha akarod \\
+  veszek takarót vaságyamra. \\
+  Egyszerű, szürke takarót. \\
+  Illik az \\
+  szegénységemhez, aki szeret téged \\
+  és az Úr is szereti nagyon \\
+  és engem is szeret az Úr \\
+  nem jön soha nagy fényességgel \\
+  Nem akarja, hogy elromoljanak \\
+  szemeim, akik \\
+  nagyon kívánnak látni téged. \\
+  És nagyon szépen néznek majd terád \\
+  ha visszajössz \\
+  vigyázva foglak megcsókolni, \\
+  nem tépem le rólad a kabátot \\
+  és elmondom mind a sok tréfát, \\
+  mert sokat kieszeltem azóta, \\
+  hogy te is örülj, \\
+  majd elpirulsz, \\
+  lenézel a földre és kacagunk \\
+  hangosan, hogy behallatszik szomszédunkba \\
+  a szótlan, komoly napszámosokhoz is behallik \\
+  és fáradt, összetört \\
+  álmukban majd elmosolyodnak ők is.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\addcontentsline{toc}{section}{\emph{Trains de fret aiguillés}}
+
+\poemtitle*{[Trains de fret aiguillés]}
+
+%% Note: The edition by \emph{Szépirodalmi könyvkiadó}, page~169, misses
+%% two verses and a conjunction.
+
+\begin{verse}
+  Trains de fret aiguillés \\
+  --- le cliquetis onirique \\
+  passe de légères menottes \\
+  au paysage muet.
+
+  La lune jaillit sans effort, \\
+  comme un prisonnier libéré.
+
+  Les pierres concassées reposent \\
+  dans leur ombre propre, \\
+  elles scintillent pour elles-mêmes, \\
+  elles sont à leur place \\
+  comme jamais avant.
+
+  Quel éclat de la vaste nuit \\
+  est cette lourde nuitée, \\
+  qu'elle tombe sur nous \\
+  comme un fer sur la poussière?
+
+  Désir né du soleil! \\
+  Quand l'ombre recouvre le lit, \\
+  pourrais-tu aussi veiller toute la nuit?
+
+  Devant l'entrepôt \\
+  une lampe poussiéreuse brûle. \\
+  Elle est seulement visible, pas lumineuse; \\
+  ainsi est le vœu pieux: il cligne vivement, \\
+  mais le ciel est une grande lumière morte.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{[Tehervonatok tolatnak]}
+
+\begin{verse}
+  Tehervonatok tolatnak, \\
+  a méla csörömpölés \\
+  könnyű bilincseket rak \\
+  a néma tájra.
+
+  Oly könnyen száll a hold, \\
+  mint a fölszabadult.
+
+  A megtört kövek \\
+  önnön árnyukon fekszenek, \\
+  csillognak \\
+  maguknak, \\
+  úgy a helyükön vannak, \\
+  mint még soha.
+
+  Milyen óriás éjszaka \\
+  szilánkja ez a sulyos éj, \\
+  mely úgy hull le ránk, \\
+  mint a porra a vasszilánk?
+
+  Napszülte vágy! \\
+  Ha majd árnyat fogad az ágy, \\
+  abban az egész éjben \\
+  is ébren \\
+  maradnál?
+
+  A raktár \\
+  előtt poros lámpa ég. \\
+  Csak látszik, nem világit, \\
+  ilyen az ész, ha áhit. \\
+  Pislog élénken, holott \\
+  nagy halott \\
+  fény az ég.
+\end{verse}
+
+\newpage
+
+\input{conscience}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\poemtitle{Ils déchargent le bois}
+\label{ils_dechargent_le_bois}
+
+\begin{verse}
+  Le pont de la gare tremble encore, \\
+  mais le délicat midi d'automne \\
+  gronde déjà et l'on jette du wagon \\
+  les bûches sèches qui claquettent.
+
+  Dos tourné, le tas par terre est muet... \\
+  Que se passe-t-il? On dirait que j'ai peur, \\
+  m'enfuyant, le bois de feu sur les épaules. \\
+  Le petit garçon que j'étais est toujours en vie.
+
+  Le gamin que j'étais est bien vivant aujourd'hui \\
+  et l'adulte s'étrangle de chagrin; \\
+  mais il ne pleure pas, il chantonne un air \\
+  et prend soin que son chapeau ne s'envole.
+
+  Avais-je peur de vous, les costauds, \\
+  vous les jeteurs de bois que j'admirais? \\
+  Maintenant, comme du bois volé, \\
+  je vous porte dans ce monde sans logis \\
+  plein de gardes.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{Kirakják a fát}
+
+\begin{verse}
+  A pályaudvar hídja még remeg, \\
+  de már a kényes őszi dél dorombol \\
+  és kiszáradt hasábfák döngenek, \\
+  amint dobálják őket a vagonból.
+
+  Ha fordul is egy, a lehullt halom \\
+  néma... Mi bánt? Úgy érzem, mintha félnék, \\
+  menekülnék, hasáb a vállamon. \\
+  A kisgyerek, ki voltam, mégis él még.
+
+  A kis kölyök, ki voltam, ma is él \\
+  s a felnőttet a bánat fojtogatja; \\
+  de nem könnyezik, egy dalt zöngicsél \\
+  s ügyel, hogy el ne szálljon a kalapja.
+
+  Tőletek féltem, kemény emberek, \\
+  ti fadobálók, akiket csodáltam? \\
+  Most mint lopott fát, viszlek titeket \\
+  ez otthontalan, csupa-csősz világban.
+\end{verse}
+
+%% \newpage
+
+%% \vspace*{-15mm}
+%% \centeredornament
+
+%% \selectlanguage{french}
+
+%% \addcontentsline{toc}{section}{\emph{Tu vieilliras et regretteras combien tu m'as blessé}}
+
+%% \poemtitle*{[Tu vieilliras et regretteras]}
+
+%% \begin{verse}
+%%   Tu vieilliras et regretteras \\
+%%   combien tu m'as blessé \\
+%%   --- ce dont tu t'enorgueillis aujourd'hui. \\
+%%   La conscience viendra heurter à la porte \\
+%%   et ne te laissera seule dans aucun souvenir.
+
+%%   Tu auras un vieux chien \\
+%%   qui s'installera à tes côtés. \\
+%%   Tu te reposeras durant le jour, \\
+%%   t'assoupissant sur une chaise \\
+%%   parce que tu as peur seule la nuit. \\
+%%   Les ombres recouvriront \\
+%%   la vieille dame tremblotante.
+
+%%   Ton vieux chien gémira parfois, \\
+%%   mais la pièce redevient silencieuse, \\
+%%   tout est en ordre, et pourtant un être passé \\
+%%   te manque dans le silence solitaire.
+
+%%   Tu chancelleras et quand ta mauvaise jambe \\
+%%   aura assez titubé, tu t'assiéras. \\
+%%   Ton portrait de jeunesse trône \\
+%%   dans un cadre doré. Tu lui marmonneras: \\
+%%   «~Je ne l'ai pas serré dans mes bras, \\
+%%   c'est que je ne l'aimais pas.~»
+
+%%   «~Qu'aurais-je pu faire?~» --- demandes-tu,\hspace*{-4mm} \\
+%%   mais ta bouche édentée ne peut plus répondre;\hspace*{-4mm} \\
+%%   face au soleil dehors, tu fermes les yeux, \\
+%%   tu peux à peine attendre que la lune se lève.
+
+%%   \hfill [\ldots]
+%% \end{verse}
+
+%% \newpage
+
+%% \vspace*{-15mm}
+%% \centeredornament
+
+%% \selectlanguage{hungarian}
+
+%% \poemtitle*{[Majd megöregszel és bánni fogod]}
+
+%% \begin{verse}
+%%   Majd megöregszel és bánni fogod, \\
+%%   hogy bántasz --- azt, amire büszke vagy ma. \\
+%%   A lelkiismeret majd bekopog \\
+%%   s nem lesz emlék, melyben magadra hagyna.
+
+%%   Lesz vén ebed s az melléd települ. \\
+%%   Nappal pihensz majd, széken szunyókálva, \\
+%%   mert éjjel félni fogsz majd egyedül. \\
+%%   Árnyak ütnek a rezgő anyókára.
+
+%%   Az öreg kutya néha majd nyafog, \\
+%%   de a szobában csend lesz, csupa rend lesz; \\
+%%   hanem valaki hiányozni fog \\
+%%   a multból ahhoz a magányos csendhez.
+
+%%   Majd tipegsz s ha eleget totyogott \\
+%%   rossz lábod, leülsz. Fönn aranykeretben \\
+%%   áll ifju képed. Hozzá motyogod: \\
+%%   \textqq{Nem öleltem meg, hiszen nem szerettem.}
+
+%%   \textqq{Mit is tehettem volna?} --- kérdezed, \\
+%%   de fogatlan szád már nem válaszolhat; \\
+%%   s ki a nap előtt lehunyod szemed, \\
+%%   alig várod, hogy feljöjjön, a holdat.
+
+%%   \hfill [\ldots]
+%% \end{verse}
+
+%% \newpage
+
+%% \vspace*{-15mm}
+%% \centeredornament
+
+%% \selectlanguage{french}
+
+%% \poemtitle*{\phantom{[\emph{Tu vieilliras et regretteras}]}}
+
+%% \begin{verse}
+%%   \textnormal{[\ldots]}
+
+%%   Car quand tu t'endors, le lit bondit \\
+%%   tel un poulain qui tente de se défaire de son harnais. \\
+%%   Et la peur, non le désir, occupera ta tête: \\
+%%   devrais-tu l'aimer, devrais-tu ne pas l'aimer?
+
+%%   Décide toi-même. Je suis au regret \\
+%%   de ne pouvoir répondre si tu demandes: \\
+%%   «~Est-il vivant?~» \\
+%%   Parce que la peine au-dedans est fatiguée, \\
+%%   elle s'endort comme un enfant, et moi avec.
+%% \end{verse}
+
+%% \newpage
+
+%% \vspace*{-15mm}
+%% \centeredornament
+
+%% \selectlanguage{hungarian}
+
+%% \poemtitle*{\phantom{[\emph{Majd megöregszel és bánni fogod}]}}
+
+%% \begin{verse}
+%%   \textnormal{[\ldots]}
+
+%%   Mert ha elalszol, ugrál majd az ágy, \\
+%%   mint a csikó, hogy a hámot levesse. \\
+%%   S a félelem tünődik, nem a vágy, \\
+%%   a fejedben: Szeress-e, ne szeress-e.
+
+%%   Magadban döntöd el. Én fájlalom, \\
+%%   hogy nem felelhetek, ha kérded: él-e. \\
+%%   Mert elfárad bennem a fájdalom, \\
+%%   elalszik, mint a gyermek s én is véle.
+%% \end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\poemtitle{L'inventaire est prêt}
+
+\begin{verse}
+  J'eus confiance en moi dès le début. \\
+  Qui ne possède rien ne vaut pas grand chose, \\
+  pour sûr pas plus que l'animal \\
+  qui périt pour toujours. \\
+  Quand j'avais peur, je faisais front. \\
+  Je suis né, je me suis fondu dans le décor, \\
+  je me suis distingué. \\
+  J'ai aussi payé ce qui était dû, \\
+  j'ai aimé qui donnait gratuitement. \\
+  Quand une dame espiègle me faisait marcher,\hspace*{-1mm} \\
+  je la croyais sincèrement \\
+  --- qu'elle satisfasse son désir! \\
+  J'ai récuré des navires, j'ai hissé des seaux. \\
+  Parmi les hommes cultivés, j'ai fait l'idiot. \\
+  J'ai colporté des moulinets, du pain et \\
+  des livres, des journaux, des poèmes \\
+  --- quand c'était facile. \\
+  Parfois j'espère que je mourrai dans un lit, \\
+  pas dans une glorieuse bataille, \\
+  pas sur une corde molle. \\
+  Quoiqu'il advienne, l'inventaire est prêt. \\
+  J'ai vécu, et d'autres en sont déjà morts.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{Kész a leltár}
+
+\begin{verse}
+  Magamban bíztam eleitől fogva --- \\
+  ha semmije sincs, nem is kerül sokba \\
+  ez az embernek. Semmiképp se többe, \\
+  mint az állatnak, mely elhull örökre. \\
+  Ha féltem is, a helyemet megálltam --- \\
+  születtem, elvegyültem és kiváltam. \\
+  Meg is fizettem, kinek ahogy mérte, \\
+  ki ingyen adott, azt szerettem érte. \\
+  Asszony ha játszott velem hitegetve: \\
+  hittem igazán --- hadd teljen a kedve! \\
+  Sikáltam hajót, rántottam az ampát. \\
+  Okos urak közt játszottam a bambát. \\
+  Árultam forgót, kenyeret és könyvet, \\
+  ujságot, verset --- mikor mi volt könnyebb. \\
+  Nem dicső harcban, nem szelíd kötélen, \\
+  de ágyban végzem, néha ezt remélem. \\
+  Akárhogyan lesz, immár kész a leltár. \\
+  Éltem --- és ebbe más is belehalt már.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{francais}
+
+\poemtitle{Herbes jaunes}
+
+\begin{verse}
+  Herbes jaunes sur le sable, \\
+  le vent est une vieille dame étique, \\
+  les flaques sont un bétail nerveux, \\
+  la mer est calme, elle conte une histoire.
+
+  Je fredonne mon inventaire discret. \\
+  Un manteau colporté est ma demeure, \\
+  le crépuscule se défait sur les dunes, \\
+  mon cœur ne peut poursuivre.
+
+  Ils scintillent, l'affairé récif corallien \\
+  du temps, le monde mort, \\
+  le bouleau, l'immeuble, la dame \\
+  traversant les flots de ciel bleu.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{Sárga füvek}
+
+\begin{verse}
+  Sárga füvek a homokon, \\
+  csontos öreg nő ez a szél, \\
+  a tócsa ideges barom, \\
+  a tenger nyugodt, elbeszél.
+
+  Dúdolom halk leltáromat. \\
+  Hazám az eladott kabát, \\
+  buckákra omlott alkonyat, \\
+  nincs szivem folytatni tovább.
+
+  Csillan a nyüzsögő idő \\
+  korallszirtje, a holt világ, \\
+  a nyírfa, a bérház, a nő \\
+  az áramló kék égen át.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\poemtitle{Je te loue avec peine, avec joie}
+
+\begin{verse}
+  Je te loue avec peine, avec joie; \\
+  je prends soin de toi avec dévotion, \\
+  je te garde avec des mains implorantes, \\
+  avec les champs de blé, avec les nuages.
+
+  Ton va-et-vient est un \emph{diminuendo}, \\
+  mon rempart contre toi est perpétuel \\
+  effondrement, je suis bercé dans l'ombre de \\
+  la ruine, je m'enveloppe dans ton haleine.
+
+  Peu importe que tu m'aimes ou non, \\
+  que nos cœurs communient l'un avec l'autre;\hspace*{-1mm} \\
+  je te vois, je t'entends et je te chante, \\
+  et je te réponds à Dieu.
+
+  La forêt s'étire dans l'aube, \\
+  elle étend ses bras accueillants, \\
+  elle cueille la lumière du jour \\
+  et la recouvre de son cœur aimant.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{Áldalak búval, vigalommal}
+
+\begin{verse}
+  Áldalak búval, vigalommal, \\
+  féltelek szeretnivalómmal, \\
+  őrizlek kérő tenyerekkel: \\
+  búzaföldekkel, fellegekkel.
+
+  Topogásod muzsikás romlás, \\
+  falam ellened örök omlás, \\
+  düledék-árnyán ringatózom, \\
+  leheletedbe burkolózom.
+
+  Mindegy, szeretsz-e, nem szeretsz-e, \\
+  szívemhez szívvel keveredsz-e, \\
+  látlak, hallak és énekellek, \\
+  Istennek tégedet felellek.
+
+  Hajnalban nyujtózik az erdő, \\
+  ezer ölelő karja megnő, \\
+  az égről a fényt leszakítja, \\
+  szerelmes szívére borítja.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{english}
+
+\poemtitle{Pose ta main}
+
+\begin{verse}
+  Sur mon front pose ta main, \\
+  comme si elle était ma main.
+
+  Garde ma vie \\
+  comme un bourreau, \\
+  comme si elle était ta vie.
+
+  Aime mon cœur \\
+  comme s'il était bon, \\
+  comme s'il était ton cœur.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{Tedd a kezed}
+
+\begin{verse}
+  Tedd a kezed \\
+  homlokomra, \\
+  mintha kezed \\
+  kezem volna.
+
+  Úgy őrizz, mint \\
+  ki gyilkolna, \\
+  mintha éltem \\
+  élted volna.
+
+  Úgy szeress, mint \\
+  ha jó volna, \\
+  mintha szívem \\
+  szíved volna.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{english}
+
+\poemtitle*{[Souvenirs légers, où êtes-vous?]}
+
+\addcontentsline{toc}{section}{\emph{Souvenirs légers, où êtes-vous?}}
+
+\begin{verse}
+  Souvenirs légers, où êtes-vous? \\
+  Mon cœur est lourd, je sanglote presque. \\
+  Je ne peux plus vivre sans vous, \\
+  tout glisse entre mes doigts.
+
+  Je mériterais un petit jeu \\
+  --- papillonnez donc, faibles flocons de neige! \\
+  Souvenirs, petits soldats de plomb \\
+  que je désirais tant \\
+  et dont je redressais les baïonnettes \\
+  --- Turques, Boers, en cercle autour de moi! \\
+  Petits canons, vous aussi debout en ordre! \\
+  Mon cœur est lourd. Défendez-moi bien!
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{[Könnyű emlékek, hová tűntetek?]}
+
+\begin{verse}
+  Könnyű emlékek, hová tűntetek? \\
+  Nehéz a szívem, majdnem zokogok. \\
+  Már nem élhetek meg nélkűletek, \\
+  már nem fog kézen, amit megfogok.
+
+  Egy kis játékot én is érdemelnék \\
+  -- libbenjetek elő, ti gyönge pillék!
+
+  Emlékek, kicsi ólomkatonák, \\
+  kikért annyira sóvárogtam én \\
+  s akiknek egyengettem szuronyát -- \\
+  törökök, búrok, gyűljetek körém! \\
+  Kis ágyúk, ti is álljatok föl rendben! \\
+  Nehéz a szívem. Védjetek meg engem!
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\poemtitle{Simplement la mer est venue}
+
+\begin{verse}
+  La poutre bleue \\
+  entre les deux pôles de ta poitrine \\
+  \rule[0.2em]{3em}{0.5pt} Le rêve de l'acrobate s'y tient debout.\hspace*{-1mm}
+
+  Les nuages se sont défait, \\
+  alors tu souhaites pouvoir t'envoler, \\
+  et je t'ai déjà cherchée aux confins.
+
+  Mon rêve vole déjà \\
+  avec le souffle des eaux calmes et profondes. \\
+  Et les pommes de pin goûteuses \\
+  tombent des grands pins solitaires. \\
+  Et aussi les herbes les plus hautes \\
+  ont déjà bien poussé sur les collines; \\
+  dans leurs cœurs brûlent \\
+  de beaux feux verdoyants.
+
+  Quand le soir tombe, les scarabées fatigués \\
+  retrouvent le chemin de la maison \\
+  et le Seigneur, les mains ouvertes, \\
+  jusqu'aux genoux dans le clapotis paisible, \\
+  les attend au bout de leur voie...
+
+  Mais je ne suis pas fatigué, ma chère --- \\
+  simplement la mer est venue à mon seuil.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{Csak a tenger jött el}
+
+\begin{verse}
+  Melled két pólusa közt a kék sugár \\
+  --- A kötéltáncos álma áll azon.
+
+  A felhő elfoszlott, hogy föllebeghess \\
+  és én már túlsokat kerestelek --- \\
+  Nyugodt, mély vizek leheletével száll már az enyém \\
+  s magányos, nagy fenyőmről hullong a jóhúsú toboz.
+
+  S a legmagosabb füvek is kinőttek már a dombon, \\
+  szivükben szép, zöld tüzek égnek, \\
+  hogy az elfáradt bogarak mind hazatalálnak, ha esteledik \\
+  S az Úr \\
+  nyitott tenyérrel, térdig csobogó nyugalomban \\
+  ott áll az útjuk végén...
+
+  De én nem vagyok fáradt, kedvesem \\
+  --- Csak a tenger jött el a küszöbömig.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\poemtitle{Les feuilles dans l'arbre}
+\label{les_feuilles_dans_l_arbre}
+
+\begin{verse}
+  Les feuilles dans l'arbre \\
+  se balancent lentement. \\
+  Elles sont déjà tordues, \\
+  jaunes, molles et ployées.
+
+  Parmi elles un oiseau silencieux \\
+  se déplace de bas en haut, \\
+  comme si l'arbre était sa cage.
+
+  Et ainsi fait mon âme\footnote{Voir
+  page~\pageref{seul_toi_devrait_lire_mes_poemes}, où le narrateur
+  parle de son âme comme d'un silence ou un mutisme.} \\
+  les cent pas en moi, \\
+  un mutisme qui va \\
+  d'une branche à l'autre.
+
+  Je pourrais peut-être m'envoler \\
+  --- Je n'ose pas. \\
+  La brindille plie et tremblote, \\
+  le mutisme attend puis continue.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{A fán a levelek}
+
+\begin{verse}
+  A fán a levelek \\
+  lassan lengenek. \\
+  Már mind görbe, sárga \\
+  s konnyadt, puha.
+
+  Egy hallgatag madár \\
+  köztük föl-le jár, \\
+  mintha kalitkája \\
+  volna a fa.
+
+  Így csinál lelkem is. \\
+  Jár-kel bennem is, \\
+  ágról-ágra lépked \\
+  egy némaság.
+
+  Szállhatnék --- nem merek. \\
+  Meghajlik, remeg \\
+  a gally, vár és lépked \\
+  a némaság.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\poemtitle{Tu as fait de moi un enfant}
+
+\begin{verse}
+  Tu as fait de moi un enfant. \\
+  En vain la souffrance m'a fait grandir \\
+  à travers trente hivers grinçants. \\
+  Je ne sais ni marcher ni rester assis; \\
+  mes jambes traînent ou me poussent vers toi.
+
+  Je te garde dans la bouche \\
+  comme une chienne son petit \\
+  et je m'enfuirais pour qu'on ne te noie pas. \\
+  Les ans qui ont détruit mon destin \\
+  se déversent sur moi à chaque moment.
+
+  Nourris-moi, regarde-moi: j'ai faim. \\
+  Borde-moi: j'ai froid. \\
+  Je ne sais rien: prends soin de moi. \\
+  Ton absence souffle toujours en travers \\
+  comme un courant d'air dans la maison. \\
+  Parle-moi --- que la peur me quitte.
+
+  Tu me regardas et je laissai tout tomber. \\
+  Tu m'écoutas et ma voix vacilla. \\
+  Rends-moi moins inexorable que cela, \\
+  que je puisse apprendre à vivre et mourir seul!\hspace*{-1mm}
+
+  \hfill [\ldots]
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{Gyermekké tettél}
+
+\begin{verse}
+  Gyermekké tettél. Hiába növesztett \\
+  harminc csikorgó télen át a kín. \\
+  Nem tudok járni s nem ülhetek veszteg. \\
+  Hozzád vonszolnak, löknek tagjaim.
+
+  Számban tartalak, mint kutya a kölykét \\
+  s menekülnék, hogy meg ne fojtsanak. \\
+  Az éveket, mik sorsom összetörték, \\
+  reám zúdítja minden pillanat.
+
+  Etess, nézd --- éhezem. Takarj be --- fázom. \\
+  Ostoba vagyok --- foglalkozz velem. \\
+  Hiányod átjár, mint huzat a házon. \\
+  Mondd, --- távozzon tőlem a félelem.
+
+  Reám néztél s én mindent elejtettem. \\
+  Meghallgattál és elakadt szavam. \\
+  Tedd, hogy ne legyek ily kérlelhetetlen; \\
+  hogy tudjak élni, halni egymagam!
+
+  \hfill [\ldots]
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\poemtitle*{\phantom{Tu as fait de moi un enfant}}
+
+\begin{verse}
+  \textnormal{[\ldots]}
+
+  Ma mère m'a corrigé \\
+  --- Je m'étais allongé devant le seuil. \\
+  Je me serais caché: impossible: \\
+  pierre par-dessous moi et vide par-dessus. \\
+  Oh comme j'aimerais pouvoir dormir! \\
+  Je frappe à ta porte.
+
+  Nombreux parmi les vivants sont les hommes \\
+  insensibles qui néanmoins pleurent \\
+  comme moi. \\
+  Je t'aime beaucoup parce que je fus capable \\
+  de m'aimer beaucoup avec toi.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{\phantom{Gyermekké tettél}}
+
+\begin{verse}
+  \textnormal{[\ldots]}
+
+  Anyám kivert --- a küszöbön feküdtem --- \\
+  magamba bujtam volna, nem lehet --- \\
+  alattam kő és üresség fölöttem. \\
+  Óh, hogy alhatnék! Nálad zörgetek.
+
+  Sok ember él, ki érzéketlen, mint én, \\
+  kinek szeméből mégis könny ered. \\
+  Nagyon szeretlek, hisz magamat szintén \\
+  nagyon meg tudtam szeretni veled.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\poemtitle{Depuis}
+
+\begin{verse}
+  Depuis que je t'ai vue, \\
+  le soleil brille sur moi plus bellement, \\
+  et depuis lors le petit rossignol \\
+  chante cent fois plus bellement.
+
+  Seules tes lèvres rouges restent muettes \\
+  et aucun sourire n'éclôt sur elles; \\
+  je ne suis que ma propre ombre \\
+  car je ne peux t'embrasser.
+
+  Depuis que je t'ai vue, \\
+  les champs sont plus fragrants, \\
+  et depuis lors le rosier orgueilleux \\
+  trône sans aiguillons.
+
+  Seule ton âme est devenue plus froide, \\
+  seul ton cœur est devenu plus orgueilleux, \\
+  et mon amour a attisé les braises \\
+  du désespoir.
+
+  Depuis que je t'ai vue, \\
+  un ciel de printemps éternel a fleuri, \\
+  et depuis lors aucun petit oiseau \\
+  n'a été retenu captif par une fillette.
+
+  Seule toi m'a retenu prisonnier \\
+  et seul mon cœur n'est que blessures; \\
+  je rends l'âme avec ton nom sur mes lèvres! \\
+  --- c'est plus doux ainsi
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{Amióta}
+
+\begin{verse}
+  Amióta megláttalak, \\
+  szebben süt a nap le rám \\
+  és azóta százszor szebben \\
+  dalol a kis csalogány. \\
+  csak a piros ajkad néma
+
+  s mosoly rajta nem fakad, \\
+  saját magam árnya vagyok, \\
+  hisz csókolnom nem szabad.
+
+  Amióta megláttalak, \\
+  illatosabb a mező \\
+  és azóta tövis nélkül \\
+  áll a büszke rózsatő. \\
+  Csak a lelked lett fagyosabb, \\
+  csak a szíved lett büszke \\
+  s szerelmemtől lobbant lángra \\
+  a kétségbeesés üszke.
+
+  Amióta megláttalak, \\
+  örök tavasz ég virul \\
+  és azóta kis madarat \\
+  kis leány nem tart rabul. \\
+  Csak te tartasz foglyul engem \\
+  s csak a szívem csupa seb; \\
+  a neveddel ajkaimon \\
+  halok meg! --- úgy édesebb.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\poemtitle{Ils disent}
+
+\begin{verse}
+  Je suis né un couteau en main \\
+  --- ils disent: «~C'est un poème.~» \\
+  J'ai bien pris une plume, \\
+  car le couteau ne suffisait pas: \\
+  je suis alors né homme.
+
+  Si on erre en sanglotant \\
+  avec une loyauté passionnée, \\
+  ils disent: «~Il est amoureux.~» \\
+  Oh invite-moi à ton giron, simplicité larmoyante!\hspace*{-1mm} \\
+  Je ne fais que jouer avec toi.
+
+  Je ne me souviens pas et je n'oublie pas. \\
+  Ils disent: «~Comment est-ce possible?~» \\
+  Comme ce qui tombe au sol y reste, \\
+  tu le trouves si je ne le trouve pas.
+
+  La terre m'emplit et la mer m'écrase: \\
+  ils disent que je me meurs. \\
+  On entend tellement de sortes de choses \\
+  que je garde le silence sur elles.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{Azt mondják}
+
+\begin{verse}
+  Mikor születtem, a kezemben kés volt -- \\
+  azt mondják, ez költemény. \\
+  Biz tollat fogtam, mert a kés kevés volt: \\
+  embernek születtem én.
+
+  Kiben zokogva bolyong heves hűség, \\
+  azt mondják, hogy az szeret. \\
+  Óh hívj öledbe, könnyes egyszerűség! \\
+  Csupán játszom én veled.
+
+  Én nem emlékezem és nem felejtek. \\
+  Azt mondják, ez hogy lehet? \\
+  Ahogy e földön marad, mit elejtek, -- \\
+  ha én nem, te megleled.
+
+  Eltöm a föld és elmorzsol a tenger: \\
+  azt mondják, hogy meghalok. \\
+  De annyi mindenfélét hall az ember, \\
+  hogy erre csak hallgatok.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\poemtitle{Pour Flora}
+
+\begin{verse}
+  Maintenant, je dois soupeser ceci: \\
+  si tu ne m'aimes pas, \\
+  je pourrais éteindre mes charbons coûteux, \\
+  je pourrais fermer mes yeux fatigués. \\
+  Parce qu'il est bon d'être mort.
+
+  Je serais peut-être content \\
+  si tu ne m'aimais pas ainsi. \\
+  Je sortirais m'asseoir \\
+  près des ciels verts à l'écume blanche, \\
+  les nuages d'étoiles jaseuses,
+
+  sur les rives de tranquillité, \\
+  sur l'espace non-vide des berges d'érosion, \\
+  pour contempler les mondes \\
+  tels des fleurs sur un buisson.
+
+  Quand j'étais un mousse couvert de suie \\
+  sur le pousseur Tatar cliquetant, \\
+  un beau jour d'été que je vaquais \\
+  comme quelqu'un étudiant la joie,
+
+  j'admirais la crue du Danube \\
+  berçant des branches feuillues, \\
+  faisant tournoyer le gentil clapot, \\
+  emportant et mordillant des planches,
+
+  tant de jolis melons reluisants \\
+  dans les flots jaunes que tu ne le croirais pas, \\
+  et je ne le croirais pas non plus peut-être \\
+  si je ne te le disais pas.
+
+  \hfill [\ldots]
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{Flórának}
+
+\begin{verse}
+  Most azon muszáj elmerengnem: \\
+  hogy ha te nem szeretnél engem, \\
+  kiolthatnám drága szenem, \\
+  lehunyhatnám fáradt szemem.
+
+  Mert jó meghalni. Tán örülnék, \\
+  ha nem szeretnél így. Kiülnék \\
+  a fehérhabú zöld egek, \\
+  fecsegő csillagfellegek
+
+  mellé a nyugalom partjára, \\
+  a nem üres űr egy martjára, \\
+  szemlélni a világokat, \\
+  mint bokron a virágokat.
+
+  Hajósinas koromban, nyáron, \\
+  a zörgő, vontató Tatáron, \\
+  egy szép napon munkátlanul, \\
+  mint aki örömöt tanul,
+
+  bámultam a Dunát, megáradt, \\
+  libegtetett leveles ágat, \\
+  úgy kanyarított sok fodort, \\
+  deszkát harapdált és sodort
+
+  olyan sok szép villogó dinnyét \\
+  a sárga ár, hogy el se hinnéd \\
+  és én se hinném el talán, \\
+  ha nem tenéked mondanám.
+
+  \hfill [\ldots]
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\poemtitle*{\phantom{[\emph{For Flora}]}}
+\label{pour_flora}
+
+\begin{verse}
+  \textnormal{[\ldots]}
+
+  Des pommes rouges qui se dodelinent, \\
+  des poivrons verts qui surnagent \\
+  --- j'aimais cela alors, et ensuite aussi. \\
+  Et le bateau tenait bon et hochait du bord.
+
+  Ainsi devrait être l'exploration de l'espace. \\
+  Quelle beauté! Hocher de la tête à tout, \\
+  je verrais quelle sorte de ciel bleu \\
+  est le ciel, lequel t'irait le mieux.
+
+  Car l'univers n'est qu'un supplément\footnote{Voir
+  \emph{Conscience~X}, page~\pageref{conscience_X}.} \\
+  et la vie, comme une crue, bat \\
+  au-delà les rives de la mort, \\
+  dans les profondeurs des espaces et des cœurs,\hspace*{-1mm} \\
+  bien au-delà de la frontière silencieuse, \\
+  tout comme le Danube cet été-là...
+
+  Puisque tu m'aimes \\
+  et que je peux dormir en paix, \\
+  je peux confesser que le mourant \\
+  fut pris la main dans le sac,\footnote{Retour au début: la source de
+  cette rêverie existentielle était une tentative de suicide.} \\
+  et que je ne suis pas resté en moi-même; \\
+  c'est pourquoi mon âme est chose publique,\hspace*{-1mm} \\
+  c'est pourquoi je t'aime tant.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{\phantom{[\emph{Flórának}]}}
+
+\begin{verse}
+  \textnormal{[\ldots]}
+
+  Piros almák is ringatóztak, \\
+  zöld paprikák bicegve úsztak, \\
+  most ez, majd az lett volna jó. \\
+  S állt és bólintott a hajó.
+
+  Ilyen lenne az űri szemle. \\
+  Milyen szép! -- bólintva mindenre, \\
+  meglátnám, milyen kéken ég \\
+  az ég, mely hozzád illenék.
+
+  Mert a mindenség ráadás csak, \\
+  az élet mint az áradás csap \\
+  a halál partszegélyein \\
+  túl, űrök, szívek mélyein
+
+  túl, túl a hallgatag határon, \\
+  akár a Duna akkor nyáron... \\
+  Mert szeretsz s nyugton alhatom, \\
+  neked én be is vallhatom
+
+  az elmulástól tetten érten, \\
+  hogy önmagamba én se fértem, \\
+  a lelkem azért közvagyon \\
+  s azért szeretlek ily nagyon.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{french}
+
+\poemtitle{Attila \textsc{József}}
+
+\begin{verse}
+  Il était joyeux et bon, et peut-être têtu \\
+  quand ses vérités étaient heurtées. \\
+  Il aimait manger et, \\
+  d'une manière ou d'une autre, \\
+  il était aussi comparé à un dieu. \\
+  D'un médecin juif il reçut un manteau, \\
+  et sa parentèle le nomma ainsi: \\
+  Je-Ne-Te-Reverrai-Plus-Ici. \\
+  Dans l'Église orthodoxe grecque \\
+  il ne trouva aucune paix, seulement des prêtres.\hspace*{-1mm} \\
+  Son décès fut une perte nationale.
+
+  Mais, bon, ne soyez pas triste.
+\end{verse}
+
+\newpage
+
+\vspace*{-15mm}
+\centeredornament
+
+\selectlanguage{hungarian}
+
+\poemtitle*{József Attila}
+
+\begin{verse}
+  Vidám és jó volt s tán konok, \\
+  ha bántották vélt igazában. \\
+  Szeretett enni s egyben másban \\
+  istenhez is hasonlitott. \\
+  Egy zsidó orvostól kapott \\
+  kabátot és a rokonok \\
+  úgy hívták: Többé-itt-ne-lássam. \\
+  A görög-keleti vallásban \\
+  nyugalmat nem lelt, csak papot --- \\
+  országos volt a pusztulásban,
+
+  no de hát ne búsuljatok.
+\end{verse}
+
+\newpage
+
+\thispagestyle{empty} \ \clearemptydoublepage
+\thispagestyle{empty} \ \clearemptydoublepage
+
+\end{document}
