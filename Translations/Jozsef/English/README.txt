@@ -9,7 +9,7 @@ and comment out the following line:
 
 \includepdf{front_cover_en}
 
-The LaTeX file cover.tex generated cover_en.pdf like so:
+The LaTeX file cover_en.tex generated cover_en.pdf like so:
 
 $ pdflatex cover_en
 
