@@ -1,4 +1,4 @@
-\documentclass[11pt]{book}
+\documentclass[11pt]{extbook}
 
 % Geometry
 %
@@ -18,11 +18,24 @@
 \usepackage[main=spanish,hungarian]{babel}
 \AddToHook{begindocument}[test]{\catcode\string``=12 }
 \DeclareHookRule{begindocument}{test}{before}{babel}
-\usepackage{ebgaramond}
 
+\usepackage{ebgaramond}
 \usepackage{microtype}
 
-\usepackage{verse} % \poemlines{1} % Number each verse
+\usepackage{endnotes}
+\let\footnote=\endnote
+
+\usepackage{verse}
+\poemlines{0} % No verse numbering.
+
+\makeatletter
+\renewcommand{\tableofcontents}{%
+  \chapter*{\contentsname}%
+  \vspace*{-10em} % adjust until it's flush
+  \@starttoc{toc}%
+}
+\makeatother
+
 \usepackage[final]{pdfpages}
 \usepackage{hyphenat}
 \usepackage{pgfornament}
@@ -93,8 +106,6 @@ Traducción de Christian Rinderknecht}
 \def\contentsname{\empty}
 \tableofcontents
 
-\thispagestyle{empty}
-\newpage
 \leavevmode\thispagestyle{empty}
 \pagenumbering{arabic}
 \newpage
@@ -1695,6 +1706,12 @@ Traducción de Christian Rinderknecht}
 
   no de hát ne búsuljatok.
 \end{verse}
+
+\thispagestyle{empty} \ \clearemptydoublepage
+
+\selectlanguage{spanish}
+\renewcommand{\notesname}{Notas}
+\theendnotes
 
 \newpage
 
