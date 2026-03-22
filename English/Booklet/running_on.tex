@@ -28,6 +28,13 @@
 \newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
 \newcommand*{\centeredornament}{\centerline{\pgfornament[width=6cm]{88}}}
 
+% Chinese
+
+\usepackage{CJKutf8}
+\newcommand{\zh}[1]{\begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
+
+% Title and author
+
 \title{Running On}
 \author{Christian Rinderknecht}
 \date{\small 2024}
@@ -53,7 +60,8 @@
 \vspace*{14cm}
 
 \begin{flushright}
-  \textcopyright{} Christian Rinderknecht, \oldstylenums{2024}.
+  \textcopyright{} Christian Rinderknecht, \oldstylenums{2024}.\\
+  \textcopyright{} Cover by Max Wang (\zh{王震旦}), \oldstylenums{2024}.
 \end{flushright}
 
 \newpage
@@ -377,6 +385,12 @@ To Réka Dudás.
 \end{verse}
 
 \newpage
+
+\vspace*{-15mm}
+\centeredornament
+\vspace*{-7mm}
+
+\poemtitle*{\phantom{IX}}
 
 \settowidth{\versewidth}{to the halo of your blond hair}
 
