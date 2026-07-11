@@ -64,21 +64,13 @@ Translation by Christian Rinderknecht}
 
 \begin{document}
 
+\pagenumbering{gobble}
+
 \includepdf{front_cover_en}
 
-\thispagestyle{empty}
-
-\mbox{}
-\thispagestyle{empty}
-
-\newpage\leavevmode\thispagestyle{empty}
-
-\mbox{}
-\thispagestyle{empty}
+\newpage
 
 \maketitle
-
-\thispagestyle{empty}
 
 \vspace*{\fill}
 
@@ -97,21 +89,17 @@ Translation by Christian Rinderknecht}
   \textsc{Juhász} Dávid and \textsc{Dudás} Réka.
 \end{flushright}
 
-\thispagestyle{empty}
-
-\newpage\leavevmode\thispagestyle{empty}\newpage
-
-\def\contentsname{\empty}
+\newpage
+\newpage
 
 \def\contentsname{\empty}
 \tableofcontents
 
-\leavevmode\thispagestyle{empty}
-\pagenumbering{arabic}
-\newpage
 \clearpage
 
 %----------------------------------------------------------------------
+
+\pagenumbering{arabic}
 
 \vspace*{-15mm}
 \centeredornament
