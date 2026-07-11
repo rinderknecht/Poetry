@@ -16,8 +16,6 @@
 
 \usepackage[T1]{fontenc}
 \usepackage[main=spanish,hungarian]{babel}
-\AddToHook{begindocument}[test]{\catcode\string``=12 }
-\DeclareHookRule{begindocument}{test}{before}{babel}
 
 \usepackage{ebgaramond}
 \usepackage{microtype}
@@ -67,6 +65,12 @@ Traducción de Christian Rinderknecht}
 \pagenumbering{gobble}
 
 \includepdf{front_cover_es}
+
+\mbox{}
+
+\newpage
+
+\mbox{}
 
 \newpage
 
