@@ -1,0 +1,45 @@
+% xetex
+
+\documentclass[a4paper,14pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[main=hungarian]{babel}
+\usepackage{verse}
+\usepackage{fontspec}
+
+\newfontfamily\zapfino{Zapfino.ttf}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\LARGE
+\zapfino
+
+\selectlanguage{hungarian}
+
+%\poemtitle*{Sárga füvek}
+
+\settowidth{\versewidth}{nincs szivem folytatni tovább.}
+
+\begin{center}
+\begin{verse}[\versewidth]
+  Sárga füvek a homokon, \\[-5mm]
+  csontos öreg nő ez a szél, \\[-6mm]
+  a tócsa ideges barom, \\[-4mm]
+  a tenger nyugodt, elbeszél. \\[1\baselineskip]
+
+
+  Dúdolom halk leltáromat. \\[1mm]
+  Hazám az eladott kabát, \\[1mm]
+  buckákra omlott alkonyat, \\[-5mm]
+  nincs szivem folytatni tovább. \\[1\baselineskip]
+
+  Csillan a nyüzsögő idő \\[-6mm]
+  korallszirtje, a holt világ, \\[-6mm]
+  a nyírfa, a bérház, a nő \\[-5mm]
+  az áramló kék égen át.
+\end{verse}
+\end{center}
+
+\end{document}
