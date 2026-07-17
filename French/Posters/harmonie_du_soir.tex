@@ -1,0 +1,55 @@
+% xetex
+
+\documentclass[14pt]{article}
+
+\usepackage[a4paper]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[main=french]{babel}
+\usepackage{verse}
+\usepackage{fontspec}
+
+%\newfontfamily\belle{Belle Allure CE}
+
+%\setmainfont{Tangerine_Regular}
+
+\newfontfamily\tangerine{Tangerine_Regular.ttf}
+\newfontfamily\tangerineBold{Tangerine_Bold.ttf}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\large
+\tangerine
+
+\poemtitle*{\tangerineBold Harmonie du soir}
+
+\settowidth{\versewidth}{Les sons et les parfums tournent dans l'air du soir;}
+
+\bigskip
+
+\begin{center}
+  \begin{verse}[\versewidth]
+    Voici venir les temps où vibrant sur sa tige \\
+    chaque fleur s'évapore ainsi qu'un encensoir; \\
+    les sons et les parfums tournent dans l'air du soir; \\
+    valse mélancolique et langoureux vertige!
+
+    Chaque fleur s'évapore ainsi qu'un encensoir; \\
+    le violon frémit comme un cœur qu'on afflige; \\
+    valse mélancolique et langoureux vertige! \\
+    Le ciel est triste et beau comme un grand reposoir.
+
+    Le violon frémit comme un cœur qu'on afflige, \\
+    un cœur tendre, qui hait le néant vaste et noir! \\
+    Le ciel est triste et beau comme un grand reposoir; \\
+    le soleil s'est noyé dans son sang qui se fige.
+
+    Un cœur tendre, qui hait le néant vaste et noir, \\
+    du passé lumineux recueille tout vestige! \\
+    Le soleil s'est noyé dans son sang qui se fige... \\
+    ton souvenir en moi luit comme un ostensoir!
+  \end{verse}
+\end{center}
+
+\end{document}
