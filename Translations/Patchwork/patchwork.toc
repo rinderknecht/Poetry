@@ -1,0 +1,32 @@
+\babel@toc {french}{}\relax 
+\babel@toc {spanish}{}\relax 
+\contentsline {part}{I\hspace {1em}Rubén Darío}{3}{}%
+\contentsline {subsection}{Chanson de carnaval (\emph {Canción de carnaval})}{5}{}%
+\babel@toc {french}{}\relax 
+\babel@toc {spanish}{}\relax 
+\contentsline {subsection}{Mienne ({\em Mía})}{9}{}%
+\babel@toc {french}{}\relax 
+\babel@toc {spanish}{}\relax 
+\contentsline {subsection}{Mienne dit ({\em Dice mía})}{10}{}%
+\babel@toc {french}{}\relax 
+\babel@toc {spanish}{}\relax 
+\contentsline {subsection}{Syrinx ({\em Syrinx})}{11}{}%
+\babel@toc {french}{}\relax 
+\babel@toc {spanish}{}\relax 
+\contentsline {part}{II\hspace {1em}Gerardo Diego}{13}{}%
+\contentsline {subsection}{Se taire ({\em Callar})}{15}{}%
+\babel@toc {french}{}\relax 
+\babel@toc {spanish}{}\relax 
+\contentsline {subsection}{Élégie de cave ({\em Elegia de atarazanas})}{16}{}%
+\babel@toc {french}{}\relax 
+\babel@toc {spanish}{}\relax 
+\contentsline {subsection}{Le roman de boutique ({\em La novela de una tienda})}{18}{}%
+\babel@toc {french}{}\relax 
+\babel@toc {spanish}{}\relax 
+\contentsline {part}{III\hspace {1em}Jorge Guillén}{19}{}%
+\contentsline {subsection}{Les souvenirs ({\em Los recuerdos})}{21}{}%
+\babel@toc {french}{}\relax 
+\babel@toc {spanish}{}\relax 
+\contentsline {subsection}{Les jardins ({\em Los jardines})}{21}{}%
+\babel@toc {french}{}\relax 
+\babel@toc {spanish}{}\relax 
