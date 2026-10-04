@@ -5,15 +5,14 @@
 % Page geometry for L'Harmattan
 %
 \usepackage[bindingoffset=0cm,
-            a4paper,
             left=55mm,
             top=6cm,
             textheight=185mm,
             textwidth=10cm,
             footskip=13mm,
             includefoot,
-            includehead,
-            dvips]{geometry}% showframe, showcrop
+            includehead
+           ]{geometry}% showframe, showcrop
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -23,6 +22,7 @@
 \usepackage{verse}
 \usepackage{url}
 \usepackage{hyphenat}
+\usepackage{tikz} % For the front cover
 
 %\selectlanguage{francais}
 
@@ -61,8 +61,17 @@
 %% \end{center}
 %% %\centerline\today
 
-\cleardoublepage
-\
+\begin{tikzpicture}[remember picture,overlay]
+  \node at (current page.center) {%
+    \includegraphics[
+      width=\paperwidth,
+      height=\paperheight
+    ]{Rimes_cover.jpg}%
+  };
+\end{tikzpicture}
+
+%\cleardoublepage
+%\
 \cleardoublepage
 \
 \cleardoublepage
