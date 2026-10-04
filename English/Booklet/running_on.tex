@@ -22,6 +22,7 @@
 \usepackage[final]{pdfpages}
 \usepackage{graphicx}
 \usepackage{pgfornament}
+\usepackage{tikz} % For the front cover
 
 \frenchspacing  % Follow French conventions after a period
 
@@ -42,7 +43,14 @@
 
 \begin{document}
 
-\includepdf{front_cover}
+\begin{tikzpicture}[remember picture,overlay]
+  \node at (current page.center) {%
+    \includegraphics[
+      width=\paperwidth,
+      height=\paperheight
+    ]{front_cover.png}%
+  };
+\end{tikzpicture}
 
 \thispagestyle{empty}
 
