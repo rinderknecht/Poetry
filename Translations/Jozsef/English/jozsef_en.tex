@@ -5,20 +5,47 @@
 \usepackage[papersize={12.85cm,19.84cm},%
             includehead,%
             includefoot,%
-            bindingoffset=1cm%, showframe, showcrop
+            bindingoffset=1cm%, showframe, showcrop,
             ]{geometry}
 
-%\setlength{\evensidemargin}{-50pt}
-%\setlength{\oddsidemargin}{-50pt}
+% The text height is set too large so that the TOC fits on one page.
+% This is not an issue for the rest of the book, as we do not use the
+% bottom to print the page numbers, for example.
+%
 \setlength{\topmargin}{-50pt}
 \setlength{\textheight}{500pt}
-%\setlength{\textwidth}{530pt}
 
+% Language and fonts
+%
 \usepackage[T1]{fontenc}
 \usepackage[main=english,hungarian]{babel}
 
 \usepackage{ebgaramond}
 \usepackage{microtype}
+
+% I want the page numbers on the header: leftmost and rightmost. Odd
+% pages bear EVEN numbers in this book because it is a bilingual
+% edition, and the translation is always on a left page, with the
+% original on the facing (right) page. So we start with page 1 on a
+% left page, that is an even page.
+%
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[LO,RE]{\itshape\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyhead[LO,RE]{\itshape\thepage}%
+  \renewcommand{\headrulewidth}{0pt}}
+
+\makeatletter
+\renewcommand{\tableofcontents}{%
+  \def\contentsname{\empty}
+  \chapter*{\contentsname}%
+  \vspace*{-10em} % adjust until it's flush
+  \@starttoc{toc}%
+}
+\makeatother
 
 \usepackage{endnotes}
 \let\footnote=\endnote
@@ -26,13 +53,6 @@
 \usepackage{verse}
 \poemlines{0} % No verse numbering
 
-\makeatletter
-\renewcommand{\tableofcontents}{%
-  \chapter*{\contentsname}%
-  \vspace*{-10em} % adjust until it's flush
-  \@starttoc{toc}%
-}
-\makeatother
 
 \usepackage[final]{pdfpages}
 \usepackage{hyphenat}
@@ -45,7 +65,18 @@
 %
 %\setcounter{tocdepth}{3}
 
-\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
+\makeatletter
+\newcommand{\clearevenpage}{%
+  \clearpage
+  \if@twoside
+    \ifodd\c@page
+      \hbox{}\thispagestyle{empty}\newpage
+    \fi
+  \fi}
+\makeatother
+
+%\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
+\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\clearevenpage}}
 \newcommand*{\centeredornament}{\centerline{\pgfornament[width=6cm]{88}}}
 
 % Chinese
@@ -62,6 +93,7 @@ Translation by Christian Rinderknecht}
 
 \begin{document}
 
+\pagestyle{empty}
 \pagenumbering{gobble}
 
 \includepdf[%
@@ -99,21 +131,27 @@ Translation by Christian Rinderknecht}
 \newpage
 \newpage
 
-\def\contentsname{\empty}
+% Table of Contents (ToC)
+%
+% The title should be typeset in the ToC as a chapter without page nymber:
+\addtocontents{toc}{\protect\contentsline{chapter}{The Tiger and the Roe Deer}{}{}}
+
 \tableofcontents
 
+% Right on the back of the ToC, we typeset the first poem on a left
+% page, page 1.
+
 \clearpage
-
-%----------------------------------------------------------------------
-
+\pagestyle{plain}
 \pagenumbering{arabic}
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
 
 \selectlanguage{english}
 
-\addcontentsline{toc}{chapter}{The Tiger and the Roe Deer}
 \addcontentsline{toc}{section}{\emph{Only you should read my poems}}
 
 \poemtitle*{[Only you should read my poems]}
@@ -156,6 +194,8 @@ Translation by Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -209,6 +249,8 @@ Translation by Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -269,6 +311,8 @@ Translation by Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -335,6 +379,8 @@ Translation by Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -396,6 +442,8 @@ Translation by Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -456,6 +504,8 @@ Translation by Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -542,6 +592,8 @@ Translation by Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -549,8 +601,8 @@ Translation by Christian Rinderknecht}
 
 \addcontentsline{toc}{section}{\emph{Freight trains switching}}
 
-%% % Note: The edition by \emph{Szépirodalmi könyvkiadó}, page~169, misses
-%% % two verses and a conjunction.
+% Note: The edition by \emph{Szépirodalmi könyvkiadó}, page~169, misses
+% two verses and a conjunction.
 
 \poemtitle*{[Freight trains switching]}
 
@@ -634,9 +686,13 @@ Translation by Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \input{consciousness}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -700,6 +756,8 @@ Translation by Christian Rinderknecht}
 \end{verse}
 
 %% \newpage
+
+%% % ---------------------------------------------------------------------
 
 %% \vspace*{-15mm}
 %% \centeredornament
@@ -831,6 +889,8 @@ Translation by Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -892,6 +952,8 @@ Translation by Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -901,8 +963,8 @@ Translation by Christian Rinderknecht}
 
 \begin{verse}
   Yellow grasses on the sand, \\
-  the wind is a gaunt old lady, \\
-  puddles are a nervous cattle, \\
+  that wind is a gaunt old lady, \\
+  puddles are nervous cattle, \\
   the sea is calm, it tells a story.
 
   I croon my quiet inventory. \\
@@ -943,6 +1005,8 @@ Translation by Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -1006,6 +1070,8 @@ Translation by Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -1054,6 +1120,8 @@ Translation by Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -1106,6 +1174,8 @@ Translation by Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -1172,6 +1242,8 @@ Translation by Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -1234,6 +1306,8 @@ Translation by Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -1322,6 +1396,8 @@ Translation by Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -1402,6 +1478,8 @@ Translation by Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -1465,6 +1543,8 @@ Translation by Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -1553,6 +1633,8 @@ Translation by Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -1632,6 +1714,8 @@ Translation by Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -1678,7 +1762,12 @@ Translation by Christian Rinderknecht}
   no de hát ne búsuljatok.
 \end{verse}
 
-\thispagestyle{empty} \ \clearemptydoublepage
+% ---------------------------------------------------------------------
+
+% End notes are on the next odd page (Odd pages bear EVEN numbersin
+% this book!)
+
+\clearevenpage
 
 \selectlanguage{english}
 \renewcommand{\notesname}{Endnotes}
