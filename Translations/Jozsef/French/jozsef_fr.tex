@@ -8,45 +8,71 @@
             bindingoffset=1cm%, showframe, showcrop
             ]{geometry}
 
-%\setlength{\evensidemargin}{-50pt}
-%\setlength{\oddsidemargin}{-50pt}
+% The text height is set too large so that the TOC fits on one page.
+% This is not an issue for the rest of the book, as we do not use the
+% bottom to print the page numbers, for example.
+%
 \setlength{\topmargin}{-50pt}
 \setlength{\textheight}{500pt}
-%\setlength{\textwidth}{530pt}
 
+% Language and fonts
+%
 \usepackage[T1]{fontenc}
 \usepackage[main=french,hungarian]{babel}
-
 \usepackage{ebgaramond}
 \usepackage{microtype}
-
-\usepackage{endnotes}
-\let\footnote=\endnote
-
+\usepackage{hyphenat}
+\usepackage{pgfornament}
+\usepackage[final]{pdfpages} % To insert an external PDF (the cover)
 \usepackage{verse}
+
+\newcommand*{\centeredornament}{\centerline{\pgfornament[width=6cm]{88}}}
+
 \poemlines{0} % No verse numbering.
 
+\frenchspacing  % Follow French conventions after a period
+\hfuzz 2pt      % Do not report overhang less than 2pt
+
+% I want the page numbers on the header: leftmost and rightmost. Odd
+% pages bear EVEN numbers in this book because it is a bilingual
+% edition, and the translation is always on a left page, with the
+% original on the facing (right) page. So we start with page 1 on a
+% left page, that is an even page.
+%
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[LO,RE]{\itshape\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyhead[LO,RE]{\itshape\thepage}%
+  \renewcommand{\headrulewidth}{0pt}}
+
+% Table of Contents
+%
 \makeatletter
 \renewcommand{\tableofcontents}{%
+  \def\contentsname{\empty}
   \chapter*{\contentsname}%
   \vspace*{-10em} % adjust until it's flush
   \@starttoc{toc}%
 }
 \makeatother
 
-\usepackage[final]{pdfpages}
-\usepackage{hyphenat}
-\usepackage{pgfornament}
+\makeatletter
+\newcommand{\clearevenpage}{%
+  \clearpage
+  \if@twoside
+    \ifodd\c@page
+      \hbox{}\thispagestyle{empty}\newpage
+    \fi
+  \fi}
+\makeatother
 
-\frenchspacing  % Follow French conventions after a period
-\hfuzz 2pt      % Do not report overhang less than 2pt
-
-% For subsubsections to appear in the table of contents
+% End notes
 %
-%\setcounter{tocdepth}{3}
-
-\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
-\newcommand*{\centeredornament}{\centerline{\pgfornament[width=6cm]{88}}}
+\usepackage{endnotes}
+\let\footnote=\endnote
 
 % Chinese
 
@@ -62,6 +88,7 @@ Traduction de Christian Rinderknecht}
 
 \begin{document}
 
+\pagestyle{empty}
 \pagenumbering{gobble}
 
 \includepdf[%
@@ -99,21 +126,27 @@ Traduction de Christian Rinderknecht}
 \newpage
 \newpage
 
-\def\contentsname{\empty}
+% Table of Contents (ToC)
+%
+% The title should be typeset in the ToC as a chapter without page nymber:
+\addtocontents{toc}{\protect\contentsline{chapter}{Le tigre et le chevreuil}{}{}}
+
 \tableofcontents
 
+% Right on the back of the ToC, we typeset the first poem on a left
+% page, page 1.
+
 \clearpage
+\pagestyle{plain}
+\pagenumbering{arabic}
 
 %----------------------------------------------------------------------
-
-\pagenumbering{arabic}
 
 \vspace*{-15mm}
 \centeredornament
 
 \selectlanguage{french}
 
-\addcontentsline{toc}{chapter}{Le tigre et le chevreuil}
 \addcontentsline{toc}{section}{\emph{Seul toi devrais lire mes poèmes}}
 
 \poemtitle*{[Seul toi devrais lire mes poèmes]}
@@ -156,6 +189,8 @@ Traduction de Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -211,6 +246,8 @@ Traduction de Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -270,6 +307,8 @@ Traduction de Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -336,6 +375,8 @@ Traduction de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -398,6 +439,8 @@ Traduction de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -458,6 +501,8 @@ Traduction de Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -544,6 +589,8 @@ Traduction de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -553,8 +600,8 @@ Traduction de Christian Rinderknecht}
 
 \poemtitle*{[Trains de fret aiguillés]}
 
-%% Note: The edition by \emph{Szépirodalmi könyvkiadó}, page~169, misses
-%% two verses and a conjunction.
+% Note: The edition by \emph{Szépirodalmi könyvkiadó}, page~169,
+% misses two verses and a conjunction.
 
 \begin{verse}
   Trains de fret aiguillés \\
@@ -634,9 +681,13 @@ Traduction de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \input{conscience}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -699,6 +750,8 @@ Traduction de Christian Rinderknecht}
   Most mint lopott fát, viszlek titeket \\
   ez otthontalan, csupa-csősz világban.
 \end{verse}
+
+% ---------------------------------------------------------------------
 
 %% \newpage
 
@@ -831,6 +884,8 @@ Traduction de Christian Rinderknecht}
 %%   elalszik, mint a gyermek s én is véle.
 %% \end{verse}
 
+% ---------------------------------------------------------------------
+
 \newpage
 
 \vspace*{-15mm}
@@ -897,6 +952,8 @@ Traduction de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -906,7 +963,7 @@ Traduction de Christian Rinderknecht}
 
 \begin{verse}
   Herbes jaunes sur le sable, \\
-  le vent est une vieille dame étique, \\
+  ce vent est une vieille dame étique, \\
   les flaques sont un bétail nerveux, \\
   la mer est calme, elle conte une histoire.
 
@@ -948,6 +1005,8 @@ Traduction de Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -1011,6 +1070,8 @@ Traduction de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -1058,6 +1119,8 @@ Traduction de Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -1111,6 +1174,8 @@ Traduction de Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -1178,6 +1243,8 @@ Traduction de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -1241,6 +1308,8 @@ Traduction de Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -1312,6 +1381,8 @@ Traduction de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -1360,6 +1431,8 @@ Traduction de Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -1441,6 +1514,8 @@ Traduction de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -1505,6 +1580,8 @@ Traduction de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -1523,10 +1600,10 @@ Traduction de Christian Rinderknecht}
   si tu ne m'aimais pas ainsi. \\
   Je sortirais m'asseoir \\
   près des ciels verts à l'écume blanche, \\
-  les nuages d'étoiles jaseuses,
+  nuages d'étoiles jaseuses,
 
-  sur les rives de tranquillité, \\
-  sur l'espace non-vide des berges d'érosion, \\
+  vers la rive de tranquillité, \\
+  une berge d'érosion d'espace non-vide, \\
   pour contempler les mondes \\
   tels des fleurs sur un buisson.
 
@@ -1593,6 +1670,8 @@ Traduction de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -1617,7 +1696,7 @@ Traduction de Christian Rinderknecht}
   Car l'univers n'est qu'un supplément\footnote{Voir
   \emph{Conscience~X}, page~\pageref{conscience_X}.} \\
   et la vie, comme une crue, bat \\
-  au-delà les rives de la mort, \\
+  au-delà des rives de la mort, \\
   dans les profondeurs des espaces et des cœurs,\hspace*{-1mm} \\
   bien au-delà de la frontière silencieuse, \\
   tout comme le Danube cet été-là...
@@ -1672,6 +1751,8 @@ Traduction de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -1719,15 +1800,24 @@ Traduction de Christian Rinderknecht}
   no de hát ne búsuljatok.
 \end{verse}
 
-\thispagestyle{empty} \ \clearemptydoublepage
+% ---------------------------------------------------------------------
+
+% End notes are on the next odd page (Odd pages bear EVEN numbers in
+% this book!)
+
+\clearevenpage
 
 \selectlanguage{francais}
 \renewcommand{\notesname}{Notes}
 \theendnotes
 
-\newpage
+% ---------------------------------------------------------------------
 
-\thispagestyle{empty} \ \clearemptydoublepage
-\thispagestyle{empty} \ \clearemptydoublepage
+\newpage
+\pagestyle{empty}
+\null
+\cleardoublepage
+\newpage
+\null
 
 \end{document}
