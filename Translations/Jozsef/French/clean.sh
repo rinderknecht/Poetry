@@ -2,4 +2,4 @@
 
 #set -x
 
-rm -f *.aux *.dvi0 *.dvi *.log *.xdy *.toc *.glo *.ent
+rm -f *.aux *.dvi0 *.dvi *.log *.xdy *.toc *.glo *.ent *.pdf *.ps
