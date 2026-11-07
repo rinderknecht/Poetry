@@ -8,45 +8,71 @@
             bindingoffset=1cm,% showframe, showcrop
             ]{geometry}
 
-%\setlength{\evensidemargin}{-50pt}
-%\setlength{\oddsidemargin}{-50pt}
+% The text height is set too large so that the TOC fits on one page.
+% This is not an issue for the rest of the book, as we do not use the
+% bottom to print the page numbers, for example.
+%
 \setlength{\topmargin}{-50pt}
 \setlength{\textheight}{500pt}
-%\setlength{\textwidth}{530pt}
 
+% Language, fonts & typography
+%
 \usepackage[T1]{fontenc}
 \usepackage[main=spanish,hungarian]{babel}
-
 \usepackage{ebgaramond}
 \usepackage{microtype}
-
-\usepackage{endnotes}
-\let\footnote=\endnote
-
+\usepackage{hyphenat}
+\usepackage{pgfornament}
+\usepackage[final]{pdfpages} % To insert an external PDF (the cover)
 \usepackage{verse}
-\poemlines{0} % No verse numbering.
 
+\newcommand*{\centeredornament}{\centerline{\pgfornament[width=6cm]{88}}}
+
+\poemlines{0} % No verse numbering
+
+\frenchspacing  % Follow French conventions after a period
+\hfuzz 2pt      % Do not report overhang less than 2pt
+
+% I want the page numbers on the header: leftmost and rightmost. Odd
+% pages bear EVEN numbers in this book because it is a bilingual
+% edition, and the translation is always on a left page, with the
+% original on the facing (right) page. So we start with page 1 on a
+% left page, that is an even page.
+%
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[LO,RE]{\itshape\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyhead[LO,RE]{\itshape\thepage}%
+  \renewcommand{\headrulewidth}{0pt}}
+
+% Table of Contents
+%
 \makeatletter
 \renewcommand{\tableofcontents}{%
+  \def\contentsname{\empty}
   \chapter*{\contentsname}%
   \vspace*{-10em} % adjust until it's flush
   \@starttoc{toc}%
 }
 \makeatother
 
-\usepackage[final]{pdfpages}
-\usepackage{hyphenat}
-\usepackage{pgfornament}
+\makeatletter
+\newcommand{\clearevenpage}{%
+  \clearpage
+  \if@twoside
+    \ifodd\c@page
+      \hbox{}\thispagestyle{empty}\newpage
+    \fi
+  \fi}
+\makeatother
 
-\frenchspacing  % Follow French conventions after a period
-\hfuzz 2pt      % Do not report overhang less than 2pt
-
-% For subsubsections to appear in the table of contents
+% End notes
 %
-%\setcounter{tocdepth}{3}
-
-\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
-\newcommand*{\centeredornament}{\centerline{\pgfornament[width=6cm]{88}}}
+\usepackage{endnotes}
+\let\footnote=\endnote
 
 % Chinese
 
@@ -62,6 +88,7 @@ Traducción de Christian Rinderknecht}
 
 \begin{document}
 
+\pagestyle{empty}
 \pagenumbering{gobble}
 
 \includepdf[%
@@ -99,21 +126,27 @@ Traducción de Christian Rinderknecht}
 \newpage
 \newpage
 
-\def\contentsname{\empty}
+% Table of Contents (ToC)
+%
+% The title should be typeset in the ToC as a chapter without page nymber:
+\addtocontents{toc}{\protect\contentsline{chapter}{El tigre y el corzo}{}{}}
+
 \tableofcontents
 
+% Right on the back of the ToC, we typeset the first poem on a left
+% page, page 1.
+
 \clearpage
+\pagestyle{plain}
+\pagenumbering{arabic}
 
 %----------------------------------------------------------------------
-
-\pagenumbering{arabic}
 
 \vspace*{-15mm}
 \centeredornament
 
 \selectlanguage{spanish}
 
-\addcontentsline{toc}{chapter}{El tigre y el corzo}
 \addcontentsline{toc}{section}{\emph{Sólo tú deberías leer mis poemas}}
 
 \poemtitle*{[Sólo tú deberías leer mis poemas]}
@@ -154,6 +187,8 @@ Traducción de Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -207,6 +242,8 @@ Traducción de Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -266,6 +303,8 @@ Traducción de Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -396,6 +435,8 @@ Traducción de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -455,6 +496,8 @@ Traducción de Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -538,6 +581,8 @@ Traducción de Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -627,9 +672,13 @@ Traducción de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \input{consciencia}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -695,6 +744,8 @@ Traducción de Christian Rinderknecht}
 \end{verse}
 
 %% \newpage
+
+%% % ---------------------------------------------------------------------
 
 %% \vspace*{-15mm}
 %% \centeredornament
@@ -826,6 +877,8 @@ Traducción de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -886,6 +939,8 @@ Traducción de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -895,7 +950,7 @@ Traducción de Christian Rinderknecht}
 
 \begin{verse}
   Hierbas amarillas en la arena, \\
-  el viento es una anciana demacrada, \\
+  ese viento es una anciana demacrada, \\
   los charcos son un ganado nervioso, \\
   la mar es calma, cuenta una historia.
 
@@ -937,6 +992,8 @@ Traducción de Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -1060,7 +1117,7 @@ Traducción de Christian Rinderknecht}
 \begin{verse}
   Leves recuerdos, ¿donde desaparecisteis? \\
   Tengo el corazón en un puño, \\
-  a punto de sollozar. \\
+  estoy a punto de sollozar. \\
   Yo ya no puedo vivir sin ustedes, \\
   todo se desliza entre mis dedos.
 
@@ -1102,6 +1159,8 @@ Traducción de Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -1167,6 +1226,8 @@ Traducción de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -1228,6 +1289,8 @@ Traducción de Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -1298,6 +1361,8 @@ Traducción de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -1345,6 +1410,8 @@ Traducción de Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -1426,6 +1493,8 @@ Traducción de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -1491,6 +1560,8 @@ Traducción de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -1505,11 +1576,11 @@ Traducción de Christian Rinderknecht}
   Porque es bueno estar muerto.
 
   Tal vez me alegraría si no me quisieras así. \\
-  Iría yo fuera para sentarme cerca de \\
+  Saldría yo para sentarme cerca de \\
   los cielos verdes de espuma blanca, \\
-  la tertulia de las estrellas,
+  tertulia de estrellas,
 
-  en la orilla de la tranquilidad, \\
+  hacia la orilla de tranquilidad, \\
   en una ladera de espacio sin vacío, \\
   para contemplar los mundos \\
   como flores en un arbusto.
@@ -1524,9 +1595,9 @@ Traducción de Christian Rinderknecht}
   remolinando tantas ondas, \\
   llevándose y mordisqueando tablas,
 
-  tantos bonitos melones rielando \\
+  tantos melones bonitos rielando \\
   en el desbordamiento amarillo \\
-  que no te lo creerías, y tampoco quizá yo \\
+  que no te lo creerías, y tampoco quizás yo \\
   si no te lo contara.
 
   \hfill [\ldots]
@@ -1577,6 +1648,8 @@ Traducción de Christian Rinderknecht}
 
 \newpage
 
+% ---------------------------------------------------------------------
+
 \vspace*{-15mm}
 \centeredornament
 
@@ -1613,7 +1686,7 @@ Traducción de Christian Rinderknecht}
   suicidio.} \\
   que no me quedé en mí mismo; \\
   es por eso que mi alma es bien público, \\
-  y es por eso que te amo tanto.
+  y es por eso que tanto te amo.
 \end{verse}
 
 \newpage
@@ -1655,6 +1728,8 @@ Traducción de Christian Rinderknecht}
 \end{verse}
 
 \newpage
+
+% ---------------------------------------------------------------------
 
 \vspace*{-15mm}
 \centeredornament
@@ -1702,15 +1777,24 @@ Traducción de Christian Rinderknecht}
   no de hát ne búsuljatok.
 \end{verse}
 
-\thispagestyle{empty} \ \clearemptydoublepage
+% ---------------------------------------------------------------------
+
+% End notes are on the next odd page (Odd pages bear EVEN numbers in
+% this book!)
+
+\clearevenpage
 
 \selectlanguage{spanish}
 \renewcommand{\notesname}{Notas}
 \theendnotes
 
-\newpage
+% ---------------------------------------------------------------------
 
-\thispagestyle{empty} \ \clearemptydoublepage
-\thispagestyle{empty} \ \clearemptydoublepage
+\newpage
+\pagestyle{empty}
+\null
+\cleardoublepage
+\newpage
+\null
 
 \end{document}
