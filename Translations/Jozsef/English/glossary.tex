@@ -8,32 +8,24 @@
             bindingoffset=1cm%, showframe, showcrop
             ]{geometry}
 
-%\setlength{\evensidemargin}{-50pt}
-%\setlength{\oddsidemargin}{-50pt}
 \setlength{\topmargin}{-50pt}
 \setlength{\textheight}{450pt}
-%\setlength{\textwidth}{530pt}
 
 \usepackage[T1]{fontenc}
 \usepackage[main=english,hungarian]{babel}
 \AddToHook{begindocument}[test]{\catcode\string``=12 }
 \DeclareHookRule{begindocument}{test}{before}{babel}
 \usepackage{ebgaramond}
-%\usepackage{emptypage}
 \usepackage{microtype}
-
-%\usepackage{verse}
-%\poemlines{0} % No verse numbering
 \usepackage[final]{pdfpages}
 \usepackage{hyphenat}
-%\usepackage{pgfornament}
 
 \frenchspacing  % Follow French conventions after a period
 \hfuzz 2pt      % Do not report overhang less than 2pt
 
 % Title and author
 %
-\title{Companion English-Hungarian Glossary\\
+\title{Companion Hungarian-English Glossary \\
 to \\
 \emph{The Tiger and the Roe Deer}}
 \author{Christian Rinderknecht\\}
@@ -44,29 +36,46 @@ to \\
 \maketitle
 
 \noindent \textbf{\large A} \\
-\textbf{abban} \emph{az} `that' + iness. \emph{-ban} `in' $\rightarrow$ `in that'\\
-\textbf{ablakok} \emph{ablak} `window' + pl. \emph{-ok} \\
-\textbf{adott} vb. \emph{ad} `to give' + 3rd pers. sg. ind. past. indef. \\
-\textbf{ahhoz} \emph{az} `that' + allat. \emph{-hoz} `towards' \\
-\textbf{ahogy} \emph{az} `that' + \emph{hogy} $\rightarrow$ `as, as
-soon as' \\
-\textbf{ahol} art. \emph{az} + interr. adv. \emph{hol} `where?' \\
-\textbf{ajkad} arch. \emph{ajk} `lip', syn. \emph{ajak} + 2nd
-pers. sg. single\hyp{}poss. \emph{-d} \\
-\textbf{ajkaimon} arch. \emph{ajk} `lip', syn. \emph{ajak} +  1st
-pers. sg. poss. mult.\hyp{}poss. \emph{-aim} + super. \emph{-on} `on' \\
-\textbf{akár} lit. `just like' \\
-\textbf{akárhogyan} lit. \emph{akár} `just like' + \emph{hogyan} `how'
-$\rightarrow$ `anyway, anyhow, whatever', alt. \emph{akárhogy} \\
-\textbf{akarja} vb. `to want' + 3rd
-pers. sg. ind. pres. indef. \emph{-ja} \\
-\textbf{akarod} vb. \emph{akar} `to want' + 2nd
-pers. sg. ind. pres. def. \emph{-od} \\
-\textbf{aki} conj. `who' \\
-\textbf{akik} pron. \emph{aki} `who' + pl. \emph{-k} \\
-\textbf{akiket} pron. \emph{aki} `who' + pl. \emph{-k} +
-acc. \emph{-et} \\
-\textbf{akinek} pron. \emph{aki} `who' + attr. poss. \emph{-nek} \\
+\textbf{abban} pron. `in that', e.g. \emph{Abban a házban lakom.} `I live in that
+house' (\emph{az} `that' + iness. \emph{-ban} `in')\\
+\textbf{ablakok} `windows' (\emph{ablak} `window' + pl. \emph{-ok}) \\
+\textbf{adott} `(s)he gave' (vb. \emph{ad} `to give' + 3rd
+pers. sg. ind. past. indef.) \\
+\textbf{ahhoz} adv. `to that' \textbar\textbar{} `for it/that (purpose)',
+e.g. \emph{Ahhoz idő kell.} `It/that takes time.' (\emph{az} `that' +
+allat. \emph{-hoz} `towards') \\
+\textbf{ahogy} adv. `as, the way', e.g. \emph{Ahogy tudom.} `As far as I know.'
+\textbar\textbar{} `as soon as', syn. \emph{amint} (\emph{az} `that' +
+\emph{hogy} `how') \\
+\textbf{ahol} adv. `where', e.g. \emph{A város, ahol elünk.} `The town where we
+live.' (art. \emph{az} + interr. adv. \emph{hol} `where') \\
+\textbf{ajkad} arch. `your lip(s)' (arch. \emph{ajk} `lip', syn. \emph{ajak} +
+2nd pers. sg. poss. single\hyp{}poss. \emph{-ad}), now \emph{ajakad}\\
+\textbf{ajkaimon} `on my lips' (arch. \emph{ajk} `lip', syn. \emph{ajak} + 1st
+pers. sg. poss. mult.\hyp{}poss. \emph{-aim} + super. \emph{-on} `on'), now
+\emph{ajakaimon}\\
+\textbf{akár} adv. comp. `just/quite like', e.g. \emph{Olyan, akár az anyja.}
+`He is just like his mother.' \textbar\textbar{} adv. comp. e.g. \emph{akár igen,
+akár nem} `whether or not', \emph{Akár így, akár úgy.} `One way or the other.'
+\textbar\textbar{} permission, e.g. \emph{Akár most mindjárt.} `At once if you
+like.'\\
+\textbf{akárhogyan} adv. `however, anyway' (\emph{akár} `just like' +
+\emph{hogy\-an} `how'), syn. \emph{akárhogy} \\
+\textbf{akarja} `(s)he wants' (\emph{akar} vb. `want' + 3rd
+pers. sg. ind. pres. indef. \emph{-ja}) \\
+\textbf{akarod} `you want' (\emph{akar} vb. `want' + 2nd
+pers. sg. ind. pres. def. \emph{-od}) \\
+\textbf{aki} rel. pron. `who (sg.)' \\
+\textbf{akik} rel. pron. `who (pl.)' (rel. pron. \emph{aki} `who' +
+pl. \emph{-k}) \\
+\textbf{akiket} rel. pron. `whom (pl.)' (\emph{aki} `who' + pl. \emph{-k} +
+acc. \emph{-et}), e.g. \emph{Az emberek, akiket látok, barátaim.} `The people I
+see are my friends.' \\
+\textbf{akinek} rel. pron. `to/for whom' \textbar\textbar{} `whose'
+(pron. \emph{aki} `who' + dative \emph{-nek}, that is, recipient or possessor),
+e.g. \emph{A fiú, akinek írtam.} `The boy to whom I wrote.'; \emph{A nő, akinek
+segítettem.} `The woman [for whom] I helped.'; \emph{A nő, akinek a fia orvos.}
+`The woman whose son is a physician.' \\
 \textbf{akiknek} pron. \emph{aki} `who' + pl. \emph{-k} +
 attr. poss. \emph{-nek} \\
 \textbf{akkor} \emph{az} `that' + \emph{-kor} `time, at the time of'
